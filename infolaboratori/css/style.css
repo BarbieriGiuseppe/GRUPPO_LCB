@@ -294,7 +294,7 @@ nav.small {
 	min-height: 400px;
 }
 .home-page-photo {
-	background-image: url(../images/bg-5.jpg);
+	background-image: url(../images/lab1.jpg);
 	background-size: cover;
 	z-index: -1;
 	position: absolute;
@@ -354,7 +354,7 @@ nav.small {
 /* 11 Twitter-tweets
 ----------------------------------------------------------------------------- */
 #twitter_tweet {
-	background: url(../images/pattern1.png), url(../images/bg-4.jpg);
+	background: url(../images/pattern1.png), url(../images/lab1.jpg);
 }
 .twitter_tweet h5{
     font-weight: 300;

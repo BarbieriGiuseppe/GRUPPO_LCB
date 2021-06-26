@@ -81,21 +81,18 @@
       <div class="home__header-content">
         <div id="main-home-carousel" class="owl-carousel">
           <div>
-            <h1 class="intro-title">Start your own project</h1>
-            <p class="intro-text">Lorem ipsum dolor sit amet consectetur adictum piscing elit fusce sit amet inerdum neque ultra icies <br/>  pelentesque tempor justo a scelerisque placerat sit amet magna e.</p>
-            <a class="btn btn-custom" href="#">Get started</a>
+            <h1 class="intro-title">Professionalità</h1>
+            <p class="intro-text">Cerchiamo di offrire un servizio che rispetti il benessere del paziente. <br/> Il paziente ha la nostra completa attenzione.</p>
+          
           </div><!--slide item like paragraph-->
 
           <div>
-            <h1 class="intro-title">Best ideas for your Business</h1>
-            <p class="intro-text">Lorem ipsum dolor sit amet consectetur adictum piscing elit fusce sit amet inerdum neque ultra icies <br/>  pelentesque tempor justo a scelerisque placerat sit amet magna e.</p>
-            <a class="btn btn-custom" href="#">Get started</a>
+            <h1 class="intro-title">Garanzia</h1>
+            <p class="intro-text">Ti garantiamo,ad un prezzo accessibile, un servizio affifabile. <br/> Garantiamo un'affidabilità del tampone del 99%</p>
+          
           </div><!--slide item like paragraph-->
 
-          <div>
-            <h1 class="intro-title">We are digital expert</h1>
-            <p class="intro-text">Lorem ipsum dolor sit amet consectetur adictum piscing elit fusce sit amet inerdum neque ultra icies <br/>  pelentesque tempor justo a scelerisque placerat sit amet magna e.</p>
-            <a class="btn btn-custom" href="#">Get started</a>
+         
           </div><!--slide item like paragraph-->
         </div>
       </div>
@@ -117,7 +114,7 @@
             <div class="text-center services-item">
               <div class="col-wrapper">
                 <div class="icon-border"> 
-                  <i class="icon-design-graphic-tablet-streamline-tablet color-l-orange"></i> 
+                  <i class="icon-design-pencil-rule-streamline color-l-blue"></i> 
                 </div>
                 <h5>Personale Qualificato</h5>
                 <p>Il nostro personale viene scelto dopo un'accurata selezione. Cosi da garantire al paziente un servizio impeccabile.</p>
@@ -129,7 +126,8 @@
             <div class="text-center services-item">
               <div class="col-wrapper">
                 <div class="icon-border"> 
-                  <i class="icon-design-pencil-rule-streamline color-l-blue"></i> 
+                  <i class="icon-design-graphic-tablet-streamline-tablet color-l-orange"></i> 
+
                 </div>
                 <h5>Tecnologia all'avanguardia</h5>
                 <p>Il nostro laboratorio è dotato di strumenti di ultima generazione garantendo l'affidabilità del tampone e tempi ristretti per la comunicazione dell'esito.</p>
@@ -150,13 +148,7 @@
           </div>
         </div> <!--/.row -->
 
-        <div class="row">
-          <div class="col-sm-4"> <!-- Service-item -->
-            <div class="text-center services-item">
-              <div class="col-wrapper">
-                <div class="icon-border"> 
-                  <i class="icon-settings-streamline-2 color-l-purple"></i> 
-                </div>
+        
           
             </div>
           </div>
@@ -170,28 +162,28 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="title text-center">Contact Us</h3>
+            <h3 class="title text-center">Contattaci</h3>
             <div class="titleHR"><span></span></div>
 
             <form role="form" name="ajax-form" id="ajax-form" action="php/contact.php" method="post" class="form-main">
               <div class="col-xs-12">
                 <div class="row">            
                   <div class="form-group col-xs-6">
-                    <label for="name2">Name</label>
+                    <label for="name2">Nome</label>
                     <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
-                    <div class="error" id="err-name" style="display: none;">Please enter name</div>
+                    <div class="error" id="err-name" style="display: none;">Inserire</div>
                   </div>
                   <div class="form-group col-xs-6">
                     <label for="email2">Email</label>
                     <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
-                    <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div> 
+                    <div class="error" id="err-emailvld" style="display: none;">L' e-mail non è nel formato valido</div> 
                   </div>
                 </div>
                 <div class="row">            
                   <div class="form-group col-xs-12">
-                    <label for="message2">Message</label>
-                    <textarea class="form-control" id="message2" name="message" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
-                    <div class="error" id="err-message" style="display: none;">Please enter message</div>
+                    <label for="message2">Note</label>
+                    <textarea class="form-control" id="message2" name="message" onblur="if(this.value == 'Inserire Note') this.value='Inserire Note'" onfocus="if(this.value == 'Inserire Note') this.value=''">Inserire Note</textarea>
+                    <div class="error" id="err-message" style="display: none;">Inserire le note</div>
                   </div>
                 </div> 
                 <div class="row">
@@ -201,9 +193,9 @@
                 </div>
                 <div class="row">            
                   <div class="col-xs-12 text-center">
-                    <div id="ajaxsuccess">E-mail was successfully sent.</div>
-                    <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
-                    <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                    <div id="ajaxsuccess">E-mail correttamene inviata.</div>
+                    <div class="error" id="err-form" style="display: none;">C'è stato un problema nella compilazione del form, riprovare!</div>
+                    <div class="error" id="err-timedout">La connessione al server è terminata!</div>
                     <div class="error" id="err-state"></div>
                     <button type="submit" class="btn btn-custom" id="send">Invia</button>
                   </div>
