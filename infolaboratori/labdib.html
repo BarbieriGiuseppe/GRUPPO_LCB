@@ -55,13 +55,21 @@
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <div class="logo-image">
+                <img src="logo.png" class="img-fluid">
+          </div>
+        
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+         
+     
         </button>
         <a class="navbar-brand" href="#">LaboratorioDib</a>
+        
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,7 +77,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Servizi</a></li>
-          <li><a href="#contact">Contatti</a></li>
+          
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
@@ -83,7 +91,7 @@
           <div>
             <h1 class="intro-title">Professionalità</h1>
             <p class="intro-text">Cerchiamo di offrire un servizio che rispetti il benessere del paziente. <br/> Il paziente ha la nostra completa attenzione.</p>
-          
+            
           </div><!--slide item like paragraph-->
 
           <div>
@@ -157,56 +165,7 @@
     </section>
     <!-- / End services-->
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h3 class="title text-center">Contattaci</h3>
-            <div class="titleHR"><span></span></div>
 
-            <form role="form" name="ajax-form" id="ajax-form" action="php/contact.php" method="post" class="form-main">
-              <div class="col-xs-12">
-                <div class="row">            
-                  <div class="form-group col-xs-6">
-                    <label for="name2">Nome</label>
-                    <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
-                    <div class="error" id="err-name" style="display: none;">Inserire</div>
-                  </div>
-                  <div class="form-group col-xs-6">
-                    <label for="email2">Email</label>
-                    <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
-                    <div class="error" id="err-emailvld" style="display: none;">L' e-mail non è nel formato valido</div> 
-                  </div>
-                </div>
-                <div class="row">            
-                  <div class="form-group col-xs-12">
-                    <label for="message2">Note</label>
-                    <textarea class="form-control" id="message2" name="message" onblur="if(this.value == 'Inserire Note') this.value='Inserire Note'" onfocus="if(this.value == 'Inserire Note') this.value=''">Inserire Note</textarea>
-                    <div class="error" id="err-message" style="display: none;">Inserire le note</div>
-                  </div>
-                </div> 
-                <div class="row">
-                  <div class="col-md-8 col-md-offset-2">
-                    <p class="text-center con_sub_text">
-                  </div>
-                </div>
-                <div class="row">            
-                  <div class="col-xs-12 text-center">
-                    <div id="ajaxsuccess">E-mail correttamene inviata.</div>
-                    <div class="error" id="err-form" style="display: none;">C'è stato un problema nella compilazione del form, riprovare!</div>
-                    <div class="error" id="err-timedout">La connessione al server è terminata!</div>
-                    <div class="error" id="err-state"></div>
-                    <button type="submit" class="btn btn-custom" id="send">Invia</button>
-                  </div>
-                </div>
-              </div>  
-            </form>
-          </div> <!-- end col-md-12 -->
-        </div> <!-- end row -->
-      </div> <!-- container -->
-    </section>
-    <!-- End CONTACT -->
 
     <!-- FOOTER begings -->
     <footer id="footer">    
