@@ -199,11 +199,9 @@ section {
 
 
 .logo-image{
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
+    width: 80px;
+    height: 70px;
     overflow: hidden;
-    margin-top: -6px;
 }
 
 /* 3 Pre-loader
@@ -303,7 +301,7 @@ nav.small {
 	min-height: 400px;
 }
 .home-page-photo {
-	background-image: url(../images/lab1.jpg);
+	background-image: url(../../img/lab1.jpg);
 	background-size: cover;
 	z-index: -1;
 	position: absolute;
@@ -474,118 +472,4 @@ footer p{
     font-size: 15px;
     display: block;
     line-height: 33px;
-}
-
-
-
-
-/*==================================
-STYLE SWITHER - Demo purpose only
-==================================*/ 
-
-#style-switcher div h3 {
-    color: #1D1D1D;
-    font-size: 16px;
-    margin: 8px 3px 12px;
-}
-#style-switcher {
-    background: none repeat scroll 0 0 #FFFFFF;
-    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.08);
-    left: -189px;
-    position: fixed;
-    top: 17%;
-    width: 189px;
-    z-index: 9999;
-    padding: 10px 5px;
-}
-#style-switcher div {
-    padding: 5px 10px;
-}
-#style-switcher .bottom {
-    background: none repeat scroll 0 0 #FFFFFF;
-    color: #252525;
-    padding: 0;
-}
-#style-switcher .bottom a.settings {
-    background: none repeat scroll 0 0 #FFFFFF;
-    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.08);
-    display: block;
-    height: 41px;
-    position: absolute;
-    right: -40px;
-    top: 0;
-    width: 40px;
-    padding: 3px;
-}
-#style-switcher .bottom a {
-  text-decoration: none;
-}
-
-#style-switcher .bottom a.settings i {
-    margin-left: 8px;
-    color: gray;
-    font-size: 18px;
-    position: absolute;
-    margin-top: 9px;
-}
-
-ul.pattern {
-    list-style: none outside none;
-    margin: 0 0 0px;
-    overflow: hidden;
-  padding:0;
-  border-radius: 0px;
-}
-ul.pattern li {
-    float: left;
-    margin: 2px;
-}
-ul.pattern li a {
-    cursor: pointer;
-    display: block;
-    height: 35px;
-    width: 35px;
-}
-
-ul.pattern .color1 {
-  background-color: #00bc95;
-}
-ul.pattern .color2 {
-  background-color: #d13a7a;
-}
-ul.pattern .color3 {
-  background-color: #e24348;
-}
-ul.pattern .color4 {
-  background-color: #1aace7;
-}
-ul.pattern .color5 {
-  background-color: #6a5a8c;
-}
-ul.pattern .color6 {
-  background-color: #F94c00;
-}
-ul.pattern .color7 {
-  background-color: #1f7f5c;
-}
-ul.pattern .color8 {
-  background-color: #336699;
-}
-ul.pattern .color9 {
-  background-color: #Fbce43;
-}
-ul.pattern .color10 {
-  background-color: #a06081;
-}
-ul.pattern .color11 {
-  background-color: #737f97;
-}
-ul.pattern .color12 {
-  background-color: #9932cc;
-}
-
-@media only screen and (max-width: 479px) {
-#style-switcher {
-    display: none;
-}
 }
