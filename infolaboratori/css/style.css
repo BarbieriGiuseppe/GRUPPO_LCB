@@ -300,8 +300,21 @@ nav.small {
 	background: #000;
 	min-height: 400px;
 }
-.home-page-photo {
-	background-image: url(../../img/lab1.jpg);
+
+.home-page-dib-photo {
+	background-image: url(../../../../img/lab1.jpg);
+	background-size: 100% 100%;
+	z-index: -1;
+	position:absolute;
+	top: 0;
+	opacity: 0.50;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.home-page-poli-photo {
+	background-image: url(../../../../img/lab2.jpg);
 	background-size: 100% 100%;
 	z-index: -1;
 	position:absolute;
@@ -314,6 +327,8 @@ nav.small {
 	
 
 }
+
+
 
 .home__header-content {
 	-webkit-transform: translateY(-50%);
