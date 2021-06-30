@@ -48,10 +48,31 @@
               <img src="img/logoIndex.png" class="img-responsive">
             </div>
             <div class="banner-text text-center">
-              <h1 class="white">Devi eseguire rapidamente il tampone Covid-19?</h1>
+              <h1 class="white">Devi eseguire un tampone Covid-19?</h1>
               <p>Prenota subito un tampone presso i nostri laboratori convenzionati ! <br>Risultati Test e Refertazione direttamente in questo sito</p>
-              <a href="#contact" class="btn btn-appoint">Accedi</a>
-              <a href="#contact" class = "btn btn-appoint">Registrati</a>
+              <button id = "btnModalAccedi" class = "btn btn-appoint">Accedi</button>
+              <!--Modal-->
+              <div class="modal fade" id="Modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <h4 class="modal-title">Le Aree Riservate: </h4>                                                  
+                    </div> 
+                    <div class="modal-body">
+                      <a href="areariservata/loginprivato.html" class = "btn btn-appoint">Login <br>Cittadino</a>
+                      <a href="areariservata/loginmedico.html" class = "btn btn-appoint">Login <br>Medico</a>
+                      <a href="areariservata/loginlab.html" class = "btn btn-appoint">Login Lab.<br> Convenzionato</a>
+                      <a href="areariservata/areaasl.html" class = "btn btn-appoint">Area<br> Azienda Sanitaria</a>
+                    </div>   
+                    <div class="modal-footer">
+                     <h5>Non sei registrato? <a href="areariservata/registrazione.html">Registrati</a></h5>
+                                                     
+                    </div>
+                  </div>                                                                       
+                </div>  
+              </div>
+              <a href="areariservata/registrazione.html" class = "btn btn-appoint">Registrati</a>
             </div>
             <div class="overlay-detail text-center">
               <a href="#service"><i class="fa fa-angle-down"></i></a>
@@ -66,11 +87,11 @@
   <section id="service" class="section-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-5 col-sm-10">
+        <div class="col-md-3 col-sm-0">
           <h2 class="ser-title">SERVIZI OFFERTI</h2></h2>
           <hr class="botm-line">
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-4">
           <div class="service-info">
             <div class="icon">
               <i class="fa fa-stethoscope"></i>
@@ -231,7 +252,7 @@
                 <li><a href="index.html"><i class="fa fa-circle"></i>Home</a></li>
                 <li><a href="#laboratori"><i class="fa fa-circle"></i>Laboratori Convenzionati</a></li>
                 <li><a href="#service"><i class="fa fa-circle"></i>Servizi</a></li>
-                <li><a href = "areaasl.html"><i class = "fa fa-circle"> </i>Area Privata Azienda Sanitaria</a></li>
+                <li><a href = "areariservata/areaasl.html"><i class = "fa fa-circle"> </i>Area Privata Azienda Sanitaria</a></li>
               </ul>
             </div>
           </div>
@@ -270,7 +291,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="contactform/contactform.js"></script>
-
+  <script src = "js/popup.js"></script>
 </body>
 
 </html>

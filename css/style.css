@@ -179,19 +179,21 @@ banner
     padding-top: 8px;
     display: inline-block;
 }
+
+
 /***************************************
 services
 ***************************************/
 .icon i{
 	color: #0cb8b6;
-	font-size: 45px;
-	margin-bottom: 25px;
+	font-size: 40px;
+	margin-bottom: 16px;
 }
 .service-info{
 	margin-bottom: 20px;
 }
 .icon-info h4{
-	padding-bottom: 15px;
+	padding-bottom: 10px;
 }
 .icon-info p{
 	font-size: 15px !important;
@@ -273,14 +275,30 @@ about
 doctor team
 ***************************************/
 .thumbnail {
-	border-radius: 0px;
+	border-radius: 10px;
+    
 }
+
+.thumbnail img{
+    padding: 0px;
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+
+}
+
+.thumbnail:hover img{
+    transform: scale(1.10,1.15);
+}
+
 .caption h3{
     padding-bottom: 5px;
 }
 .caption p{
     padding-bottom: 10px;
 }
+
+
+
 /***************************************
 testimonial
 ***************************************/
@@ -522,3 +540,6 @@ footer
         font-size: 24px;
     }
 }
+/***************************************
+accedi
+***************************************/
