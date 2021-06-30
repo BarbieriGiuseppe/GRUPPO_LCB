@@ -376,6 +376,7 @@ nav.small {
 	text-transform: uppercase;
 }
 
+
 /* 11 Twitter-tweets
 ----------------------------------------------------------------------------- */
 #twitter_tweet {
@@ -433,22 +434,22 @@ footer p{
 	color: #a1a1a1;
 	padding: 20px 0px 1px;
 }
-.footer-socials {
+.footer-orari {
 	position: relative;
-	margin: 47px 0px 20px 0px;
+	margin: 0px 0px 20px 0px;
 	text-align: center;
 }
-.footer-socials a{
+.footer-orari a{
 	display: inline-block;
 }
-.footer-socials i {
+.footer-orari i {
 	width: 42px;
 	height: 42px;
 	line-height: 42px;
 	background: transparent;
 	border: 2px solid #E7EBEF;
 	margin: 0px auto;
-	position: relative;
+	position:relative;
 	display: inline-block;
 	margin: 0px 5px;
 	border-radius: 50%;
