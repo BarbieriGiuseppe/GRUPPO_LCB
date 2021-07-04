@@ -3421,10 +3421,20 @@ tbody.collapse.in {
   opacity: 0;
 }
 .input-group {
-  position: relative;
+  position:relative;
   display: table;
   border-collapse: separate;
 }
+.input-group-residenza {
+  position:inherit;
+  right: -400px;
+  
+  
+  display: table;
+  border-collapse: separate;
+}
+
+
 .input-group[class*="col-"] {
   float: none;
   padding-right: 0;
@@ -3516,7 +3526,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 3px;
 }
 .input-group-addon.input-lg {
-  padding: 10px 16px;
+  padding: 10px 160px;
   font-size: 18px;
   border-radius: 6px;
 }
