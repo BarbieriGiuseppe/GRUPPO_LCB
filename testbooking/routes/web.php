@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'App\Http\Controllers\IndexController@index');
 
-Route::get('/infolaboratori', function(){
-    return view('labdib');
-});
+Route::get('/labdib', 'App\Http\Controllers\IndexController@labdib');
+
+Route::get('/labpoli', 'App\Http\Controllers\IndexController@labpoli');
