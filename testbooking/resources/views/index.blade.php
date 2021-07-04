@@ -170,7 +170,7 @@
             <img src="<?php echo url('/'); ?>/img/lab1.jpg" alt="..." class="team-img">
             <div class="caption">
               <h3>Laboratorio DIB</h3>
-              <a href="infolaboratori">Info</a>
+              <a href="labdib">Info</a>
               <ul class="list-inline">
               </ul>
             </div>
@@ -181,7 +181,7 @@
             <img src="<?php echo url('/'); ?>/img/lab2.jpg" alt="..." class="team-img">
             <div class="caption">
               <h3>Laboratorio Poli</h3>
-              <a href="infolaboratori/labpoli.html">Info</a>
+              <a href="labpoli">Info</a>
             </div>
           </div>
         </div>
