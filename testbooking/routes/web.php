@@ -17,8 +17,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::view('/infolaboratori','infolaboratori.labdib');
-
-Route::get('/login', function () {
-    return view('login.loginlab');
+Route::get('/infolaboratori', function(){
+    return view('labdib');
 });

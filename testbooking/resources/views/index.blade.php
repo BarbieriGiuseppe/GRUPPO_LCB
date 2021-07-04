@@ -60,19 +60,40 @@
                       <h4 class="modal-title">Le Aree Riservate: </h4>                                                  
                     </div> 
                     <div class="modal-body">
-                      <a href="login/loginprivato.html" class = "btn btn-appoint">Login <br>Cittadino</a>
+                      <a href="login/loginprivato.html" class = "btn btn-appoint">Login <br>Utente Privato</a>
                       <a href="login/loginmedico.html" class = "btn btn-appoint">Login <br>Medico</a>
-                      <a href="login/loginazienda.html" class = "btn btn-appoint">Login<br> Azienda</a>
-                      <a href="login/loginlab.html" class = "btn btn-appoint">Login Laboratorio<br> Convenzionato</a>
+                      <a href="login/loginazienda.html" class = "btn btn-appoint">Login<br>Azienda</a>
+                      <a href="login/loginlab.html" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
                     </div>   
                     <div class="modal-footer">
-                     <h5>Non sei registrato? <a href="areariservata/registrazione.html">Registrati</a></h5>
-                                                     
+                      <h5>Non sei registrato? <button id = "btnModalRegistratidue" class = "btn btn-appoint">Registrati</button>
                     </div>
                   </div>                                                                       
                 </div>  
               </div>
-              <a href="areariservata/registrazione.html" class = "btn btn-appoint">Registrati</a>
+              
+              <button id = "btnModalRegistrati" class = "btn btn-appoint">Registrati</button>
+              <!--Modal-->
+              <div class="modal fade" id="ModalRegistrati">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <h4 class="modal-title">Scegli il tuo profilo di registrazione: </h4>                                                  
+                    </div> 
+                    <div class="modal-body">
+                      <a href="registrazione/registrazioneprivato.html" class = "btn btn-appoint">Registrazione <br>Utente Privato</a>
+                      <a href="registrazione/registrazionemedico.html" class = "btn btn-appoint">Registrazione <br>Medico</a>
+                      <a href="registrazione/registrazionedatore.html" class = "btn btn-appoint">Registrazione<br> Azienda</a>
+                      <a href="registrazione/convenzionalab.html" class = "btn btn-appoint">Sei un laboratorio?<br>Convenzionati</a>
+                    </div>   
+                    <div class="modal-footer">                                                     
+                    </div>
+                  </div>                                                                       
+                </div>  
+              </div>
+
+              
             </div>
             <div class="overlay-detail text-center">
               <a href="#service"><i class="fa fa-angle-down"></i></a>
