@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Responsive Admin</title>
+    <title>Area Riservata</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="/areariservata/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -41,15 +41,15 @@
                  
 
  <li >
-                        <a href="privato_index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
+                        <a href="privatoindex.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
                     </li>
                    
 
                     <li>
-                        <a href="privato_prenotazione.html"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                        <a href="privatoprenotazione.html"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
                     <li class="active-link">
-                        <a href="privato_modifica.html"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
+                        <a href="privatomodifica.html"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
                     </li>
 
 
@@ -81,26 +81,26 @@
 <div class="input-group">
     <h5>Mail</h5>
     <div class="input-group">
-        <span class="input-group-addon">@</span>
+        
         <input type="text" class="form-control" placeholder="" />
       </div>
       <div class="input-group">
         <h5>Codice Fiscale</h5>
         <div class="input-group">
-            <span class="input-group-addon"></span>
+          
             <input type="text" class="form-control" placeholder="" />
           </div>
           <div class="input-group">
             <h5>Cognome</h5>
             <div class="input-group">
-                <span class="input-group-addon">A-Z</span>
+               
                 <input type="text" class="form-control" placeholder="" />
               </div>
 
               <div class="input-group">
             <h5>Nome</h5>
             <div class="input-group">
-                <span class="input-group-addon">A-Z</span>
+               
                 <input type="text" class="form-control" placeholder="" />
               </div>
         
@@ -108,7 +108,7 @@
           <div class="input-group">
             <h5>Eta</h5>
             <div class="input-group">
-                <span class="input-group-addon">0-9</span>
+                
                 <input type="text" class="form-control" placeholder="" />
               </div>
             </div>
@@ -121,7 +121,7 @@
                   <div class="input-group">
                     <h5>Telefono</h5>
                     <div class="input-group">
-                        <span class="input-group-addon">0-9</span>
+                        
                         <input type="text" class="form-control" placeholder="" />
                       </div>
                     </div>
@@ -132,23 +132,27 @@
                             <div class="input-group">
                                 <h5>Luogo Di Nascita</h5>
                                 <div class="input-group">
-                                    <span class="input-group-addon">A-Z</span>
+                                   
                                     <input type="text" class="form-control" placeholder="" />
                                   </div>
                                 </div>
-                                <div class="input-group">
-                                    <h5>Data Di Nascita[dd/mm/yyyy]</h5>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"></span>
-                                        <input type="text" class="form-control" placeholder="" />
+                            
+                                <div class="wrapper">
+                                    <h5>Data Di Nascita</h5>
+                                    
+                                    
+                                      <label>
+                                        
+
+                                        <input type="date"  class="dateselect" required="required"/>
+                                        
+                                      </label>
                                       </div>
-                                    </div>
-
-
+                                      
                                     <div class="input-group">
                                         <h5>Nazione Di Nascita</h5>
                                         <div class="input-group">
-                                            <span class="input-group-addon">A-Z</span>
+                                            
                                             <input type="text" class="form-control" placeholder="" />
                                           </div>
                                         </div>
@@ -156,9 +160,10 @@
                     
                                         </div>
                                         <div class="input-group">
-                                            <h5>Residenza</h5>
-                                            <div class="input-group">
-                                                <span class="input-group-addon">A-Z</span>
+                                            
+                                            <div class="input-group-residenza">
+                                              <h5>Residenza</h5>
+                                               
                                                 <input type="text" class="form-control" placeholder="" />
                                               </div>
                                             </div>
@@ -166,54 +171,54 @@
                                             <div class="input-group">
                                                 <h5>Nazione</h5>
                                                 <div class="input-group">
-                                                    <span class="input-group-addon">A-Z</span>
+                                                  
                                                     <input type="text" class="form-control" placeholder="" />
                                                   </div>
                                                 </div>
                                             </div>
 
                                             <div class="input-group">
-                                                <h5>Città</h5>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">A-Z</span>
-                                                    <input type="text" class="form-control" placeholder="" />
-                                                  </div>
+                                              <h5>Città</h5>
+                                              <div class="input-group">
+                                                
+                                                  <input type="text" class="form-control" placeholder="" />
                                                 </div>
-                                    
-                        
-                                            </div>
-                                            <div class="input-group">
-                                                <h5>Provincia</h5>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">A-Z</span>
-                                                    <input type="text" class="form-control" placeholder="" />
-                                                  </div>
+                                              </div>
+                                  
+                      
+                                          </div>
+                                          <div class="input-group">
+                                              <h5>Provincia</h5>
+                                              <div class="input-group">
+                                                 
+                                                  <input type="text" class="form-control" placeholder="" />
                                                 </div>
-                                    
-                        
-                                            </div>
+                                              </div>
+                                  
+                      
+                                          </div>
 
-                                            <div class="input-group">
-                                                <h5>CAP</h5>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">0-9</span>
-                                                    <input type="text" class="form-control" placeholder="" />
-                                                  </div>
+                                          <div class="input-group">
+                                              <h5>CAP</h5>
+                                              <div class="input-group">
+                                               
+                                                  <input type="text" class="form-control" placeholder="" />
                                                 </div>
-                                    
-                        
-                                            </div>
+                                              </div>
+                                  
+                      
+                                          </div>
 
-                                            <div class="input-group">
-                                                <h5>Domicilio</h5>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">A-Z</span>
-                                                    <input type="text" class="form-control" placeholder="" />
-                                                  </div>
+                                          <div class="input-group">
+                                              <h5>Domicilio</h5>
+                                              <div class="input-group">
+                                                
+                                                  <input type="text" class="form-control" placeholder="" />
                                                 </div>
-                                    
-                        
-                                            </div>
+                                              </div>
+                                  
+                      
+                                          </div>
 
                                             
                             
