@@ -62,8 +62,13 @@
                     <div class="modal-body">
                       <a href="loginprivato" class = "btn btn-appoint">Login <br>Utente Privato</a>
                       <a href="loginmedico" class = "btn btn-appoint">Login <br>Medico</a>
+<<<<<<< HEAD
+                      <a href="login/loginazienda.html" class = "btn btn-appoint">Login<br>Azienda</a>
+                      <a href="login/loginlab.html" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
+=======
                       <a href="loginazienda" class = "btn btn-appoint">Login<br>Azienda</a>
                       <a href="loginlab" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
+>>>>>>> 22883af7641c7c376146b83aa53ba37e56f1864e
                     </div>   
                     <div class="modal-footer">
                       <h5>Non sei registrato? <button id = "btnModalRegistratidue" class = "btn btn-appoint">Registrati</button>

@@ -30,6 +30,9 @@ Route dei login
 */
 Route::get('/loginprivato', 'App\Http\Controllers\LoginController@loginprivato');
 
+<<<<<<< HEAD
+Route::get('/loginmedico', 'App\Http\Controllers\LoginController@loginmedico');
+=======
 Route::get('/loginlab', 'App\Http\Controllers\LoginController@loginlab');
 
 Route::get('/loginasl', 'App\Http\Controllers\LoginController@loginasl');
@@ -79,3 +82,4 @@ Route::get('/privatoindex', 'App\Http\Controllers\AreaRiservataController@privat
 Route::get('/privatomodifica', 'App\Http\Controllers\AreaRiservataController@privatomodifica');
 
 Route::get('/privatoprenotazione', 'App\Http\Controllers\AreaRiservataController@privatoprenotazione');
+>>>>>>> 22883af7641c7c376146b83aa53ba37e56f1864e
