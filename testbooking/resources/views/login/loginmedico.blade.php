@@ -5,11 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-<<<<<<< HEAD
-	<link rel="icon" type="image/png" href="<?php echo url('/login'); ?>/images/icons/favicon.ico"/>
-=======
 	<link rel="icon" type="image/png" href="<?php echo url('/img'); ?>/favicon.ico"/>
->>>>>>> 22883af7641c7c376146b83aa53ba37e56f1864e
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -40,21 +36,12 @@
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
 						<a href="/">
-<<<<<<< HEAD
-							<img src = '<?php echo url('/login'); ?>/images/icons/logoindex.png'>
-=======
 							<img src = "<?php echo url('/img'); ?>/logoindexblack.png">
->>>>>>> 22883af7641c7c376146b83aa53ba37e56f1864e
 						</a>
 						Area Riservata Medici
 					</span>
 					<span class="login100-form-avatar">
-<<<<<<< HEAD
-						
-						<img src="<?php echo url('/login'); ?>/images/icons/medico.png" alt="MEDICO">
-=======
 						<img src="<?php echo url('/img'); ?>/medico.png" alt="MEDICO">
->>>>>>> 22883af7641c7c376146b83aa53ba37e56f1864e
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail">
