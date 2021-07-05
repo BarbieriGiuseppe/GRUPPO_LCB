@@ -84,14 +84,14 @@
       <div class="home__header-content">
         <div id="main-home-carousel" class="owl-carousel">
           <div>
-            <h1 class="intro-title">Professionalità</h1>
+            <h1 class="intro-title">ProfessionalitÃ </h1>
             <p class="intro-text">Cerchiamo di offrire un servizio che rispetti il benessere del paziente. <br/> Il paziente ha la nostra completa attenzione.</p>
             
           </div><!--slide item like paragraph-->
 
           <div>
             <h1 class="intro-title">Garanzia</h1>
-            <p class="intro-text">Ti garantiamo,ad un prezzo accessibile, un servizio affifabile. <br/> Garantiamo un'affidabilità del tampone del 99%</p>
+            <p class="intro-text">Ti garantiamo,ad un prezzo accessibile, un servizio affifabile. <br/> Garantiamo un'affidabilitï¿½ del tampone del 99%</p>
           
           </div><!--slide item like paragraph-->
 
@@ -119,7 +119,7 @@
                 <div class="icon-border"> 
                 </div>
                 <h5>Test salivari</h5>
-                <p>Il prelievo di saliva è più semplice e meno invasivo rispetto al tampone naso-faringeo o al prelievo di sangue <br/> Costo: 15€ <br>Tempistiche Esito: 2 Giorni</p></p>
+                <p>Il prelievo di saliva Ã¨ piÃ¹ semplice e meno invasivo rispetto al tampone naso-faringeo o al prelievo di sangue <br/> Costo: 15â‚¬ <br>Tempistiche Esito: 2 Giorni</p></p>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@
                 <div class="icon-border"> 
                 </div>
                 <h5>Test Molecolare</h5>
-                <p>Viene prelevato con un lungo bastoncino simile ad un cotton-fioc un campione delle vie respiratorie del paziente, preferibilmente dalla mucosa naso-faringea.<br> Costo: 50€<br>Tempistiche Esito: 4 Giorni</p></p>
+                <p>Viene prelevato con un lungo bastoncino simile ad un cotton-fioc un campione delle vie respiratorie del paziente, preferibilmente dalla mucosa naso-faringea.<br> Costo: 50â‚¬<br>Tempistiche Esito: 4 Giorni</p></p>
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@
                 <div class="icon-border"> 
                 </div>
                 <h5>Test Antigenico</h5>
-                <p>Questa tipologia di test è basata sulla ricerca, nei campioni respiratori del paziente, delle proteine virali (antigeni). Le modalità di raccolta del campione sono del tutto analoghe a quelle dei test molecolari (tampone naso-faringeo)<br> Costo:15€ <br> Tempistiche Esito:30 Minuti</p></p>
+                <p>Questa tipologia di test Ã¨ basata sulla ricerca, nei campioni respiratori del paziente, delle proteine virali (antigeni). Le modalitÃ  di raccolta del campione sono del tutto analoghe a quelle dei test molecolari (tampone naso-faringeo)<br> Costo:15â‚¬ <br> Tempistiche Esito:30 Minuti</p></p>
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@
         </div> <!-- container -->
       </div>
       <div class="footer-bottom text-center"> <!-- Footer-copyright -->
-        <p>©2021 GRUPPO_LCB <br> Realizzato da <a href="https://github.com/LorussoDanilo/GRUPPO_LCB">Gruppo LCB</a></p>
+        <p>ï¿½2021 GRUPPO_LCB <br> Realizzato da <a href="https://github.com/LorussoDanilo/GRUPPO_LCB">Gruppo LCB</a></p>
       </div>
     </footer>
     <!-- End footer begings -->
@@ -225,7 +225,7 @@
      <!-- Jquery-Nav -->
      <script src="<?php echo url('/infolaboratori'); ?>/js/jquery.nav.js"></script>
      <!-- Owl carousel -->                                                      
-     <script type="text/javascript" src="<?php echo url('/infolaboratori'); ?>js/owl.carousel.min.js"></script>
+     <script type="text/javascript" src="<?php echo url('/infolaboratori'); ?>/js/owl.carousel.min.js"></script>
      <!-- App JS -->
      <script src="<?php echo url('/infolaboratori'); ?>/js/app.js"></script>
 

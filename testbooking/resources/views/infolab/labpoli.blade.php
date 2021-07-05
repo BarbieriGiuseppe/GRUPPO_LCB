@@ -52,7 +52,7 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="/">
           <div class="logo-image">
-                <img src="<?php echo url('/infolaboratori'); ?>/img/logo.png" class="img-fluid">
+                <img src="<?php echo url('/'); ?>/img/logo.png" class="img-fluid">
           </div>
         
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -85,14 +85,14 @@
       <div class="home__header-content">
         <div id="main-home-carousel" class="owl-carousel">
           <div>
-            <h1 class="intro-title">Professionalità</h1>
+            <h1 class="intro-title">ProfessionalitÃ </h1>
             <p class="intro-text">Cerchiamo di offrire un servizio che rispetti il benessere del paziente. <br/> Il paziente ha la nostra completa attenzione.</p>
             
           </div><!--slide item like paragraph-->
 
           <div>
             <h1 class="intro-title">Garanzia</h1>
-            <p class="intro-text">Ti garantiamo,ad un prezzo accessibile, un servizio affifabile. <br/> Garantiamo un'affidabilità del tampone del 99%</p>
+            <p class="intro-text">Ti garantiamo,ad un prezzo accessibile, un servizio affifabile. <br/> Garantiamo un'affidabilitï¿½ del tampone del 99%</p>
           
           </div><!--slide item like paragraph-->
 
@@ -121,7 +121,7 @@
                  
                 </div>
                 <h5>Test Molecolare</h5>
-                <p>Viene prelevato con un lungo bastoncino simile ad un cotton-fioc un campione delle vie respiratorie del paziente, preferibilmente dalla mucosa naso-faringea.<br> Costo: 66€<br>Tempistiche Esito: 5 Giorni</p>
+                <p>Viene prelevato con un lungo bastoncino simile ad un cotton-fioc un campione delle vie respiratorie del paziente, preferibilmente dalla mucosa naso-faringea.<br> Costo: 66â‚¬<br>Tempistiche Esito: 5 Giorni</p>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@
 
                 </div>
                 <h5>Test Antigenico</h5>
-                <p>Questa tipologia di test è basata sulla ricerca, nei campioni respiratori del paziente, delle proteine virali (antigeni). Le modalità di raccolta del campione sono del tutto analoghe a quelle dei test molecolari (tampone naso-faringeo)<br> Costo:10€ <br> Tempistiche Esito:15 Minuti</p>
+                <p>Questa tipologia di test Ã¨ basata sulla ricerca, nei campioni respiratori del paziente, delle proteine virali (antigeni). Le modalitÃ  di raccolta del campione sono del tutto analoghe a quelle dei test molecolari (tampone naso-faringeo)<br> Costo:10â‚¬ <br> Tempistiche Esito:15 Minuti</p>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@
                   
                 </div>
                 <h5>Test Sierologico Classico</h5>
-                <p>Questo test, denominato anche ELISA o CLIA o IFA a secondo della tecnologia utilizzata, richiede un prelievo di sangue venoso, e viene effettuato presso laboratori specializzati.<br> Costo: 60€ <br> Tempistiche Esito: 7 Giorni</p>
+                <p>Questo test, denominato anche ELISA o CLIA o IFA a secondo della tecnologia utilizzata, richiede un prelievo di sangue venoso, e viene effettuato presso laboratori specializzati.<br> Costo: 60â‚¬ <br> Tempistiche Esito: 7 Giorni</p>
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@
         </div> <!-- container -->
       </div>
       <div class="footer-bottom text-center"> <!-- Footer-copyright -->
-        <p>©2021 GRUPPO_LCB <br> Realizzato da <a href="https://github.com/LorussoDanilo/GRUPPO_LCB">Gruppo LCB</a></p>
+        <p>ï¿½2021 GRUPPO_LCB <br> Realizzato da <a href="https://github.com/LorussoDanilo/GRUPPO_LCB">Gruppo LCB</a></p>
       </div>
     </footer>
     <!-- End footer begings -->
