@@ -5,27 +5,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<link rel="icon" type="image/png" href="<?php echo url('/img'); ?>/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/animate/animate.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/select2/select2.min.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/css/main.css">
 <!--===============================================================================================-->
+
 </head>
 <body>
 	
@@ -34,20 +35,23 @@
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-70">
-						<a href="../index.html">
-							<img src = /img/logoindexblack.png>
+						<a href="/">
+							<img src = "<?php echo url('/img'); ?>/logoindexblack.png">
 						</a>
 						Convenziona Laboratorio
 					</span>
 					<span class="login100-form-avatar">
-						<img src="/img/laboratori.png" alt="LAB">
+						<img src="<?php echo url('/img'); ?>/laboratorio.png" alt="LABORATORIO">
 					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nome Laboratorio">
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nome Laboratorio" style = "position:relative; left:300px; top:-140px; ">
 						<input class="input100" type="text" name="Nome Laboratorio">
 						<span class="focus-input100" data-placeholder="Nome Laboratorio"></span>
 					</div>
 
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail Laboratorio " style = "position:relative; left:300px; top:-140px; ">
+						<input class="input100" type="text" name="E-mail Laboratorio">
+						<span class="focus-input100" data-placeholder="E-mail Laboratorio"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nazione Laboratorio">
@@ -76,7 +80,9 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Conferma E-mail Laboratorio">
+						<input class="input100" type="text" name="Conferma E-mail Laboratorio">
 						<span class="focus-input100" data-placeholder="Conferma E-mail Laboratorio"></span>
+					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Inserisci la password">
 						<input class="input100" type="password" name="Password">
@@ -95,10 +101,11 @@
 					</div>
 
 					<div>
+						<br>
 						<p>Dopo essersi convenzionati si verrà a conoscenza di: <br> </p>
-						<p>Un codice laboratorio privato con cui accedere alla propria area privata <br></p>
-						<p>Un codice laboratorio pubblico con cui si verà riconosciuti dall'azienda sanitaria <br></p>
-						<p>Un codice Azienda Sanitaria pubblico a cui si è referenti di provincia</p>
+						<p>-Un <b>codice laboratorio privato</b> con cui accedere alla propria area privata <br></p>
+						<p>-Un <b>codice laboratorio pubblico</b> con cui si verà riconosciuti dall'azienda sanitaria <br></p>
+						<p>-Un <b>codice azienda sanitaria pubblico</b> a cui si è referenti </p>
 						
 					</div>
 				
@@ -136,21 +143,21 @@
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="<?php echo url('/login'); ?>/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/bootstrap/js/popper.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/daterangepicker/moment.min.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="<?php echo url('/login'); ?>/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="<?php echo url('/login'); ?>/js/main.js"></script>
 
 </body>
 </html>
