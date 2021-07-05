@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Area Riservata</title>
-	<!-- BOOTSTRAP STYLES-->
-    <link href="/areariservata/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
-    <link href="/areariservata/css/font-awesome.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
-    <link href="/areariservata/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="<?php echo url('/login'); ?>/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
      
@@ -27,7 +43,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img src="/img/logoindexwhite.png" />
+                        <img src = "<?php echo url('/aziendasanitaria'); ?>/images/icons/logoindex.png">
 
                     </a>
                     
