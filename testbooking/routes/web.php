@@ -21,3 +21,4 @@ Route::get('/labpoli', 'App\Http\Controllers\IndexController@labpoli');
 
 Route::get('/loginprivato', 'App\Http\Controllers\LoginController@loginprivato');
 
+Route::get('/loginmedico', 'App\Http\Controllers\LoginController@loginmedico');

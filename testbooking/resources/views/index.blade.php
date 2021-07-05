@@ -61,7 +61,7 @@
                     </div> 
                     <div class="modal-body">
                       <a href="loginprivato" class = "btn btn-appoint">Login <br>Utente Privato</a>
-                      <a href="login/loginmedico.html" class = "btn btn-appoint">Login <br>Medico</a>
+                      <a href="loginmedico" class = "btn btn-appoint">Login <br>Medico</a>
                       <a href="login/loginazienda.html" class = "btn btn-appoint">Login<br>Azienda</a>
                       <a href="login/loginlab.html" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
                     </div>   
