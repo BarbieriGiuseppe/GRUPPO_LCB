@@ -26,7 +26,7 @@ Route::get('/labpoli', 'App\Http\Controllers\IndexController@labpoli');
 
 /*
 
-Route del login
+Route dei login
 */
 Route::get('/loginprivato', 'App\Http\Controllers\LoginController@loginprivato');
 
@@ -37,6 +37,19 @@ Route::get('/loginasl', 'App\Http\Controllers\LoginController@loginasl');
 Route::get('/loginmedico', 'App\Http\Controllers\LoginController@loginmedico');
 
 Route::get('/loginazienda', 'App\Http\Controllers\LoginController@loginazienda');
+
+
+/*
+
+Route delle registrazioni
+*/
+Route::get('/registrazioneprivato', 'App\Http\Controllers\RegistrazioneController@registrazioneprivato');
+
+Route::get('/convenzionalab', 'App\Http\Controllers\RegistrazioneController@convenzionalab');
+
+Route::get('/registrazionemedico', 'App\Http\Controllers\RegistrazioneController@registrazionemedico');
+
+Route::get('/registrazioneazienda', 'App\Http\Controllers\RegistrazioneController@registrazioneazienda');
 
 /*
 

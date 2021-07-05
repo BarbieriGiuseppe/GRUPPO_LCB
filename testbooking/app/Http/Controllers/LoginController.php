@@ -11,7 +11,7 @@ class LoginController extends Controller
     }
 
     public function loginmedico(){
-        return view('login.loginlab');
+        return view('login.loginmedico');
     }
 
     public function loginlab(){
