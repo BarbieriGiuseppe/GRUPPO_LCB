@@ -84,7 +84,7 @@
                     <div class="modal-body">
                       <a href="registrazioneprivato" class = "btn btn-appoint">Registrazione <br>Utente Privato</a>
                       <a href="registrazionemedico" class = "btn btn-appoint">Registrazione <br>Medico</a>
-                      <a href="registrazionedatore" class = "btn btn-appoint">Registrazione<br> Azienda</a>
+                      <a href="registrazioneazienda" class = "btn btn-appoint">Registrazione<br> Azienda</a>
                       <a href="convenzionalab" class = "btn btn-appoint">Sei un laboratorio?<br>Convenzionati</a>
                     </div>   
                     <div class="modal-footer">                                                     
