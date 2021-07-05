@@ -18,3 +18,6 @@ Route::get('/', 'App\Http\Controllers\IndexController@index');
 Route::get('/labdib', 'App\Http\Controllers\IndexController@labdib');
 
 Route::get('/labpoli', 'App\Http\Controllers\IndexController@labpoli');
+
+Route::get('/loginprivato', 'App\Http\Controllers\LoginController@loginprivato');
+
