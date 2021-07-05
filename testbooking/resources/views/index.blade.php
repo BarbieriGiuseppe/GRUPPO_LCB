@@ -27,7 +27,7 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				      </button>
-              <a class="navbar-brand" href="#"><img src="<?php echo url('/'); ?>/img/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+              <a class="navbar-brand" href="#"><img src="<?php echo url('/img'); ?>/logo.png" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
             </div>
             <div class="collapse navbar-collapse navbar-right" id="myNavbar">
               <ul class="nav navbar-nav">
@@ -45,7 +45,7 @@
         <div class="row">
           <div class="banner-info">
             <div class="banner-logo text-center">
-              <img src="<?php echo url('/'); ?>/img/logoIndex.png" class="img-responsive">
+              <img src="<?php echo url('/img'); ?>/logoindexwhite.png" class="img-responsive">
             </div>
             <div class="banner-text text-center">
               <h1 class="white">Devi eseguire un tampone Covid-19?</h1>
@@ -62,8 +62,13 @@
                     <div class="modal-body">
                       <a href="loginprivato" class = "btn btn-appoint">Login <br>Utente Privato</a>
                       <a href="loginmedico" class = "btn btn-appoint">Login <br>Medico</a>
+<<<<<<< HEAD
                       <a href="login/loginazienda.html" class = "btn btn-appoint">Login<br>Azienda</a>
                       <a href="login/loginlab.html" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
+=======
+                      <a href="loginazienda" class = "btn btn-appoint">Login<br>Azienda</a>
+                      <a href="loginlab" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
+>>>>>>> 22883af7641c7c376146b83aa53ba37e56f1864e
                     </div>   
                     <div class="modal-footer">
                       <h5>Non sei registrato? <button id = "btnModalRegistratidue" class = "btn btn-appoint">Registrati</button>
@@ -82,10 +87,10 @@
                       <h4 class="modal-title">Scegli il tuo profilo di registrazione: </h4>                                                  
                     </div> 
                     <div class="modal-body">
-                      <a href="registrazione/registrazioneprivato.html" class = "btn btn-appoint">Registrazione <br>Utente Privato</a>
-                      <a href="registrazione/registrazionemedico.html" class = "btn btn-appoint">Registrazione <br>Medico</a>
-                      <a href="registrazione/registrazionedatore.html" class = "btn btn-appoint">Registrazione<br> Azienda</a>
-                      <a href="registrazione/convenzionalab.html" class = "btn btn-appoint">Sei un laboratorio?<br>Convenzionati</a>
+                      <a href="registrazioneprivato" class = "btn btn-appoint">Registrazione <br>Utente Privato</a>
+                      <a href="registrazionemedico" class = "btn btn-appoint">Registrazione <br>Medico</a>
+                      <a href="registrazionedatore" class = "btn btn-appoint">Registrazione<br> Azienda</a>
+                      <a href="convenzionalab" class = "btn btn-appoint">Sei un laboratorio?<br>Convenzionati</a>
                     </div>   
                     <div class="modal-footer">                                                     
                     </div>

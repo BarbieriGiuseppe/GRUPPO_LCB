@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Accesso Aziende</title>
+	<title>Convenziona Laboratorio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,48 +38,77 @@
 						<a href="/">
 							<img src = "<?php echo url('/img'); ?>/logoindexblack.png">
 						</a>
-						Area Riservata Aziende
+						Convenziona Laboratorio
 					</span>
 					<span class="login100-form-avatar">
-						<img src="<?php echo url('/img'); ?>/azienda.png" alt="AZIENDA">
+						<img src="<?php echo url('/img'); ?>/laboratorio.png" alt="LABORATORIO">
 					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail">
-						<input class="input100" type="text" name="E-mail">
-						<span class="focus-input100" data-placeholder="E-mail"></span>
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nome Laboratorio" style = "position:relative; left:300px; top:-140px; ">
+						<input class="input100" type="text" name="Nome Laboratorio">
+						<span class="focus-input100" data-placeholder="Nome Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail Laboratorio " style = "position:relative; left:300px; top:-140px; ">
+						<input class="input100" type="text" name="E-mail Laboratorio">
+						<span class="focus-input100" data-placeholder="E-mail Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nazione Laboratorio">
+						<input class="input100" type="text" name="Nazione Laboratorio">
+						<span class="focus-input100" data-placeholder="Nazione Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Città Laboratorio">
+						<input class="input100" type="text" name="Città Laboratorio">
+						<span class="focus-input100" data-placeholder="Città Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Indirizzo Laboratorio">
+						<input class="input100" type="text" name="Indirizzo Laboratorio">
+						<span class="focus-input100" data-placeholder="Indirizzo Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Provincia Laboratorio">
+						<input class="input100" type="text" name="Provincia Laboratorio">
+						<span class="focus-input100" data-placeholder="Provincia Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail Laboratorio">
+						<input class="input100" type="text" name="E-mail Laboratorio">
+						<span class="focus-input100" data-placeholder="E-mail Laboratorio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Conferma E-mail Laboratorio">
+						<input class="input100" type="text" name="Conferma E-mail Laboratorio">
+						<span class="focus-input100" data-placeholder="Conferma E-mail Laboratorio"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Inserisci la password">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="Password">
 						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Conferma la password">
+						<input class="input100" type="password" name="Password">
+						<span class="focus-input100" data-placeholder="Conferma Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Convenzionati
 						</button>
 					</div>
-					<ul class="login-more p-t-190">
-						<li class="m-b-8">
-							<span class="txt1">
-								Hai dimenticato la
-							</span>
 
-							<a href="#" class="txt2">
-								Password?
-							</a>
-						</li>
-
-						<li>
-							<span class="txt1">
-								Non sei registrato/a?
-							</span>
-
-							<a href="../areariservata/registrazione.html" class="txt2">
-								Registrati
-							</a>
-						</li>
-					</ul>
+					<div>
+						<br>
+						<p>Dopo essersi convenzionati si verrà a conoscenza di: <br> </p>
+						<p>-Un <b>codice laboratorio privato</b> con cui accedere alla propria area privata <br></p>
+						<p>-Un <b>codice laboratorio pubblico</b> con cui si verà riconosciuti dall'azienda sanitaria <br></p>
+						<p>-Un <b>codice azienda sanitaria pubblico</b> a cui si è referenti </p>
+						
+					</div>
+				
 				</form>
 			</div>
 		</div>
