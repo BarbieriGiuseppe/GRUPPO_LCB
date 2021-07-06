@@ -86,3 +86,9 @@ Route::get('/privatoindex', 'App\Http\Controllers\AreaRiservataController@privat
 Route::get('/privatomodifica', 'App\Http\Controllers\AreaRiservataController@privatomodifica');
 
 Route::get('/privatoprenotazione', 'App\Http\Controllers\AreaRiservataController@privatoprenotazione');
+
+/*
+Route::post(')
+
+
+*/ 

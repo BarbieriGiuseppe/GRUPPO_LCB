@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class LoginController extends Controller
 {
     public function loginprivato(){
@@ -25,4 +26,8 @@ class LoginController extends Controller
     public function loginasl(){
         return view('login.loginasl');
     }
+
+
+
+
 }
