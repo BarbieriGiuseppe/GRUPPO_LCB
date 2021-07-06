@@ -9,24 +9,24 @@
 <!--===============================================================================================-->	
 <link rel="icon" type="image/png" href="<?php echo url('/login'); ?>/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/vendor/animate/animate.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/vendor/select2/select2.min.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/css/util.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo url('/login'); ?>/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo url('/areariservata'); ?>/css/main.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -43,7 +43,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img src = "<?php echo url('/aziendasanitaria'); ?>/images/icons/logoindex.png">
+                        <img src = "<?php echo url('/img'); ?>/logoindexwhite.png">
 
                     </a>
                     
@@ -178,11 +178,13 @@
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="/areariservata/js/jquery-1.10.2.js"></script>
-      <!-- BOOTSTRAP SCRIPTS -->
-    <script src="/areariservata/js/bootstrap.min.js"></script>
-      <!-- CUSTOM SCRIPTS -->
-    <script src="/areariservata/js/custom.js"></script>
+    <!--===============================================================================================-->
+	<script src="<?php echo url('/areariservata'); ?>/areariservata/js/jquery-1.10.2.js"></script>
+    <!--===============================================================================================-->
+        <script src="<?php echo url('/areariservata'); ?>/areariservata/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="<?php echo url('/areariservata'); ?>/areariservata/js/custom.js"></script>
+        
     
    
 </body>
