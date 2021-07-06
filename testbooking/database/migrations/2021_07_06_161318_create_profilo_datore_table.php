@@ -14,11 +14,11 @@ class CreateProfiloDatoreTable extends Migration
     public function up()
     {
         Schema::create('Profilo_Datore_Lavoro', function (Blueprint $table) {
-            $table->integer('ID_Datore');
+            $table->integer('ID_Datore')->unique();
             $table->timestamps();
             $table->rememberToken();
-            $table->string('Mail');
-            $table->string('Codice_Fiscale',16);
+            $table->string('Mail')->unique();
+            $table->string('Codice_Fiscale',16)->unique();
             $table->string('Password',20);
             $table->string('Partita_IVA',11);
             $table->string('Ruolo_Aziendale',40);

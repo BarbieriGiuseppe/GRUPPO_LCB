@@ -14,11 +14,11 @@ class CreateProfiloMedicoCurante extends Migration
     public function up()
     {
         Schema::create('Profilo_Medico_Curante', function (Blueprint $table) {
-            $table->integer('ID_Medico');
+            $table->integer('ID_Medico')->unique();
             $table->timestamps();
             $table->rememberToken();
-            $table->string('Mail');
-            $table->string('Codice_Fiscale',16);
+            $table->string('Mail')->unique();
+            $table->string('Codice_Fiscale',16)->unique();
             $table->string('Password',20);
             $table->string('Nome_Studio_Medico',40);
             $table->string('Partita_IVA',11);

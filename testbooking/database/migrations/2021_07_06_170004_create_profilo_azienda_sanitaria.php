@@ -14,14 +14,14 @@ class CreateProfiloAziendaSanitaria extends Migration
     public function up()
     {
         Schema::create('Profilo_Azienda_Sanitaria', function (Blueprint $table) {
-            $table->string('Codice_AS_Pubblico');
-            $table->string('Codice_AS_Privato');
+            $table->string('Codice_AS_Pub')->unique();
+            $table->string('Codice_AS_Priv')->unique();
             $table->timestamps();
             $table->rememberToken();
             $table->string('Mail');
             $table->string('Password',20);
             $table->string('Provincia',3);
-            $table->primary(array('Codice_AS_Pubblico','Codice_AS_Privato'));
+            $table->primary(array('Codice_AS_Pub','Codice_AS_Priv'));
         });
     }
 

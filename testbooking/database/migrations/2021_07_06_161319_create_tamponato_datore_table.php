@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTamèponatoDatoreTable extends Migration
+class CreateTamponatoDatoreTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class CreateTamèponatoDatoreTable extends Migration
     public function up()
     {
         Schema::create('Tamponato_Datore', function (Blueprint $table) {
-            
+             
             $table->timestamps();
             $table->rememberToken();
+            $table->string('Mail_Datore');
             $table->string('Codice_Fiscale_Tamponato',16);
             $table->string('Mail');
-            $table->string('Mail_Datore');
             $table->string('Partita_IVA',11);
             $table->string('Cognome',40);
             $table->string('Nome',40);
@@ -32,7 +32,7 @@ class CreateTamèponatoDatoreTable extends Migration
             $table->string('CAP',5);
             $table->string('Domicilio',40)->nullable();
             $table->primary(array('Codice_Fiscale_Tamponato','Mail_Datore'));
-            $table->foreign('Mail_Datore')->references('profilo_datore_lavoro')->on('Mail');
+            $table->foreign('Mail_Datore')->references('Mail')->on('Profilo_Datore_Lavoro');
         });
     }
 

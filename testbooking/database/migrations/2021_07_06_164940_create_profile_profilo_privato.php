@@ -14,11 +14,11 @@ class CreateProfileProfiloprivato extends Migration
     public function up()
     {
         Schema::create('Profilo_Privato', function (Blueprint $table) {
-            $table->integer('ID_Privato');
+            $table->integer('ID_Privato')->unique();
             $table->timestamps();
             $table->rememberToken();
-            $table->string('Mail');
-            $table->string('Codice_Fiscale',16);
+            $table->string('Mail')->unique();
+            $table->string('Codice_Fiscale',16)->unique();
             $table->string('Password',20);
             $table->string('Cognome',40);
             $table->string('Nome',40);

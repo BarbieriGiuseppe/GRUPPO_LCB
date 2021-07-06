@@ -26,10 +26,10 @@ class CreatePrenotazioneMedicoTable extends Migration
             $table->string('Esito',15);
             $table->boolean ('Pagato');
             $table->primary(array('ID_Tampone'));
-            $table->foreign('Mail_Medico')->references('profilo_medico_curante')->on('Mail');
-            $table->foreign('CF_Tamponato_Medico')->references('Tamponato_Medico')->on('Codice_Fiscale_Tamponato');
-            $table->foreign('Codice_AS_Pubblico')->references('Profilo_Azienda_Sanitaria')->on('Codice_AS_Pubblico');
-            $table->foreign('Codice_Lab_Pubblico')->references('Profilo_Laboratorio')->on('Codice_Lab_Pubblico');
+            $table->foreign('Mail_Medico')->references('Mail')->on('Profilo_Medico_Curante');
+            $table->foreign('CF_Tamponato_Medico')->references('Codice_Fiscale_Tamponato')->on('Tamponato_Medico');
+            $table->foreign('Codice_AS_Pubblico')->references('Codice_AS_Pub')->on('Profilo_Azienda_Sanitaria');
+            $table->foreign('Codice_Lab_Pubblico')->references('Codice_Lab_Pub')->on('Profilo_Laboratorio');
         });
     }
 

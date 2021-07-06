@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTamèponatoMedicoTable extends Migration
+class CreateTamponatoMedicoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -32,7 +32,7 @@ class CreateTamèponatoMedicoTable extends Migration
             $table->string('CAP',5);
             $table->string('Domicilio',40)->nullable();
             $table->primary(array('Codice_Fiscale_Tamponato','Mail_Medico'));
-            $table->foreign('Mail_Medico')->references('profilo_medico_curante')->on('Mail');
+            $table->foreign('Mail_Medico')->references('Mail')->on('Profilo_Medico_Curante');
         });
     }
 

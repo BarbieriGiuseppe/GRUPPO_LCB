@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTamèponatoPrivatoTable extends Migration
+class CreateTamponatoPrivatoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -31,7 +31,7 @@ class CreateTamèponatoPrivatoTable extends Migration
             $table->string('CAP',5);
             $table->string('Domicilio',40)->nullable();
             $table->primary(array('Codice_Fiscale_Tamponato','Mail_Privato'));
-            $table->foreign('Mail_Privato')->references('profilo_privato')->on('Mail');
+            $table->foreign('Mail_Privato')->references('Mail')->on('Profilo_Privato');
         });
     }
 
