@@ -18,7 +18,7 @@ Route che identifica l'utente
 */
 Route::get('users/user/{id}','UserController@showUsers');
 Route::get('users/create','UserController@createPrivatoUser');
-Route::post('users/create','UserController@saveUser')->name('createuser');
+Route::post('users/create','UserController@savePrivatoUser')->name('createuser');
 
 
 /*
@@ -86,5 +86,3 @@ Route::get('/privatoindex', 'App\Http\Controllers\AreaRiservataController@privat
 Route::get('/privatomodifica', 'App\Http\Controllers\AreaRiservataController@privatomodifica');
 
 Route::get('/privatoprenotazione', 'App\Http\Controllers\AreaRiservataController@privatoprenotazione');
-
-
