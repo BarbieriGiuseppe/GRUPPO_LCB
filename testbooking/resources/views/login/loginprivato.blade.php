@@ -33,7 +33,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				
 					<span class="login100-form-title p-b-70">
 						<a href="/">
 							<img src = "<?php echo url('/img'); ?>/logoindexblack.png">
@@ -44,6 +44,8 @@
 						<img src="<?php echo url('/img'); ?>/utente.png" alt="UTENTE">
 					</span>
 
+				@include('includes.validation')	
+				<form action = "{{ route('signin') }}" method= "post" class="login100-form validate-form">
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail">
 						<input class="input100" type="text" name="E-mail">
 						<span class="focus-input100" data-placeholder="E-mail"></span>

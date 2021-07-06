@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProfiloPrivatoTable extends Migration
+class CreateProfiloDatoreTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateProfiloPrivatoTable extends Migration
      */
     public function up()
     {
-        Schema::create('Profilo_Privato', function (Blueprint $table) {
-            $table->string('Codice_Fiscale')->unique()->primary();
+        Schema::create('Profilo_Datore_Lavoro', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->rememberToken();
+            
         });
     }
 
@@ -25,6 +28,6 @@ class CreateProfiloPrivatoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Profilo_Privato');
+        Schema::dropIfExists('Profilo_Datore_Lavoro');
     }
 }
