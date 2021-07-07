@@ -46,6 +46,15 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'utente_privato' => [
+            'driver' => 'session',
+            'provider' => 'utenti_privato',
+        ],
+        'utente_privato-api' => [
+            'driver' => 'token',
+            'provider' => 'utenti_privato',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -70,7 +79,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'utenti_privato' => [
+            
+                'driver' => 'eloquent',
+                'model' => App\Models\Utente_Privato::class,
+            ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -95,6 +108,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'utenti_privato' => [
+            'provider' => 'utenti_privato',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

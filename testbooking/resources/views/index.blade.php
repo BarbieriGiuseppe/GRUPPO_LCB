@@ -60,7 +60,7 @@
                       <h4 class="modal-title">Le Aree Riservate: </h4>                                                  
                     </div> 
                     <div class="modal-body">
-                      <a href="loginprivato" class = "btn btn-appoint">Login <br>Utente Privato</a>
+                      <a href="privato/loginprivato" class = "btn btn-appoint">Login <br>Utente Privato</a>
                       <a href="loginmedico" class = "btn btn-appoint">Login <br>Medico</a>
                       <a href="loginazienda" class = "btn btn-appoint">Login<br>Azienda</a>
                       <a href="loginlab" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>

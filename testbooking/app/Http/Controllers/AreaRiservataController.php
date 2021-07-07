@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class AreaRiservataController extends Controller
 {
     public function aziendasanitariaindex(){
         return view('areariservata.aziendasanitariaindex');
@@ -16,18 +16,6 @@ class LoginController extends Controller
 
     public function laboratoriomodifica(){
         return view('areariservata.laboratoriomodifica');
-    }
-
-    public function privatoindex(){
-        return view('areariservata.privatoindex');
-    }
-    
-    public function privatomodifica(){
-        return view('areariservata.privatomodifica');
-    }
-
-    public function privatoprenotazione(){
-        return view('areariservata.privatoprenotazione');
     }
 
     public function datorelavoroindex(){

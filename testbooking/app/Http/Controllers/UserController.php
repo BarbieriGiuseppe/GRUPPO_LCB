@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('home',compact('user'));
+        return view('homeprivato',compact('user'));
     }
 
     public function createPrivatoUser()

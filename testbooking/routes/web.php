@@ -17,16 +17,14 @@ use Illuminate\Support\Facades\Route;
 /*
 Route che identifica l'utente
 */
-Route::get('users/user/{id}','UserController@showUsers');
-Route::get('users/create','UserController@createPrivatoUser');
-Route::post('users/create','UserController@savePrivatoUser')->name('createuser');
+
 
 
 /*
 
 Route dell'index
 */
-Route::get('/', 'App\Http\Controllers\IndexController@index');
+Route::get('/', 'App\Http\Controllers\IndexController@index')->name('index');
 
 Route::get('/labdib', 'App\Http\Controllers\IndexController@labdib');
 
@@ -36,16 +34,21 @@ Route::get('/labpoli', 'App\Http\Controllers\IndexController@labpoli');
 
 Route dei login
 */
-Route::get('/loginprivato', 'App\Http\Controllers\LoginController@loginprivato')->name('loginprivato');
-Route::post('/loginprivato' ,'App\Http\Controllers\LoginController@signin')->name('signin');
+Route::prefix('privato')->group(function(){
+    Route::get('/loginprivato', 'App\Http\Controllers\LoginPrivatoController@loginprivato')->name('loginprivato');
+    Route::post('/loginprivato' ,'App\Http\Controllers\LoginPrivatoController@loginp')->name('loginprivato.submit');
+    Route::get('/homeprivato', 'App\Http\Controllers\AreaRiservataPrivatoController@homeprivato')->name('homep');
+    Route::get('/privatomodifica', 'App\Http\Controllers\AreaRiservataPrivatoController@privatomodifica')->name('privatomodifica');
+    Route::get('/privatoprenotazione', 'App\Http\Controllers\AreaRiservataPrivatoController@privatoprenotazione');
+});
 
-Route::get('/loginlab', 'App\Http\Controllers\LoginController@loginlab');
+Route::get('/loginlab', 'App\Http\Controllers\LoginLabController@loginlab');
 
-Route::get('/loginasl', 'App\Http\Controllers\LoginController@loginasl');
+Route::get('/loginasl', 'App\Http\Controllers\LoginASController@loginasl');
 
-Route::get('/loginmedico', 'App\Http\Controllers\LoginController@loginmedico');
+Route::get('/loginmedico', 'App\Http\Controllers\LoginMedicoController@loginmedico');
 
-Route::get('/loginazienda', 'App\Http\Controllers\LoginController@loginazienda');
+Route::get('/loginazienda', 'App\Http\Controllers\LoginAziendaController@loginazienda');
 
 
 
@@ -84,14 +87,6 @@ Route::get('/medicocurantemodifica', 'App\Http\Controllers\AreaRiservataControll
 
 Route::get('/medicocuranteprenotazione', 'App\Http\Controllers\AreaRiservataController@medicocuranteprenotazione');
 
-Route::get('/privatoindex', 'App\Http\Controllers\AreaRiservataController@privatoindex')->name('areaprivato');
-
-Route::get('/privatomodifica', 'App\Http\Controllers\AreaRiservataController@privatomodifica');
-
-Route::get('/privatoprenotazione', 'App\Http\Controllers\AreaRiservataController@privatoprenotazione');
-
-/*
-Route::post(')
 
 
-*/ 
+Auth::routes();
