@@ -62,6 +62,11 @@ class RegisterController extends Controller
             'provincia' => ['required', 'string', 'max:255'],
             'cap' => ['required', 'string', 'max:255'],
             'telefono' => ['required', 'string', 'max:255'],
+            'studiomedico' => ['required', 'string', 'max:255'],
+            'partitaiva' => ['required', 'string', 'max:255'],
+            'cittastudio' => ['required', 'string', 'max:255'],
+            'indirizzostudio' => ['required', 'string', 'max:255'],
+            'provinciastudio' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:privatos'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -88,6 +93,11 @@ class RegisterController extends Controller
             'provincia' => $data['provincia'],
             'cap' => $data['cap'],
             'telefono' => $data['telefono'],
+            'studiomedico' => $data['studiomedico'],
+            'partitaiva' => $data['partitaiva'],
+            'cittastudio' => $data['cittastudio'],
+            'indirizzostudio' => $data['indirizzostudio'],
+            'provinciastudio' => $data['provinciastudio'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
