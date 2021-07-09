@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -53,7 +54,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nomelaboratorio' => ['required', 'string', 'max:255'],
             'codicelabpubblico' => ['required', 'string', 'max:255'],
-            'codiceaspubblico' => ['required', 'string', 'max:255'],
+            'codicelabprivato' => ['string', 'max:255'],
+            'codiceasl' => ['null'],
             'citta' => ['required', 'string', 'max:255'],
             'indirizzo' => ['required', 'string', 'max:255'],
             'provincia' => ['required', 'string', 'max:255'],
@@ -74,14 +76,15 @@ class RegisterController extends Controller
         return Laboratorio::create([
             'nomelaboratorio' => $data['nomelaboratorio'],
             'codicelabpubblico' => $data['codicelabpubblico'],
-            'codicelabprivato' => $data['codicelabprivato']->uniqid(),
-            'codiceaspubblico' => $data['codiceaspubblico'],
+            'codicelabprivato' => $data['codicelabprivato'] = Str::random(6),
             'citta' => $data['citta'],
             'indirizzo' => $data['indirizzo'],
             'provincia' => $data['provincia'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            
         ]);
+       
     }
 
     /**

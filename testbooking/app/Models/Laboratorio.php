@@ -18,8 +18,8 @@ class Laboratorio extends Authenticatable
      * @var array
      */
     protected $fillable = [
-       'nomelaboratorio', 'codicelabpubblico','codicelabprivato',
-        'codiceaspubblico','citta','indirizzo','provincia',
+       'nomelaboratorio', 'codicelabpubblico','codicelabprivato'
+       ,'citta','indirizzo','provincia',
         'email','password'
     ];
 

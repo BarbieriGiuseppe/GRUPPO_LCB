@@ -18,17 +18,16 @@ class CreateLaboratoriosTable extends Migration
             $table->string('nomelaboratorio',20);
             $table->string('codicelabpubblico')->unique();
             $table->string('codicelabprivato')->unique();
-            $table->string('codiceaspubblico',15);
             $table->string('citta',40);
             $table->string('indirizzo',40);
             $table->string('provincia',3);
             $table->string('email');
-            $table->string('password',16);
+            $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->primary(array('id','codicelabpubblico','codicelabprivato'));
-            $table->foreign('codiceaspubblico')->references('codpubblico')->on('asls');
+
         });
 
         DB::statement('ALTER TABLE laboratorios MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
