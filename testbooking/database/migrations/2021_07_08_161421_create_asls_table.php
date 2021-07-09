@@ -22,7 +22,7 @@ class CreateAslsTable extends Migration
             $table->string('provincia',3);
             $table->string('email');
             $table->string('password',20);
-            $table->primary(array('Codice_AS_Pub','Codice_AS_Priv'));
+            $table->primary(array('codprivato','codpubblico'));
 
         });
         DB::statement('ALTER TABLE asls MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
