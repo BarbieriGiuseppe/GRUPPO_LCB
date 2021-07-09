@@ -13,80 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-/*
-Route che identifica l'utente
-*/
-
-
-
-/*
-
-Route dell'index
-*/
-Route::get('/', 'App\Http\Controllers\IndexController@index')->name('index');
-
-Route::get('/labdib', 'App\Http\Controllers\IndexController@labdib');
-
-Route::get('/labpoli', 'App\Http\Controllers\IndexController@labpoli');
-
-/*
-
-Route dei login
-*/
-Route::prefix('privato')->group(function(){
-    Route::get('/loginprivato', 'App\Http\Controllers\LoginPrivatoController@loginprivato')->name('loginprivato');
-    Route::post('/loginprivato' ,'App\Http\Controllers\LoginPrivatoController@loginp')->name('loginprivato.submit');
-    Route::get('/homeprivato', 'App\Http\Controllers\AreaRiservataPrivatoController@homeprivato')->name('homep');
-    Route::get('/privatomodifica', 'App\Http\Controllers\AreaRiservataPrivatoController@privatomodifica')->name('privatomodifica');
-    Route::get('/privatoprenotazione', 'App\Http\Controllers\AreaRiservataPrivatoController@privatoprenotazione');
+Route::get('/', function () {
+    return view('index');
 });
 
-Route::get('/loginlab', 'App\Http\Controllers\LoginLabController@loginlab');
+Route::get('/labdib', function () {
+    return view('infolab.labdib');
+});
 
-Route::get('/loginasl', 'App\Http\Controllers\LoginASController@loginasl');
-
-Route::get('/loginmedico', 'App\Http\Controllers\LoginMedicoController@loginmedico');
-
-Route::get('/loginazienda', 'App\Http\Controllers\LoginAziendaController@loginazienda');
-
-
-
-/*
-
-Route delle registrazioni
-*/
-Route::get('/registrazioneprivato', 'App\Http\Controllers\RegistrazioneController@registrazioneprivato');
-
-Route::get('/convenzionalab', 'App\Http\Controllers\RegistrazioneController@convenzionalab');
-
-Route::get('/registrazionemedico', 'App\Http\Controllers\RegistrazioneController@registrazionemedico');
-
-Route::get('/registrazioneazienda', 'App\Http\Controllers\RegistrazioneController@registrazioneazienda');
-
-/*
-
-Route delle aree riservate
-*/
-
-Route::get('/aziendasanitariaindex', 'App\Http\Controllers\AreaRiservataController@aziendasanitariaindex');
-
-Route::get('/laboratorioindex', 'App\Http\Controllers\AreaRiservataController@laboratorioindex');
-
-Route::get('/laboratoriomodifica', 'App\Http\Controllers\AreaRiservataController@laboratoriomodifica');
-
-Route::get('/datorelavoroindex', 'App\Http\Controllers\AreaRiservataController@datorelavoroindex');
-
-Route::get('/datorelavoromodifica', 'App\Http\Controllers\AreaRiservataController@datorelavoromodifica');
-
-Route::get('/datorelavoroprenotazione', 'App\Http\Controllers\AreaRiservataController@datorelavoroprenotazione');
-
-Route::get('/medicocuranteindex', 'App\Http\Controllers\AreaRiservataController@medicocuranteindex');
-
-Route::get('/medicocurantemodifica', 'App\Http\Controllers\AreaRiservataController@medicocurantemodifica');
-
-Route::get('/medicocuranteprenotazione', 'App\Http\Controllers\AreaRiservataController@medicocuranteprenotazione');
-
-
-
-Auth::routes();
+Route::get('/lapoli', function () {
+    return view('infolab.labpoli');
+});

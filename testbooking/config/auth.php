@@ -36,6 +36,31 @@ return [
     */
 
     'guards' => [
+        'asl' => [
+            'driver' => 'session',
+            'provider' => 'asls',
+        ],
+
+        'laboratorio' => [
+            'driver' => 'session',
+            'provider' => 'laboratorios',
+        ],
+
+        'medico' => [
+            'driver' => 'session',
+            'provider' => 'medicos',
+        ],
+
+        'azienda' => [
+            'driver' => 'session',
+            'provider' => 'aziendas',
+        ],
+
+        'privato' => [
+            'driver' => 'session',
+            'provider' => 'privatos',
+        ],
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -44,15 +69,6 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-            'hash' => false,
-        ],
-        'utente_privato' => [
-            'driver' => 'session',
-            'provider' => 'utenti_privato',
-        ],
-        'utente_privato-api' => [
-            'driver' => 'token',
-            'provider' => 'utenti_privato',
             'hash' => false,
         ],
     ],
@@ -75,15 +91,36 @@ return [
     */
 
     'providers' => [
+        'asls' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Asl::class,
+        ],
+
+        'laboratorios' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Laboratorio::class,
+        ],
+
+        'medicos' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Medico::class,
+        ],
+
+        'aziendas' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Azienda::class,
+        ],
+
+        'privatos' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Privato::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'utenti_privato' => [
-            
-                'driver' => 'eloquent',
-                'model' => App\Models\Utente_Privato::class,
-            ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -106,14 +143,43 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
+        'asls' => [
+            'provider' => 'asls',
+            'table' => 'asl_password_resets',
             'expire' => 60,
             'throttle' => 60,
         ],
-        'utenti_privato' => [
-            'provider' => 'utenti_privato',
+
+        'laboratorios' => [
+            'provider' => 'laboratorios',
+            'table' => 'laboratorio_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'medicos' => [
+            'provider' => 'medicos',
+            'table' => 'medico_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'aziendas' => [
+            'provider' => 'aziendas',
+            'table' => 'azienda_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'privatos' => [
+            'provider' => 'privatos',
+            'table' => 'privato_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'users' => [
+            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

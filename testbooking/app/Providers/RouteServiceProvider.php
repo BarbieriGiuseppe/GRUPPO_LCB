@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/privato/homeprivato';
+    public const HOME = '/home';
 
     /**
      * The controller namespace for the application.
@@ -46,6 +46,36 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            Route::prefix('asl')
+                ->as('asl.')
+                ->middleware('web')
+                ->namespace('App\Http\Controllers\Asl')
+                ->group(base_path('routes/asl.php'));
+
+            Route::prefix('laboratorio')
+                ->as('laboratorio.')
+                ->middleware('web')
+                ->namespace('App\Http\Controllers\Laboratorio')
+                ->group(base_path('routes/laboratorio.php'));
+
+            Route::prefix('medico')
+                ->as('medico.')
+                ->middleware('web')
+                ->namespace('App\Http\Controllers\Medico')
+                ->group(base_path('routes/medico.php'));
+
+            Route::prefix('azienda')
+                ->as('azienda.')
+                ->middleware('web')
+                ->namespace('App\Http\Controllers\Azienda')
+                ->group(base_path('routes/azienda.php'));
+
+            Route::prefix('privato')
+                ->as('privato.')
+                ->middleware('web')
+                ->namespace('App\Http\Controllers\Privato')
+                ->group(base_path('routes/privato.php'));
         });
     }
 

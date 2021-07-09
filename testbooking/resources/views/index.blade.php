@@ -60,10 +60,10 @@
                       <h4 class="modal-title">Le Aree Riservate: </h4>                                                  
                     </div> 
                     <div class="modal-body">
-                      <a href="privato/loginprivato" class = "btn btn-appoint">Login <br>Utente Privato</a>
-                      <a href="loginmedico" class = "btn btn-appoint">Login <br>Medico</a>
-                      <a href="loginazienda" class = "btn btn-appoint">Login<br>Azienda</a>
-                      <a href="loginlab" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
+                      <a href="privato/login" class = "btn btn-appoint">Login <br>Utente Privato</a>
+                      <a href="medico/login" class = "btn btn-appoint">Login <br>Medico</a>
+                      <a href="azienda/login" class = "btn btn-appoint">Login<br>Azienda</a>
+                      <a href="laboratorio/login" class = "btn btn-appoint">Login Laboratorio<br>Convenzionato</a>
                     </div>   
                     <div class="modal-footer">
                       <h5>Non sei registrato? <button id = "btnModalRegistratidue" class = "btn btn-appoint">Registrati</button>
@@ -82,10 +82,10 @@
                       <h4 class="modal-title">Scegli il tuo profilo di registrazione: </h4>                                                  
                     </div> 
                     <div class="modal-body">
-                      <a href="registrazioneprivato" class = "btn btn-appoint">Registrazione <br>Utente Privato</a>
-                      <a href="registrazionemedico" class = "btn btn-appoint">Registrazione <br>Medico</a>
-                      <a href="registrazioneazienda" class = "btn btn-appoint">Registrazione<br> Azienda</a>
-                      <a href="convenzionalab" class = "btn btn-appoint">Sei un laboratorio?<br>Convenzionati</a>
+                      <a href="privato/register" class = "btn btn-appoint">Registrazione <br>Utente Privato</a>
+                      <a href="medico/register" class = "btn btn-appoint">Registrazione <br>Medico</a>
+                      <a href="azienda/register" class = "btn btn-appoint">Registrazione<br> Azienda</a>
+                      <a href="laboratorio/register" class = "btn btn-appoint">Sei un laboratorio?<br>Convenzionati</a>
                     </div>   
                     <div class="modal-footer">                                                     
                     </div>
@@ -270,10 +270,10 @@
             </div>
             <div class="info-sec">
               <ul class="quick-info">
-                <li><a href="index.html"><i class="fa fa-circle"></i>Home</a></li>
+                <li><a href="/"><i class="fa fa-circle"></i>Home</a></li>
                 <li><a href="#laboratori"><i class="fa fa-circle"></i>Laboratori Convenzionati</a></li>
                 <li><a href="#service"><i class="fa fa-circle"></i>Servizi</a></li>
-                <li><a href = "login/areaasl.html"><i class = "fa fa-circle"> </i>Area Privata Azienda Sanitaria</a></li>
+                <li><a href = "asl/login"><i class = "fa fa-circle"> </i>Area Privata Azienda Sanitaria</a></li>
               </ul>
             </div>
           </div>
