@@ -14,9 +14,7 @@ class CreateLaboratoriosTable extends Migration
     public function up()
     {
         Schema::create('laboratorios', function (Blueprint $table) {
-
-            $table->timestamps();
-            $table->rememberToken();
+            $table->integer('id')->unique();
             $table->string('nomelaboratorio',20);
             $table->string('codicelabpubblico')->unique();
             $table->string('codicelabprivato')->unique();
@@ -26,9 +24,14 @@ class CreateLaboratoriosTable extends Migration
             $table->string('provincia',3);
             $table->string('email');
             $table->string('password',16);
-            $table->primary(array('codicelabpubblico','codicelabprivato'));
-            $table->foreign('codiceaspubblico')->references('codiceaspubblico')->on('asls');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+            $table->primary(array('id','codicelabpubblico','codicelabprivato'));
+            $table->foreign('codiceaspubblico')->references('codpubblico')->on('asls');
         });
+
+        DB::statement('ALTER TABLE laboratorios MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

@@ -14,14 +14,15 @@ class CreateAslsTable extends Migration
     public function up()
     {
         Schema::create('asls', function (Blueprint $table) {
-       
-            $table->timestamps();
-            $table->rememberToken();
+            $table->integer('id')->unique();
             $table->string('codprivato')->unique();
             $table->string('codpubblico')->unique();
             $table->string('provincia',3);
             $table->string('email');
             $table->string('password',20);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
             $table->primary(array('codprivato','codpubblico'));
 
         });

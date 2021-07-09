@@ -53,12 +53,11 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nomelaboratorio' => ['required', 'string', 'max:255'],
             'codicelabpubblico' => ['required', 'string', 'max:255'],
-            'codicelabprivato' => ['required', 'string', 'max:255'],
             'codiceaspubblico' => ['required', 'string', 'max:255'],
             'citta' => ['required', 'string', 'max:255'],
             'indirizzo' => ['required', 'string', 'max:255'],
             'provincia' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:privatos'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:laboratorios'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -73,17 +72,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Laboratorio::create([
-            'nome' => $data['nome'],
-            'cognome' => $data['cognome'],
-            'codicefiscale' => $data['codicefiscale'],
-            'datanascita' => $data['datanascita'],
-            'nazionalita' => $data['nazionalita'],
-            'luogonascita' => $data['luogonascita'],
-            'residenza' => $data['residenza'],
+            'nomelaboratorio' => $data['nomelaboratorio'],
+            'codicelabpubblico' => $data['codicelabpubblico'],
+            'codicelabprivato' => $data['codicelabprivato']->uniqid(),
+            'codiceaspubblico' => $data['codiceaspubblico'],
             'citta' => $data['citta'],
+            'indirizzo' => $data['indirizzo'],
             'provincia' => $data['provincia'],
-            'cap' => $data['cap'],
-            'telefono' => $data['telefono'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
@@ -108,4 +103,7 @@ class RegisterController extends Controller
     {
         return Auth::guard('laboratorio');
     }
+
+
+
 }

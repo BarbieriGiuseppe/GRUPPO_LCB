@@ -62,7 +62,7 @@ class RegisterController extends Controller
             'provincia' => ['required', 'string', 'max:255'],
             'cap' => ['required', 'string', 'max:255'],
             'telefono' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:privatos'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:aziendas'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }

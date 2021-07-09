@@ -410,6 +410,16 @@
 						<h5><b>Dati dell' azienda</b></h5>
 					</div>
 
+					<div class="wrap-input100 validate-input m-t-30 m-b-35" data-validate = "Inserisci il Ruolo aziendale" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="ruoloaziendale" type="text" class="input100 @error('ruoloaziendale') is-invalid @enderror" name="ruoloaziendale" value="{{ old('ruoloaziendale') }}" required autocomplete="luogonascita" autofocus>
+						<span class="focus-input100" data-placeholder="Ruolo Aziendale"></span>
+						@error('ruoloaziendale')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+
 					<div class="wrap-input100 validate-input m-t-245 m-b-45" data-validate = "Inserisci Ragione sociale" style = "position:relative; left:260px; top:-1735px; ">
 						<input id="ragionesociale" type="text" class="input100 @error('ragionesociale') is-invalid @enderror" name="ragionesociale" value="{{ old('ragionesociale') }}" required autocomplete="ragionesociale" autofocus>
 						<span class="focus-input100" data-placeholder="Ragione Sociale"></span>

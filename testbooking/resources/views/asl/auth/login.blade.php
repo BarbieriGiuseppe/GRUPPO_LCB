@@ -50,12 +50,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Mail') }}</label>
+                            <label for="codiceprivato" class="col-md-4 col-form-label text-md-right">{{ __('Codice Privato') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="codiceprivato" type="text" class="form-control @error('codiceprivato') is-invalid @enderror" name="codiceprivato" value="{{ old('codiceprivato') }}" required autocomplete="codiceprivato" autofocus>
 
-                                @error('email')
+                                @error('codiceprivato')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
