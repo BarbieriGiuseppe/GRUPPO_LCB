@@ -57,11 +57,11 @@ class ResetPassword extends Notification
         }
 
         return (new MailMessage)
-            ->subject(Lang::get('Reset Password Notification'))
-            ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::get('Reset Password'), url(config('app.url').route('laboratorio.password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
-            ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.laboratorios.expire')]))
-            ->line(Lang::get('If you did not request a password reset, no further action is required.'));
+            ->subject(Lang::get('Reimpostazione password'))
+            ->line(Lang::get('Clicca il link sottostante per reimpostare la tua password'))
+            ->action(Lang::get('Reimposta Password'), url(config('app.url').route('medico.password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
+            ->line(Lang::get('Questo link scadra fra :count minutes.', ['count' => config('auth.passwords.medicos.expire')]))
+            ->line(Lang::get('Se non sei stato tu a richiederlo, non fare nulla.'));
     }
 
     /**
