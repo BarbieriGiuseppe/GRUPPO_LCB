@@ -26,6 +26,12 @@ class CreateAziendasTable extends Migration
             $table->string('provincia',3);
             $table->string('cap',5);
             $table->string('telefono',15);
+            $table->string('ragionesociale',40);
+            $table->string('partitaiva',11);
+            $table->string('ruoloaziendale',40);
+            $table->string('cittaazienda',40);
+            $table->string('indirizzoazienda',40);
+            $table->string('provinciaazienda',40);
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();

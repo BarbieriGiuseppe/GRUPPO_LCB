@@ -15,27 +15,23 @@ class CreateLaboratoriosTable extends Migration
     {
         Schema::create('laboratorios', function (Blueprint $table) {
 
-            $table->integer('id')->unique();
-            $table->string('nome',20);
-            $table->string('cognome',20);
-            $table->string('codicefiscale',16)->unique();
-            $table->date('datanascita');
-            $table->string('nazionalita',30);
-            $table->string('luogonascita',20);
-            $table->string('residenza',40)->nullable();
-            $table->string('citta',20);
-            $table->string('provincia',3);
-            $table->string('cap',5);
-            $table->string('telefono',15);
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
             $table->timestamps();
-            $table->primary(array('id','codicefiscale','email'));
-
+            $table->rememberToken();
+            $table->string('nomelaboratorio',20);
+            $table->string('codicelabpubblico')->unique();
+            $table->string('codicelabprivato')->unique();
+            $table->string('codiceaspubblico',15);
+            $table->string('citta',40);
+            $table->string('indirizzo',40);
+            $table->string('provincia',3);
+            $table->string('email');
+            $table->string('password',16);
+            $table->primary(array('Codice_Lab_Pubblico','Codice_Lab_Privato'));
+            $table->foreign('Codice_AS_Pubblico')->references('Codice_AS_Pubblico')->on('Profilo_Azienda_Sanitaria');
+            $table->string('Codice_AS_Pubblico');
+            $table->primary(array('Codice_Lab_Pub','Codice_Lab_Priv'));
+            $table->foreign('Codice_AS_Pubblico')->references('Codice_AS_Pub')->on('Profilo_Azienda_Sanitaria');
         });
-        DB::statement('ALTER TABLE laboratorios MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

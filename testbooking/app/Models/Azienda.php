@@ -21,7 +21,9 @@ class Azienda extends Authenticatable
         'nome', 'cognome', 'codicefiscale', 
         'datanascita', 'nazionalita', 'luogonascita',
         'residenza', 'citta', 'provincia',
-        'cap', 'telefono', 'email','password'
+        'cap', 'telefono','ragionesociale','partitaiva',
+        'ruoloaziendale','cittaazienda','indirizzoazienda',
+        'provinciaazienda', 'email','password'    
     ];
 
     /**
