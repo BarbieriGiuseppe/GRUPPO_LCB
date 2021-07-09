@@ -26,6 +26,11 @@ class CreateMedicosTable extends Migration
             $table->string('provincia',3);
             $table->string('cap',5);
             $table->string('telefono',15);
+            $table->string('studiomedico',20);
+            $table->string('partitaiva',20);
+            $table->string('cittastudio',20);
+            $table->string('indirizzostudio',20);
+            $table->string('provinciastudio',20);
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
