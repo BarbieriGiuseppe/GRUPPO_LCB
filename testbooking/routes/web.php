@@ -24,3 +24,7 @@ Route::get('/labdib', function () {
 Route::get('/lapoli', function () {
     return view('infolab.labpoli');
 });
+
+Route::get('asl',function() {
+    return view ('home');
+});

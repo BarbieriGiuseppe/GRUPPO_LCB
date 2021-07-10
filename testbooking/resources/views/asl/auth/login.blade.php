@@ -30,7 +30,19 @@
 
 </head>
 <body>
-	
+	<h1>Create Post</h1>
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<!-- Create Post Form -->
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
@@ -50,12 +62,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="codiceprivato" class="col-md-4 col-form-label text-md-right">{{ __('Codice Privato') }}</label>
+                            <label for="codasl" class="col-md-4 col-form-label text-md-right">{{ __('Codice ASL') }}</label>
 
                             <div class="col-md-6">
-                                <input id="codiceprivato" type="text" class="form-control @error('codiceprivato') is-invalid @enderror" name="codiceprivato" value="{{ old('codiceprivato') }}" required autocomplete="codiceprivato" autofocus>
+                                <input id="codasl" type="text" class="form-control @error('codasl') is-invalid @enderror" name="codasl" value="{{ old('codasl') }}" required autocomplete="codasl" autofocus>
 
-                                @error('codiceprivato')
+                                @error('codasl')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

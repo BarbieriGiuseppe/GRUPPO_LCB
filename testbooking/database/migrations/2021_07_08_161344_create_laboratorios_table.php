@@ -27,6 +27,7 @@ class CreateLaboratoriosTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->primary(array('id','codicelabpubblico','codicelabprivato'));
+            $table->foreign('provincia')->references('provincia')->on('asls');
 
         });
 
