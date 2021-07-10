@@ -424,11 +424,9 @@
 
     <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
         <h5>Laboratorio</h5>  
-        <select name="" id="">
-            @foreach($data as $row)
-                <option value="{{ $row->id }}">{{ $row->nomelaboratorio }}</option>
-            @endforeach
-        </select>
+        
+        <input type="text" class="form-control" placeholder="" />
+
     </div>
 
     <div class="input-group"  style = "position:relative; left:260px; top:-907px; ">

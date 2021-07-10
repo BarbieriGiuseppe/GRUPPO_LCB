@@ -61,15 +61,15 @@
 
                     <li class="active-link">
 
-                        <a href="privato.home" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
+                        <a href="home" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
                     </li>
                    
 
                     <li>
-                        <a href="privato,prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                        <a href="prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
                     <li>
-                        <a href="privato.modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
+                        <a href="modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
                     </li>
        
                     
@@ -111,7 +111,7 @@
                                     <td>dffd</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/areariservatalayout'); ?>/img/deleteicon.jpg" /></td>
+                                    <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -121,7 +121,7 @@
                                     <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/areariservatalayout'); ?>/img/deleteicon.jpg" /></td>
+                                    <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
@@ -131,7 +131,7 @@
                                     <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/areariservatalayout'); ?>/img/deleteicon.jpg" /></td>
+                                    <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
                                 </tr>
                                 
                             </tbody>
