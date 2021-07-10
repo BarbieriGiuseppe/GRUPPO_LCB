@@ -62,12 +62,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="codprivato" class="col-md-4 col-form-label text-md-right">{{ __('Codice Privato') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="codprivato" type="text" class="form-control @error('codprivato') is-invalid @enderror" name="codprivato" value="{{ old('codprivato') }}" required autocomplete="codprivato" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @error('codprivato')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

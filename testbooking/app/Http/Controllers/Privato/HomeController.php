@@ -24,4 +24,26 @@ class HomeController extends Controller
     public function index() {
         return view('privato.home');
     }
+
+     /**
+     * Show the Privato prenotazione.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function prenotazione() {
+        return view('privato.prenotazione');
+    }
+
+    
+    /**
+     * Show the Privato modifica.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function modifica() {
+        return view('privato.modifica');
+    }
+
+    
+  
 }

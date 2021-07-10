@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
-Route::get('/', 'HomeController@index')->name('home');
+Route::post('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@prenotazione')->name('prenotazione');
+Route::post('/', 'HomeController@modifica')->name('modifica');
+//Route::post('/', 'HomeController@listalab')->name('listalab');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -28,3 +31,4 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+

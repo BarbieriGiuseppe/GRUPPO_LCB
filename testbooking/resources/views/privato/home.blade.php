@@ -6,9 +6,9 @@
     <title>Area Riservata</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/bootstrap.css" rel="stylesheet" />
-     <!-- FONTAWESOME STYLES-->
+    <!-- FONTAWESOME STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/font-awesome.css" rel="stylesheet" />
-        <!-- CUSTOM STYLES-->
+    <!-- CUSTOM STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
@@ -60,15 +60,16 @@
                             </form>
 
                     <li class="active-link">
-                        <a href="privatoindex.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
+
+                        <a href="privato.home" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
                     </li>
                    
 
                     <li>
-                        <a href="privatoprenotazione.html"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                        <a href="privato,prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
                     <li>
-                        <a href="privatomodifica.html"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
+                        <a href="privato.modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
                     </li>
        
                     
@@ -81,7 +82,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-lg-12">
-                     <h2>Area Riservata Privato</h2>   
+                     <h2>Dashboard Privato</h2>   
                     </div>
                 </div>              
                 
