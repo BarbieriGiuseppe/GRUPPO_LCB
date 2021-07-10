@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Asl;
 
 use App\Http\Controllers\Controller;
+$user = Auth::user();
 
+// Get the currently authenticated user's ID...
+$id = Auth::id();
 class HomeController extends Controller
 {
     /**

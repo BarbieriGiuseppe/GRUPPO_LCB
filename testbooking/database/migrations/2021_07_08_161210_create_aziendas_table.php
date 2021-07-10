@@ -19,7 +19,6 @@ class CreateAziendasTable extends Migration
             $table->string('cognome',20);
             $table->string('codicefiscale',16)->unique();
             $table->date('datanascita');
-            $table->string('nazionalita',30);
             $table->string('luogonascita',20);
             $table->string('residenza',40)->nullable();
             $table->string('citta',20);

@@ -19,7 +19,7 @@ class Medico extends Authenticatable
      */
     protected $fillable = [
         'nome', 'cognome', 'codicefiscale', 
-        'datanascita', 'nazionalita', 'luogonascita',
+        'datanascita', 'luogonascita',
         'residenza', 'citta', 'provincia',
         'cap', 'telefono', 'studiomedico', 'partitaiva', 
         'cittastudio', 'indirizzostudio','provinciastudio','email','password'

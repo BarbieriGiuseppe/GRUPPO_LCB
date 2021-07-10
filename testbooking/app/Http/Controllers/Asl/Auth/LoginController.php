@@ -75,4 +75,10 @@ class LoginController extends Controller
 
         return $this->loggedOut($request) ?: redirect()->route('asl.home');
     }
+
+    public function codPrivato()
+{
+    return 'codprivato';
+    return Route::view('asl.home');
+}
 }
