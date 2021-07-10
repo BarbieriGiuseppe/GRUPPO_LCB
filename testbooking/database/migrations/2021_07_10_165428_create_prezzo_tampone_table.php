@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrenotazionePrivatoTable extends Migration
+class CreatePrezzoTamponeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,16 @@ class CreatePrenotazionePrivatoTable extends Migration
      */
     public function up()
     {
-        Schema::create('Prenotazione_Privato', function (Blueprint $table) {
+        Schema::create('Prezzo_Tampone', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('codicefiscaletamponato',16);
-            $table->string('codicelabpubblico');
-            $table->string('emailprivato');
-            $table->timestamp('datatampone');
-            $table->string('tipologia');
-            $table->string('esito');
-            $table->boolean('pagato');
+            $table->string('tipologia')->unique();
+            $table->string('codicelabpubblico')->unique();
+            $table->string('prezzo');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->primary('id');
-            $table->foreign('codicefiscaletamponato')->references('codicefiscale')->on('privatos');
+            $table->primary(array('id','tipologia','codicelabpubblico'));
             $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
-            $table->foreign('emailprivato')->references('email')->on('privatos');
         });
         DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
@@ -40,6 +34,6 @@ class CreatePrenotazionePrivatoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Prenotazione_Privato');
+        Schema::dropIfExists('Prezzo_Tampone');
     }
 }
