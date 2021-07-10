@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
-Route::get('/', 'HomeController@index')->name('home');
+Route::post('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@prenotazione')->name('prenotazione');
+Route::post('/', 'HomeController@modifica')->name('modifica');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -41,17 +41,17 @@
                     
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('privato')->user()->nome }}  {{ Auth::guard('laboratorio')->user()->cognome }}<span class="caret"></span>
+                            {{ Auth::guard('privato')->user()->nome }}  {{ Auth::guard('asl')->user()->cognome }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('laboratorio.logout') }}"
+                            <a class="dropdown-item" href="{{ route('asl.logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('laboratorio.logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('asl.logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
 
@@ -77,45 +77,37 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Imposta prezzi dei tamponi </h2>   
+                     <h2>Modifica Profilo </h2>   
                     </div>
                 </div>              
                  <!-- /. ROW  -->
                  <!-- /. ROW  -->
                 
-                
+                 
   
-                <div class="input-group">
-                    <h5>Tampone Rapido</h5>
+                  <div class="input-group">
+                    <h5>Provincia</h5>
                     <input type="text" class="form-control" placeholder="" />
                 </div>
                 
                 
                 
                 <div class="input-group">
-                     <h5>Tampone Molecolare</h5>
+                     <h5>Mail</h5>
                     <input type="text" class="form-control" placeholder="" />
                 </div>
             
-                
-                
                 <div class="input-group">
-                    <h5>Tampone Sierologico</h5>
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
+                    <h5>Codice Privato</h5>
+                   <input type="text" class="form-control" placeholder="" />
+               </div>
                 
                 
-                <div class="input-group">
-                    <h5>Tampone Antigenico</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
             
                 
-                <br><button type=”submit”> Salva Modifiche </button> 
+                <br><button type=”submit”> Salva Modifiche </button>
                         
-                
+            
 
                  <!-- /. ROW  -->           
     </div>

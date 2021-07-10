@@ -85,50 +85,46 @@
                        </div>
                 </div>              
                  <!-- /. ROW  -->
-                 <!-- /. ROW  -->
-                
-
-<div class="input-group">
-  
+                 <!-- /. ROW  --> 
     
-    <h5>Codice Fiscale</h5>
+    
     <div class="input-group">
-          
+        <h5>Codice Fiscale</h5>
         <input type="text" class="form-control" placeholder="" />
     </div>
     
     
-    <h5>Cognome</h5>
+    
     <div class="input-group">
-               
+         <h5>Cognome</h5>
         <input type="text" class="form-control" placeholder="" />
     </div>
 
     
-    <h5>Nome</h5>
+    
     <div class="input-group">
-        
+        <h5>Nome</h5>
         <input type="text" class="form-control" placeholder="" />
     </div>
 
     
-    <h5>Mail</h5>
+    
     <div class="input-group">
-           
+        <h5>Mail</h5>  
         <input type="text" class="form-control" placeholder="" />
     </div>
 
     
-    <h5>Telefono</h5>
+    
     <div class="input-group">
-           
+        <h5>Telefono</h5>  
         <input type="text" class="form-control" placeholder="" />
     </div>
 
     
-    <h5>Luogo Di Nascita</h5>
+    
     <div class="input-group">
-           
+        <h5>Luogo Di Nascita</h5>  
         <input type="text" class="form-control" placeholder="" />
     </div>
 
@@ -140,14 +136,15 @@
     </div>
     
     
-    <h5>Residenza</h5>
+    
     <div class="input-group">
-           
+        <h5>Residenza</h5>   
         <input type="text" class="form-control" placeholder="" />
     </div>
 
-    <h5>Nazione</h5>
+    
     <div class="input-group">
+        <h5>Nazione</h5>
         <select name="nazione" type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ old('nazione') }}" required autocomplete="nazione" autofocus>
             <option value="AF">Afghanistan</option>
             <option value="AL">Albania</option>
@@ -400,23 +397,23 @@
     </div>
 
 
-    <h5>Città</h5>
+    
     <div class="input-group">
-           
+        <h5>Città</h5>  
         <input type="text" class="form-control" placeholder="" />
     </div>
 
     
-    <h5>Provincia</h5>
+    
     <div class="input-group">
-           
+        <h5>Provincia</h5>  
         <input type="text" class="form-control" placeholder="" />
     </div>
 
     
-    <h5>CAP</h5>
+    
     <div class="input-group">
-           
+        <h5>CAP</h5>  
         <input type="text" class="form-control" placeholder="" />
     </div>
 
