@@ -19,7 +19,7 @@ class Azienda extends Authenticatable
      */
     protected $fillable = [
         'nome', 'cognome', 'codicefiscale', 
-        'datanascita', 'nazionalita', 'luogonascita',
+        'datanascita', 'luogonascita',
         'residenza', 'citta', 'provincia',
         'cap', 'telefono','ragionesociale','partitaiva',
         'ruoloaziendale','cittaazienda','indirizzoazienda',
