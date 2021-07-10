@@ -15,14 +15,14 @@ class CreateAslsTable extends Migration
     {
         Schema::create('asls', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('codasl')->unique();
+            $table->string('codprivato')->unique();
             $table->string('provincia',3)->unique();
             $table->string('email');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->primary(array('id','codasl','provincia'));
+            $table->primary(array('id','codprivato','provincia'));
 
         });
         DB::statement('ALTER TABLE asls MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
