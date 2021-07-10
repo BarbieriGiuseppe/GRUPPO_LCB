@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
-Route::post('/', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@prenotazione')->name('prenotazione');
+Route::get('/', 'HomeController@index')->name('home');
+Route::post('/', 'HomeController@prenotazione')->name('prenotazione');
 Route::post('/', 'HomeController@modifica')->name('modifica');
 //Route::post('/', 'HomeController@listalab')->name('listalab');
 
