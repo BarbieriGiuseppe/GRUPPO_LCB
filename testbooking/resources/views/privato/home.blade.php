@@ -65,10 +65,11 @@
                     </li>
                    
 
-                    <li>
+                    <li class="active-link">
                         <a href="prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
-                    <li>
+
+                    <li class="active-link">
                         <a href="modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
                     </li>
        

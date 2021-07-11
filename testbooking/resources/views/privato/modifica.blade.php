@@ -56,15 +56,16 @@
                             </form>
 
                     <li class="active-link">
-                        <a href="privatoindex.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
+                        <a href="home" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
                     </li>
                    
 
-                    <li>
-                        <a href="privatoprenotazione.html"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                    <li class="active-link">
+                        <a href="prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
-                    <li>
-                        <a href="privato/modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
+
+                    <li class="active-link">
+                        <a href="modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
                     </li>
 
                     
