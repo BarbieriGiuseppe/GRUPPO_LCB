@@ -18,8 +18,8 @@ class Asl extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'codasl', 
-        'provincia','email','password'
+        'provincia','codprivato', 
+        'email','password'
     ];
 
     /**

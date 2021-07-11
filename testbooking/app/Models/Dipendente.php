@@ -19,10 +19,10 @@ class Privato extends Authenticatable
      */
     protected $fillable = [
             'id','codicefiscaledipendente','cognome',
-           'nome', 'email','telefono','luogonascita',
+           'nome','telefono','luogonascita',
            'datanascita' , 'residenza',
-           'nazione','citta','provincia','cap',
-           'emaildatore'
+           'citta','provincia','cap','nazione',
+           'email','emaildatore',
     ];
 
 }

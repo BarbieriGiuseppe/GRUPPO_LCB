@@ -18,11 +18,11 @@ class Privato extends Authenticatable
      * @var array
      */
     protected $fillable = [
-            'id','codicefiscaledipaziente','cognome',
-           'nome', 'email','telefono','luogonascita',
-           'datanascita' , 'residenza',
-           'nazione','citta','provincia','cap',
-           'emailmedico'
+        'id','codicefiscalepaziente','cognome',
+        'nome','telefono','luogonascita',
+        'datanascita' , 'residenza',
+        'citta','provincia','cap','nazione',
+        'email','emailmedico',
     ];
 
 }

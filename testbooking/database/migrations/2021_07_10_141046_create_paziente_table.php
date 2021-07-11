@@ -18,15 +18,15 @@ class CreatePazienteTable extends Migration
             $table->string('codicefiscalepaziente',16)->unique();
             $table->string('cognome',20);
             $table->string('nome',20);
-            $table->string('email')->unique();
             $table->string('telefono',15);
             $table->string('luogonascita',20);
             $table->date('datanascita');  
-            $table->string('residenza',40)->nullable();
-            $table->string('nazione',40)->nullable();
+            $table->string('residenza',40)->nullable();         
             $table->string('citta',20);
             $table->string('provincia',3);
             $table->string('cap',5);
+            $table->string('nazione',40)->nullable();
+            $table->string('email')->unique();
             $table->string('emailmedico')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
@@ -35,7 +35,7 @@ class CreatePazienteTable extends Migration
             $table->foreign('emailmedico')->references('email')->on('medicos');
 
         });
-        DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE paziente MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

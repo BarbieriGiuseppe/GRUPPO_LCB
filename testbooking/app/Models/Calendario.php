@@ -18,9 +18,8 @@ class Privato extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','codicefiscaledipendente','codicelabpubblico',
-        'emaildatore','datatampone','tipologia',
-        'pagato','esito'
+            'id','codicelabpubblico','dataora',
+            'occupata'
     ];
 
 }

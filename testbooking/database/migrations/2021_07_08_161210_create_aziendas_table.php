@@ -15,21 +15,21 @@ class CreateAziendasTable extends Migration
     {
         Schema::create('aziendas', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('nome',20);
-            $table->string('cognome',20);
             $table->string('codicefiscale',16)->unique();
+            $table->string('cognome',20);
+            $table->string('nome',20);
+            $table->string('telefono',15);
             $table->date('datanascita');
             $table->string('luogonascita',20);
             $table->string('residenza',40)->nullable();
             $table->string('citta',20);
             $table->string('provincia',3);
             $table->string('cap',5);
-            $table->string('telefono',15);
+            $table->string('nazione',40);
             $table->string('ragionesociale',40);
             $table->string('partitaiva',11);
-            $table->string('ruoloaziendale',40);
-            $table->string('cittaazienda',40);
             $table->string('indirizzoazienda',40);
+            $table->string('cittaazienda',40);
             $table->string('provinciaazienda',40);
             $table->string('email')->unique();
             $table->string('password');

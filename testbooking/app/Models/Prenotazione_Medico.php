@@ -20,7 +20,7 @@ class Privato extends Authenticatable
     protected $fillable = [
         'id','codicefiscalepaziente','codicelabpubblico',
         'emailmedico','datatampone','tipologia',
-        'esito','pagato'
+        'pagato','esito'
     ];
 
 }

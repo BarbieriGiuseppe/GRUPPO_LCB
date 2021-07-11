@@ -16,16 +16,17 @@ class CreatePrivatosTable extends Migration
         Schema::create('privatos', function (Blueprint $table) {
 
             $table->integer('id')->unique();
-            $table->string('nome',20);
-            $table->string('cognome',20);
             $table->string('codicefiscale',16)->unique();
+            $table->string('cognome',20);
+            $table->string('nome',20);
+            $table->string('telefono',15);
             $table->date('datanascita');
             $table->string('luogonascita',20);
             $table->string('residenza',40)->nullable();
             $table->string('citta',20);
             $table->string('provincia',3);
             $table->string('cap',5);
-            $table->string('telefono',15);
+            $table->string('nazione',40)->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();

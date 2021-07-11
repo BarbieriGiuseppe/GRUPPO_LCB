@@ -18,11 +18,11 @@ class Azienda extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nome', 'cognome', 'codicefiscale', 
+        'codicefiscale','cognome','nome', 'telefono',
         'datanascita', 'luogonascita',
         'residenza', 'citta', 'provincia',
-        'cap', 'telefono','ragionesociale','partitaiva',
-        'ruoloaziendale','cittaazienda','indirizzoazienda',
+        'cap','nazione','ragionesociale','partitaiva',
+        'indirizzoazienda','cittaazienda',
         'provinciaazienda', 'email','password'    
     ];
 

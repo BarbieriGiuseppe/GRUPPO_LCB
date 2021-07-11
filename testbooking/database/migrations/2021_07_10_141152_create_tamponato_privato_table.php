@@ -18,15 +18,15 @@ class CreateTamponatoPrivatoTable extends Migration
             $table->string('codicefiscaletamponato',16)->unique();
             $table->string('cognome',20);
             $table->string('nome',20);
-            $table->string('email')->unique();
             $table->string('telefono',15);
             $table->string('luogonascita',20);
             $table->date('datanascita');  
-            $table->string('residenza',40)->nullable();
-            $table->string('nazione',40)->nullable();
+            $table->string('residenza',40)->nullable();         
             $table->string('citta',20);
             $table->string('provincia',3);
             $table->string('cap',5);
+            $table->string('nazione',40)->nullable();
+            $table->string('email')->unique();
             $table->string('emailprivato')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
@@ -35,7 +35,7 @@ class CreateTamponatoPrivatoTable extends Migration
             $table->foreign('emailprivato')->references('email')->on('privatos');
 
         });
-        DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE tamponato_privato MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

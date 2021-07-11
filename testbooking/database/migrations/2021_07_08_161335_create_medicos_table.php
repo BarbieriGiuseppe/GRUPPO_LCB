@@ -15,17 +15,18 @@ class CreateMedicosTable extends Migration
     {
         Schema::create('medicos', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('nome',20);
-            $table->string('cognome',20);
             $table->string('codicefiscale',16)->unique();
+            $table->string('cognome',20);
+            $table->string('nome',20);
+            $table->string('telefono',15);
             $table->date('datanascita');
             $table->string('luogonascita',20);
             $table->string('residenza',40)->nullable();
             $table->string('citta',20);
             $table->string('provincia',3);
             $table->string('cap',5);
-            $table->string('telefono',15);
-            $table->string('studiomedico',20);
+            $table->string('nazione');
+            $table->string('nomestudiomedico',20);
             $table->string('partitaiva',20);
             $table->string('cittastudio',20);
             $table->string('indirizzostudio',20);

@@ -15,8 +15,8 @@ class CreateAslsTable extends Migration
     {
         Schema::create('asls', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('codprivato')->unique();
             $table->string('provincia',3)->unique();
+            $table->string('codprivato')->unique(); 
             $table->string('email');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();

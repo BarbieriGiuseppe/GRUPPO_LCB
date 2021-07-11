@@ -20,8 +20,8 @@ class CreatePrenotazioneMedicoTable extends Migration
             $table->string('emailmedico')->unique();
             $table->timestamp('datatampone');
             $table->string('tipologia');
-            $table->string('esito');
             $table->boolean('pagato');
+            $table->string('esito');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

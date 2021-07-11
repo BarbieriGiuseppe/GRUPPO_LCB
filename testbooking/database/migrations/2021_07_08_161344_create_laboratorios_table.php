@@ -15,17 +15,17 @@ class CreateLaboratoriosTable extends Migration
     {
         Schema::create('laboratorios', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('nomelaboratorio',20);
             $table->string('codicelabpubblico')->unique();
             $table->string('codicelabprivato')->unique();
-            $table->string('citta',40);
+            $table->string('nomelaboratorio',20);
+            $table->string('telefono',20);
             $table->string('indirizzo',40);
+            $table->string('citta',40);
             $table->string('provincia',3);
+            $table->string('cap',5);
             $table->string('email');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
             $table->primary(array('id','codicelabpubblico','codicelabprivato'));
             $table->foreign('provincia')->references('provincia')->on('asls');
 
