@@ -82,7 +82,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-lg-12">
-                     <h2>Area Riservata Medico</h2>   
+                     <h2>Dashboard Medico</h2>   
                     </div>
                 </div>              
                 
