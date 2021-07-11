@@ -143,7 +143,27 @@
         <input type="text" class="form-control" placeholder="" />
     </div>
 
+
     
+    <div class="input-group">
+        <h5>Città</h5>  
+        <input type="text" class="form-control" placeholder="" />
+    </div>
+
+    
+    
+    <div class="input-group">
+        <h5>Provincia</h5>  
+        <input type="text" class="form-control" placeholder="" />
+    </div>
+
+    
+    
+    <div class="input-group">
+        <h5>CAP</h5>  
+        <input type="text" class="form-control" placeholder="" />
+    </div>
+
     <div class="input-group">
         <h5>Nazione</h5>
         <select name="nazione" type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ old('nazione') }}" required autocomplete="nazione" autofocus>
@@ -395,27 +415,6 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-    </div>
-
-
-    
-    <div class="input-group">
-        <h5>Città</h5>  
-        <input type="text" class="form-control" placeholder="" />
-    </div>
-
-    
-    
-    <div class="input-group">
-        <h5>Provincia</h5>  
-        <input type="text" class="form-control" placeholder="" />
-    </div>
-
-    
-    
-    <div class="input-group">
-        <h5>CAP</h5>  
-        <input type="text" class="form-control" placeholder="" />
     </div>
 
     <br><button type=”submit”> Prenota il tampone </button>
