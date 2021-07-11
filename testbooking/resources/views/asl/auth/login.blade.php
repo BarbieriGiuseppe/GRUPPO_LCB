@@ -30,7 +30,6 @@
 
 </head>
 <body>
-	<h1>Create Post</h1>
 
 @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -62,12 +61,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Mail') }}</label>
+                            <label for="codprivato" class="col-md-4 col-form-label text-md-right">{{ __('Codice Privato') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="codprivato" type="codprivato" class="form-control @error('codprivato') is-invalid @enderror" name="codprivato" value="{{ old('codprivato') }}" required autocomplete="codprivato" autofocus>
 
-                                @error('email')
+                                @error('codprivato')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

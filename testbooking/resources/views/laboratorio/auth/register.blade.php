@@ -58,7 +58,15 @@
 					</span>
 
 			
-
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Codice Laboratorio Pubblico" style = "position:relative; left:-10px; top:-20px; ">
+						<input id="codicelabpubblico" type="text" class="input100 @error('codicelabpubblico') is-invalid @enderror" name="codicelabpubblico" value="{{ old('codicelabpubblico') }}" required autocomplete="codicelabpubblico" autofocus>
+						<span class="focus-input100" data-placeholder="Codice Laboratorio Pubblico"></span>
+						@error('codicelabpubblico')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nome Laboratorio" style = "position:relative; left:-10px; top:-20px; ">
 						<input id="nomelaboratorio" type="text" class="input100 @error('nomelaboratorio') is-invalid @enderror" name="nomelaboratorio" value="{{ old('nomelaboratorio') }}" required autocomplete="nomelaboratorio" autofocus>
@@ -70,10 +78,20 @@
 									@enderror
 					</div>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Codice Laboratorio Pubblico" style = "position:relative; left:-10px; top:-20px; ">
-						<input id="codicelabpubblico" type="text" class="input100 @error('codicelabpubblico') is-invalid @enderror" name="codicelabpubblico" value="{{ old('codicelabpubblico') }}" required autocomplete="codicelabpubblico" autofocus>
-						<span class="focus-input100" data-placeholder="Codice Laboratorio Pubblico"></span>
-						@error('codicelabpubblico')
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci il telefono" style = "position:relative; left:-10px; top:-40px; ">
+						<input id="telefono" type="text" class="input100 @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono" autofocus>
+						<span class="focus-input100" data-placeholder="Telefono"></span>
+						@error('telefono')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci indirizzo" style = "position:relative; left:-10px; top:-20px; ">
+						<input id="indirizzo" type="text" class="input100 @error('indirizzo') is-invalid @enderror" name="indirizzo" value="{{ old('indirizzo') }}" required autocomplete="indirizzo" autofocus>
+						<span class="focus-input100" data-placeholder="indirizzo"></span>
+						@error('indirizzo')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
@@ -91,20 +109,6 @@
 					</div>
 					
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci indirizzo" style = "position:relative; left:-10px; top:-20px; ">
-						<input id="indirizzo" type="text" class="input100 @error('indirizzo') is-invalid @enderror" name="indirizzo" value="{{ old('indirizzo') }}" required autocomplete="indirizzo" autofocus>
-						<span class="focus-input100" data-placeholder="indirizzo"></span>
-						@error('indirizzo')
-										<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-										</span>
-									@enderror
-					</div>
-
-			
-
-					
-
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la provincia" style = "position:relative; left:-10px; top:-40px; ">
 						<input id="provincia" type="text" class="input100 @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
 						<span class="focus-input100" data-placeholder="Provincia"></span>
@@ -115,6 +119,16 @@
 									@enderror
 					</div>
 
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci il cap" style = "position:relative; left:-10px; top:-40px; ">
+						<input id="cap" type="text" class="input100 @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="cap" autofocus>
+						<span class="focus-input100" data-placeholder="CAP"></span>
+						@error('cap')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+					
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci E-mail" style = "position:relative; left:-10px; top:-80px; ">
 						<input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">

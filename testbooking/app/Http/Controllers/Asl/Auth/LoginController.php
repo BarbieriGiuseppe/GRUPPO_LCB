@@ -76,9 +76,23 @@ class LoginController extends Controller
         return $this->loggedOut($request) ?: redirect()->route('asl.home');
     }
 
-    public function codPrivato()
-{
-    return 'codprivato';
-    return Route::view('asl.home');
-}
+    public function login(Request $request)
+    {   
+        $input = $request->all();
+  
+        $this->validate($request, [
+            'codprivato' => 'required',
+            'password' => 'required',
+        ]);
+  
+        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'codprivato';
+        if(auth()->guard('asl')->attempt(array($fieldType => $input['codprivato'], 'password' => $input['password'])))
+        {
+            return redirect()->route('asl.home');
+        }else{
+            return redirect()->route('asl.login')
+                ->with('error','Email-Address And Password Are Wrong.');
+        }
+          
+    }
 }

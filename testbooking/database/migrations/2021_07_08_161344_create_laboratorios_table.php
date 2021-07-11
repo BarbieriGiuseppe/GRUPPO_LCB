@@ -26,6 +26,8 @@ class CreateLaboratoriosTable extends Migration
             $table->string('email');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
             $table->primary(array('id','codicelabpubblico','codicelabprivato'));
             $table->foreign('provincia')->references('provincia')->on('asls');
 
