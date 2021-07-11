@@ -19,7 +19,7 @@ class Laboratorio extends Authenticatable
      */
     protected $fillable = [
         'codicelabpubblico','codicelabprivato',
-        'nomelaboratorio','indirizzo','citta','provincia',
+        'nomelaboratorio','telefono','indirizzo','citta','provincia',
         'cap','email','password'
     ];
 

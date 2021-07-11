@@ -56,9 +56,11 @@ class RegisterController extends Controller
             'codicelabpubblico' => ['required', 'string', 'max:255'],
             'codicelabprivato' => ['string', 'max:255'],
             'nomelaboratorio' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255'],
             'indirizzo' => ['required', 'string', 'max:255'],
             'citta' => ['required', 'string', 'max:255'],
             'provincia' => ['required', 'string', 'max:255'],
+            'cap' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:laboratorios'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -78,9 +80,11 @@ class RegisterController extends Controller
             'codicelabpubblico' => $data['codicelabpubblico'],
             'codicelabprivato' => $data['codicelabprivato'] = Str::random(6),
             'nomelaboratorio' => $data['nomelaboratorio'],
+            'telefono' => $data['telefono'],
             'indirizzo' => $data['indirizzo'],
             'citta' => $data['citta'],
             'provincia' => $data['provincia'],
+            'cap' => $data['cap'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             
@@ -108,6 +112,15 @@ class RegisterController extends Controller
         return Auth::guard('laboratorio');
     }
 
+    public function sendMail(){
+        $email = $request->get('email');
+        Mail::to($email)->send(new WelcomeMail($data));
+ 
+         $userreg->save();
+ 
+        flash('User has been added!','success')->important();
+        return back();
+    }
 
 
 }

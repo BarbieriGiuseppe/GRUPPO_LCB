@@ -74,4 +74,31 @@ class LoginController extends Controller
 
         return $this->loggedOut($request) ?: redirect()->route('laboratorio.home');
     }
+
+    public function codiceLabPrivato()
+    {
+        return 'codicelabprivato';
+
+    }
+
+    public function login(Request $request)
+    {   
+        $input = $request->all();
+  
+        $this->validate($request, [
+            'codicelabprivato' => 'required',
+            'password' => 'required',
+        ]);
+  
+        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'codicelabprivato';
+        if(auth()->guard('laboratorio')->attempt(array($fieldType => $input['codicelabprivato'], 'password' => $input['password'])))
+        {
+            return redirect()->route('laboratorio.home');
+        }else{
+            return redirect()->route('laboratorio.login')
+                ->with('error','Email-Address And Password Are Wrong.');
+        }
+          
+    }
+
 }
