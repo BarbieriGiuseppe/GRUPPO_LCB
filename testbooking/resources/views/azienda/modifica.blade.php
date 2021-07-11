@@ -86,7 +86,7 @@
                 
                  <div class="input-group">
   
-                  <div class="input-group">
+                <div class="input-group">
                     <h5>Codice Fiscale</h5>
                     <input type="text" class="form-control" placeholder="" />
                 </div>
@@ -108,7 +108,7 @@
                 
                 
                 <div class="input-group">
-                    <h5>Mail</h5>  
+                    <h5>Email</h5>  
                     <input type="text" class="form-control" placeholder="" />
                 </div>
             
@@ -139,6 +139,28 @@
                     <input type="text" class="form-control" placeholder="" />
                 </div>
             
+                            
+            
+                
+                <div class="input-group">
+                    <h5>Città</h5>  
+                    <input type="text" class="form-control" placeholder="" />
+                </div>
+            
+                
+                
+                <div class="input-group" >
+                    <h5>Provincia</h5>  
+                    <input type="text" class="form-control" placeholder="" />
+                </div>
+            
+                
+                
+                <div class="input-group" >
+                    <h5>CAP</h5>  
+                    <input type="text" class="form-control" placeholder="" />
+                </div>
+
                 
                 <div class="input-group" >
                     <h5>Nazione</h5>
@@ -392,59 +414,32 @@
                                     </span>
                                 @enderror
                 </div>
-            
-            
-                
-                <div class="input-group">
-                    <h5>Città</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                
-                <div class="input-group" >
-                    <h5>Provincia</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                
-                <div class="input-group" >
-                    <h5>CAP</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
                 
                 <br><button type=”submit”> Salva Modifiche </button> &nbsp; <button type=”submit”> Elimina profilo </button>
                         
                 
                   
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
                     <h5>Ragione Sociale</h5>  
                     <input type="text" class="form-control" placeholder="" />
                 </div>
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
                     <h5>Partita Iva</h5>  
                     <input type="text" class="form-control" placeholder="" />
                 </div>
 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
-                    <h5>Ruolo Aziendale</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
                     <h5>Citta Azienda</h5>  
                     <input type="text" class="form-control" placeholder="" />
                 </div>
 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
                     <h5>Indirizzo Azienda</h5>  
                     <input type="text" class="form-control" placeholder="" />
                 </div>
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
                     <h5>Provincia Azienda</h5>  
                     <input type="text" class="form-control" placeholder="" />
                 </div>
