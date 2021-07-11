@@ -21,7 +21,27 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index() {
+    public function home() {
         return view('medico.home');
+    }
+
+
+     /**
+     * Show the Medico prenotazione.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function prenotazione() {
+        return view('medico.prenotazione');
+    }
+
+    
+    /**
+     * Show the Medico modifica.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function modifica() {
+        return view('medico.modifica');
     }
 }

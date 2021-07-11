@@ -45,7 +45,7 @@
                  
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('laboratorio')->guest() }}<span class="caret"></span>
+                            {{ Auth::guard('laboratorio')->user()->nome }}  {{ Auth::guard('laboratorio')->user()->cognome }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -60,15 +60,16 @@
                             </form>
 
                     <li class="active-link">
-                        <a href="privatoindex.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
+                        <a href="home" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
                     </li>
                    
 
-                    <li>
-                        <a href="privatoprenotazione.html"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                    <li class="active-link">
+                        <a href="prezzotampone"><i class="fa fa-table "></i>Prezzi Tamponi  <span class="badge"></span></a>
                     </li>
-                    <li>
-                        <a href="privatomodifica.html"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
+
+                    <li class="active-link">
+                        <a href="modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
                     </li>
        
                     

@@ -21,7 +21,26 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index() {
+    public function home() {
         return view('laboratorio.home');
+    }
+
+     /**
+     * Show the Laboratorio prenotazione.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function prezzotampone() {
+        return view('laboratorio.prezzotampone');
+    }
+
+    
+    /**
+     * Show the Laboratorio modifica.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function modifica() {
+        return view('laboratorio.modifica');
     }
 }

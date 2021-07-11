@@ -59,15 +59,16 @@
 					</div>
 
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nome" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="nome" type="text" class="input100 @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus>
-						<span class="focus-input100" data-placeholder="Nome"></span>
-						@error('nome')
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci il Codice Fiscale" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="codicefiscale" type="text" class="input100 @error('codicefiscale') is-invalid @enderror" name="codicefiscale" value="{{ old('codicefiscale') }}" required autocomplete="codicefiscale" autofocus>
+						<span class="focus-input100" data-placeholder="Codice Fiscale"></span>
+						@error('codicefiscale')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
 									@enderror
 					</div>
+
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Cognome" style = "position:relative; left:-180px; top:-10px; ">
 						<input id="cognome" type="text" class="input100 @error('cognome') is-invalid @enderror" name="cognome" value="{{ old('cognome') }}" required autocomplete="cognome" autofocus>
@@ -79,10 +80,10 @@
 									@enderror
 					</div>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci il Codice Fiscale" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="codicefiscale" type="text" class="input100 @error('codicefiscale') is-invalid @enderror" name="codicefiscale" value="{{ old('codicefiscale') }}" required autocomplete="codicefiscale" autofocus>
-						<span class="focus-input100" data-placeholder="Codice Fiscale"></span>
-						@error('codicefiscale')
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Nome" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="nome" type="text" class="input100 @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus>
+						<span class="focus-input100" data-placeholder="Nome"></span>
+						@error('nome')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
@@ -119,9 +120,49 @@
 									@enderror
 					</div>
 
-					
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la residenza" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="residenza" type="text" class="input100 @error('residenza') is-invalid @enderror" name="residenza" value="{{ old('residenza') }}" required autocomplete="luogonascita" autofocus>
+						<span class="focus-input100" data-placeholder="Residenza(indirizzo)"></span>
+						@error('residenza')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la citta" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="citta" type="text" class="input100 @error('citta') is-invalid @enderror" name="citta" value="{{ old('citta') }}" required autocomplete="citta" autofocus>
+						<span class="focus-input100" data-placeholder="Città"></span>
+						@error('citta')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la provincia" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="provincia" type="text" class="input100 @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
+						<span class="focus-input100" data-placeholder="Provincia"></span>
+						@error('provincia')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci il cap" style = "position:relative; left:-180px; top:-10px; ">
+						<input id="cap" type="text" class="input100 @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="cap" autofocus>
+						<span class="focus-input100" data-placeholder="CAP"></span>
+						@error('cap')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Scegli la nazione "style = "position:relative; left:-180px; top:-10px; ">
-						<select name="nazionalita" type="text" class="form-control @error('nazionalita') is-invalid @enderror" name="nazionalita" value="{{ old('nazionalita') }}" required autocomplete="nazionalita" autofocus>
+						<select name="nazione" type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ old('nazione') }}" required autocomplete="nazione" autofocus>
 							<option value="AF">Afghanistan</option>
 							<option value="AL">Albania</option>
 							<option value="DZ">Algeria</option>
@@ -363,65 +404,23 @@
 							<option value="ZM">Zambia</option>
 							<option value="ZW">Zimbabwe</option>
 						  </select>
-						<span class="focus-input100" data-placeholder="Nazionalità" style = "position:relative; left:-145px; top:-40px; "></span>
+						<span class="focus-input100" data-placeholder="Nazione" style = "position:relative; left:-145px; top:-40px; "></span>
 						
-						@error('nazionalita')
+						@error('nazione')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
 									@enderror
 					</div>
-
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la residenza" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="residenza" type="text" class="input100 @error('residenza') is-invalid @enderror" name="residenza" value="{{ old('residenza') }}" required autocomplete="luogonascita" autofocus>
-						<span class="focus-input100" data-placeholder="Residenza(indirizzo)"></span>
-						@error('residenza')
-										<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-										</span>
-									@enderror
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la citta" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="citta" type="text" class="input100 @error('citta') is-invalid @enderror" name="citta" value="{{ old('citta') }}" required autocomplete="citta" autofocus>
-						<span class="focus-input100" data-placeholder="Città"></span>
-						@error('citta')
-										<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-										</span>
-									@enderror
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la provincia" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="provincia" type="text" class="input100 @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
-						<span class="focus-input100" data-placeholder="Provincia"></span>
-						@error('provincia')
-										<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-										</span>
-									@enderror
-					</div>
-
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci il cap" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="cap" type="text" class="input100 @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="cap" autofocus>
-						<span class="focus-input100" data-placeholder="CAP"></span>
-						@error('cap')
-										<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-										</span>
-									@enderror
-					</div>
-
-
 
 					<div style = "position:relative; left:260px; top:-1510px; ">
 						<h5><b>Dati dello studio medico</b></h5>
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-245 m-b-45" data-validate = "Inserisci Nome Studio Medico" style = "position:relative; left:260px; top:-1735px; ">
-						<input id="studiomedico" type="text" class="input100 @error('studiomedico') is-invalid @enderror" name="studiomedico" value="{{ old('studiomedico') }}" required autocomplete="studiomedico" autofocus>
+						<input id="nomestudiomedico" type="text" class="input100 @error('nomestudiomedico') is-invalid @enderror" name="nomestudiomedico" value="{{ old('nomestudiomedico') }}" required autocomplete="nomestudiomedico" autofocus>
 						<span class="focus-input100" data-placeholder="Nome Studio Medico"></span>
-						@error('studiomedico')
+						@error('nomestudiomedico')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
@@ -438,6 +437,16 @@
 									@enderror
 					</div>
 
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Indirizzo" style = "position:relative; left:260px; top:-1735px; ">
+						<input id="indirizzostudio" type="text" class="input100 @error('indirizzostudio') is-invalid @enderror" name="indirizzostudio" value="{{ old('indirizzostudio') }}" required autocomplete="indirizzostudio" autofocus>
+						<span class="focus-input100" data-placeholder="Indirizzo"></span>
+						@error('indirizzostudio')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+					</div>
+					
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Città" style = "position:relative; left:260px; top:-1735px; ">
 						<input id="cittastudio" type="text" class="input100 @error('cittastudio') is-invalid @enderror" name="cittastudio" value="{{ old('cittastudio') }}" required autocomplete="cittastudio" autofocus>
 						<span class="focus-input100" data-placeholder="Città"></span>
@@ -448,15 +457,6 @@
 									@enderror
 					</div>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Indirizzo" style = "position:relative; left:260px; top:-1735px; ">
-						<input id="indirizzostudio" type="text" class="input100 @error('indirizzostudio') is-invalid @enderror" name="indirizzostudio" value="{{ old('indirizzostudio') }}" required autocomplete="indirizzostudio" autofocus>
-						<span class="focus-input100" data-placeholder="Indirizzo"></span>
-						@error('indirizzostudio')
-										<span class="invalid-feedback" role="alert">
-											<strong>{{ $message }}</strong>
-										</span>
-									@enderror
-					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci Provincia" style = "position:relative; left:260px; top:-1735px; ">
 						<input id="provinciastudio" type="text" class="input100 @error('provinciastudio') is-invalid @enderror" name="provinciastudio" value="{{ old('provinciastudio') }}" required autocomplete="provinciastudio" autofocus>

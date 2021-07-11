@@ -51,19 +51,27 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nome' => ['required', 'string', 'max:255'],
-            'cognome' => ['required', 'string', 'max:255'],
+
+            
             'codicefiscale' => ['required', 'string', 'max:16'],
+            'cognome' => ['required', 'string', 'max:255'],
+            'nome' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255'],
             'datanascita' => ['required', 'date', 'max:255'],
-            'nazionalita' => ['required', 'string', 'max:255'],
             'luogonascita' => ['required', 'string', 'max:255'],
             'residenza' => ['required', 'string', 'max:255'],
             'citta' => ['required', 'string', 'max:255'],
             'provincia' => ['required', 'string', 'max:255'],
             'cap' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:aziendas'],
+            'nazione' => ['required', 'string', 'max:255'],
+            'ragionesociale' => ['required', 'string', 'max:255'],
+            'partitaiva' => ['required', 'string', 'max:255'],
+            'indirizzoazienda' => ['required', 'string', 'max:255'],
+            'cittaazienda' => ['required', 'string', 'max:255'],
+            'provinciaazienda' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:privatos'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
         ]);
     }
 
@@ -77,25 +85,27 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Azienda::create([
-            'nome' => $data['nome'],
-            'cognome' => $data['cognome'],
+
+            
             'codicefiscale' => $data['codicefiscale'],
+            'cognome' => $data['cognome'],
+            'nome' => $data['nome'],
+            'telefono' => $data['telefono'],
             'datanascita' => $data['datanascita'],
-            'nazionalita' => $data['nazionalita'],
             'luogonascita' => $data['luogonascita'],
             'residenza' => $data['residenza'],
             'citta' => $data['citta'],
             'provincia' => $data['provincia'],
             'cap' => $data['cap'],
-            'telefono' => $data['telefono'],
+            'nazione' => $data['nazione'],
             'ragionesociale' => $data['ragionesociale'],
-            'partitaiva'=>$data['partitaiva'],
-            'ruoloaziendale'=>$data['ruoloaziendale'],
-            'cittaazienda'=>$data['cittaazienda'],
-            'indirizzoazienda'=>$data['indirizzoazienda'],
-            'provinciaazienda'=>$data['provinciaazienda'],
+            'partitaiva' => $data['partitaiva'],
+            'cittaazienda' => $data['cittaazienda'],
+            'indirizzoazienda' => $data['indirizzoazienda'],
+            'provinciaazienda' => $data['provinciaazienda'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+
         ]);
     }
 

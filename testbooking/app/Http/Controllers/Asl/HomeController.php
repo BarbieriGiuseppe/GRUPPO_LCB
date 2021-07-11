@@ -24,7 +24,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index() {
+    public function home() {
         return view('asl.home');
+    }
+    
+    /**
+     * Show the Asl modifica.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function modifica() {
+        return view('asl.modifica');
     }
 }

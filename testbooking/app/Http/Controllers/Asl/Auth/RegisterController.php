@@ -51,7 +51,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'codasl' => ['required', 'string', 'max:255'],
+            'codprivato' => ['required', 'string', 'max:255'],
             'provincia' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:asls'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -68,7 +68,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Asl::create([
-            'codasl' => $data['codasl'],
+            'codprivato' => $data['codprivato'],
             'provincia' => $data['provincia'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

@@ -52,12 +52,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nomelaboratorio' => ['required', 'string', 'max:255'],
+
             'codicelabpubblico' => ['required', 'string', 'max:255'],
             'codicelabprivato' => ['string', 'max:255'],
-            'codiceasl' => ['null'],
-            'citta' => ['required', 'string', 'max:255'],
+            'nomelaboratorio' => ['required', 'string', 'max:255'],
             'indirizzo' => ['required', 'string', 'max:255'],
+            'citta' => ['required', 'string', 'max:255'],
             'provincia' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:laboratorios'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -74,11 +74,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Laboratorio::create([
-            'nomelaboratorio' => $data['nomelaboratorio'],
+
             'codicelabpubblico' => $data['codicelabpubblico'],
             'codicelabprivato' => $data['codicelabprivato'] = Str::random(6),
-            'citta' => $data['citta'],
+            'nomelaboratorio' => $data['nomelaboratorio'],
             'indirizzo' => $data['indirizzo'],
+            'citta' => $data['citta'],
             'provincia' => $data['provincia'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
