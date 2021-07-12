@@ -26,7 +26,7 @@ class CreatePrenotazionePrivatoTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->primary('id');
-            $table->foreign('codicefiscaletamponato')->references('codicefiscale')->on('privatos');
+            $table->foreign('codicefiscaletamponato')->references('codicefiscaletamponato')->on('Tamponato_Privato');
             $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
             $table->foreign('emailprivato')->references('email')->on('privatos');
         });

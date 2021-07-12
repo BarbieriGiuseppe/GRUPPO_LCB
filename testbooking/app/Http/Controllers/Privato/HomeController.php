@@ -3,6 +3,11 @@
 namespace App\Http\Controllers\Privato;
 
 use App\Http\Controllers\Controller;
+use App\Models\Privato;
+use App\Controllers\Privato\Auth\LoginController;
+use Illuminate\Support\Facades\DB;
+use app\Http\Middleware\RedirectIfPrivato;
+use app\Http\Middleware\RedirectIfNotPrivato;
 
 class HomeController extends Controller
 {
@@ -43,8 +48,14 @@ class HomeController extends Controller
     public function modifica() {
         return view('privato.modifica');
     }
-
+//
+    public function dbOperations()
+    {
+        $data= DB::select('select * from prenotazione_privato'); //Attenzione!--> where Privato is unique
+        return view('privato/home',['data'=>$data]);
+    }
     
+  
   
     
 }

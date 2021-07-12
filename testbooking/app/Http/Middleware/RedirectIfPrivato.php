@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use app\Http\Controllers\Privato\HomeController;
+use App\Controllers\Privato\Auth\LoginController;
+
 
 class RedirectIfPrivato
 {

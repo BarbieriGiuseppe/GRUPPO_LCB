@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Privato\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use app\Http\Controllers\Privato\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 

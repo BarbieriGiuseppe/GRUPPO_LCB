@@ -15,7 +15,6 @@
 </head>
 <body>
      
-           
           
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
@@ -56,7 +55,7 @@
                             </a>
 
                             <form id="logout-form" action="{{ route('privato.logout') }}" method="POST" style="display: none;">
-                                @csrf
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </form>
 
                     <li class="active-link">
@@ -85,58 +84,54 @@
                     <div class="col-lg-12">
                      <h2>Dashboard Privato</h2>   
                     </div>
-                </div>              
-                
+                </div> 
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nome</th>
-                                    <th>Cognome</th>
-                                    <th>Data</th>
-                                    <th>Ora</th>
-                                    <th>Laboratorio</th>
-                                    <th>Esito</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>dffd</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
+                        
+                        
+                        <table border="1" style="width:100%">
+                                                       <tr>
+                                                           <th>Codice Fiscale </th>
+                                                           <th>Codice Lab Pubblico </th>
+                                                           <th>Data Tampone </th>
+                                                           <th>Tipologia </th>
+                                                           <th>Pagato </th>
+                                                           <th>Esito</th>
+                                                          
+                                                           <td></td>
+                                                       </tr>
+                               
+                                              
+                       @foreach ($data as $prenotazione_privato)
+                       
+                       <tr>
+                       
+                       
+                        <td>{{ $prenotazione_privato->codicefiscaletamponato }}</td>
+                       
+                        <td>{{ $prenotazione_privato->codicelabpubblico }}</td>
+                        
+                        <td>{{ $prenotazione_privato->datatampone }}</td> 
+
+                        <td>{{ $prenotazione_privato->tipologia }}</td>     
+                        
+                        <td>{{ $prenotazione_privato->pagato }}</td>
+
+                        <td>{{ $prenotazione_privato->esito }}</td>
+                       
+                        <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
+                       
+                        <td></td>
+                       
+                    </tr>
+                    
+                    @endforeach
+                            
+                    
+                </table>             
+                
+               
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
