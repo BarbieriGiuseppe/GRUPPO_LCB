@@ -90,7 +90,7 @@
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
                         
                         
-                        <table border="1" style="width:100%">
+                        <table id="table" border="1" style="width:100%">
                                                        <tr>
                                                            <th>Codice Fiscale </th>
                                                            <th>Codice Lab Pubblico </th>
@@ -120,8 +120,19 @@
 
                         <td>{{ $prenotazione_privato->esito }}</td>
                        
-                        <td> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /></td>
-                       
+                        
+                        <td>
+                            
+                            
+                               
+                               
+                                
+                            <a href="click_delete/{{$prenotazione_privato->id}}" >  <button id="deleteicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /> </button></a> 
+                        
+                        
+                        
+                        </td>
+
                         <td></td>
                        
                     </tr>
@@ -156,9 +167,11 @@
     <script src="<?php echo url('/areariservatalayout'); ?>/js/bootstrap.min.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="<?php echo url('/areariservatalayout'); ?>/js/custom.js"></script>
+ 
     
-   
 </body>
+
+
 </html>
 
 

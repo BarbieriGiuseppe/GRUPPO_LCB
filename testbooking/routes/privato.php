@@ -2,13 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\Privato\HomeController;
+use app\routes\web;
 
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
-Route::get('/home', 'HomeController@dbOperations')->name('tabella');
+Route::get('/home', 'HomeController@mostraPrenotazioni')->name('tabella');
+//Route::get('cancella-prenotazione/{id}', 'HomeController@cancella')->name('cancella');
+Route::get('/click_delete/{id}','HomeController@cancella');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

@@ -30,3 +30,5 @@ Route::get('/lapoli', function () {
 Route::get('/home',function() {
     return view ('privato.home');
 });
+
+

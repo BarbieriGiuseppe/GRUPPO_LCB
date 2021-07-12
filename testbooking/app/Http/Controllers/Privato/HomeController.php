@@ -49,10 +49,16 @@ class HomeController extends Controller
         return view('privato.modifica');
     }
 //
-    public function dbOperations()
+    public function mostraPrenotazioni()
     {
         $data= DB::select('select * from prenotazione_privato'); //Attenzione!--> where Privato is unique
         return view('privato/home',['data'=>$data]);
+    }
+
+    public  function cancella($id)
+    {
+        DB::delete('delete from prenotazione_privato where id = ?', [$id]);
+        return redirect('privato/home');
     }
     
   
