@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Str;
+use App\Mail\CodicePrivatoMail;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Laboratorio\Auth\Notification;
 
 class RegisterController extends Controller
 {
@@ -30,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/laboratorio';
+    protected $redirectTo = '/laboratorio/home';
 
     /**
      * Create a new controller instance.
@@ -75,7 +78,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Laboratorio::create([
+         $user = Laboratorio::create([
 
             'codicelabpubblico' => $data['codicelabpubblico'],
             'codicelabprivato' => $data['codicelabprivato'] = Str::random(6),
@@ -89,7 +92,15 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             
         ]);
-       
+
+        $data['email'] = $user->email;
+        Mail::send('laboratorio.emails.codiceprivato', $data, function($message) use ($data)
+        {
+            $message->from('infogruppolcb@gmail.com', "TestBooking");
+            $message->subject("Codice privato per l'area riservata");
+            $message->to($data['email']);
+        });
+        return $user;
     }
 
     /**
@@ -100,6 +111,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         return view('laboratorio.auth.register');
+        
     }
 
     /**
@@ -112,15 +124,6 @@ class RegisterController extends Controller
         return Auth::guard('laboratorio');
     }
 
-    public function sendMail(){
-        $email = $request->get('email');
-        Mail::to($email)->send(new WelcomeMail($data));
- 
-         $userreg->save();
- 
-        flash('User has been added!','success')->important();
-        return back();
-    }
 
 
 }
