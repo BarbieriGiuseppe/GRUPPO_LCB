@@ -27,8 +27,8 @@ Route::get('/lapoli', function () {
     return view('infolab.labpoli');
 });
 
-Route::get('/home',function() {
+/*Route::get('/home',function() {
     return view ('privato.home');
-});
+});*/
 
 

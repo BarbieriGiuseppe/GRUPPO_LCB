@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/privato';
+    protected $redirectTo = '/privato/home';
 
     /**
      * Create a new controller instance.
@@ -73,6 +73,6 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect()->route('privato.home');
+        return $this->loggedOut($request) ?: redirect()->back();
     }
 }
