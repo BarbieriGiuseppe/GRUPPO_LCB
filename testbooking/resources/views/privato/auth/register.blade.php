@@ -145,6 +145,8 @@
 							<option value="TA">Taranto</option>
 							<option value="FG">Foggia</option>
 							<option value="BT">Barletta-Andria-Trani</option>
+							<option value="BR">Brindisi</option>
+							<option value="LE">Lecce</option>
 						  </select>
 						<span class="focus-input100" data-placeholder="Provincia" style = "position:relative; left:-145px; top:-40px; "></span>
 						
