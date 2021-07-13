@@ -9,9 +9,12 @@ use app\routes\web;
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
-Route::get('/home', 'HomeController@mostraPrenotazioni')->name('tabella');
-//Route::get('cancella-prenotazione/{id}', 'HomeController@cancella')->name('cancella');
-Route::get('/click_delete/{id}','HomeController@cancella');
+Route::get('/home', 'HomeController@mostraPrenotazioni');
+Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
+
+Route::get('/modifica','HomeController@mostraAnagrafica');
+Route::get('/update/{id}','HomeController@modificaAnagrafica');
+
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

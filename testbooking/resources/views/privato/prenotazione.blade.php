@@ -91,7 +91,7 @@
     
     <div class="input-group">
         <h5>Codice Fiscale</h5>
-        <input type="text" class="form-control" placeholder="" />
+        <input selected="selected" type="text" class="form-control" placeholder="" />
     </div>
     
     

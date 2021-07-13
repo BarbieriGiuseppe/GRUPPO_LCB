@@ -85,90 +85,84 @@
                  <!-- /. ROW  -->
                 
                  
-  
-                  <div class="input-group">
+<!--<form action = "/update/{{ $data[0]->id }}" method="post">-->
+
+                <div class="input-group">
                     <h5>Codice Fiscale</h5>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->codicefiscale }}" class="form-control" placeholder="" />
                 </div>
                 
                 
                 
                 <div class="input-group">
                      <h5>Cognome</h5>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text"  value="{{ $data[0]->cognome }}" class="form-control" placeholder="" />
                 </div>
             
                 
                 
                 <div class="input-group">
                     <h5>Nome</h5>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->nome }}"  class="form-control" placeholder="" />
                 </div>
-            
-                
-                
-                <div class="input-group">
-                    <h5>Mail</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
+                            
                 
                 <div class="input-group">
                     <h5>Telefono</h5>  
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->telefono }}" class="form-control" placeholder="" />
                 </div>
             
                 
                 
                 <div class="input-group">
                     <h5>Luogo Di Nascita</h5>  
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->luogonascita }}" class="form-control" placeholder="" />
                 </div>
             
                 <div class="wrapper">
                     <h5>Data Di Nascita</h5>
                     <label>
-                        <input type="date"  class="dateselect" required="required"/>
+                        <input type="date"  value="{{ $data[0]->datanascita }}" class="dateselect" required="required"/>
                     </label>
                 </div>
 
 
-
-                <br><button type=”submit”> Salva Modifiche </button> &nbsp; <button type=”submit”> Elimina profilo </button>
+             
+                <a href="update/{{$data[0]->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> Salva modifiche </button></a> 
+                <button type=”submit”> Elimina profilo </button>
                 
                 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Residenza</h5>   
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->residenza }}" class="form-control" placeholder="" />
                 </div>
             
                 
             
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Città</h5>  
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->citta }}" class="form-control" placeholder="" />
                 </div>
             
                 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Provincia</h5>  
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->provincia }}" class="form-control" placeholder="" />
                 </div>
             
                 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>CAP</h5>  
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" value="{{ $data[0]->cap }}" class="form-control" placeholder="" />
                 </div>
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Nazione</h5>
-                    <select name="nazione" type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ old('nazione') }}" required autocomplete="nazione" autofocus>
+                    <select name="nazione" type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ $data[0]->nazione}}" required autocomplete="nazione" autofocus>
                         <option value="AF">Afghanistan</option>
                         <option value="AL">Albania</option>
                         <option value="DZ">Algeria</option>
@@ -277,7 +271,7 @@
                         <option value="VG">Isole Virgin (British)</option>
                         <option value="VI">Isole Virgin (USA)</option>
                         <option value="WF">Isole Wallis e Futuna</option>
-                        <option value="IT"selected="selected">Italia</option>
+                        <option value="IT"selected>Italia</option>
                         <option value="JM">Jamaica</option>
                         <option value="JP">Giappone</option>
                         <option value="JO">Giordania</option>
@@ -418,9 +412,20 @@
                                     </span>
                                 @enderror
                 </div>
+
+
             
-              
-                        
+                <div class="input-group"  style = "position:relative; left:260px; top:-492px; ">
+                    <h5>Email</h5>  
+                    <input type="text" value="{{ $data[0]->email }}" class="form-control" placeholder="" />
+                </div>
+                
+                <div class="input-group"  style = "position:relative; left:490px; top:-560px; ">
+                    <h5>Password</h5>  
+                    <input type="password" value="{{ $data[0]->password }}" class="form-control" placeholder="" />
+                </div>
+
+<!--</form>-->
                           
                   
 
