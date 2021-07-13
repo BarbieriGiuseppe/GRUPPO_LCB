@@ -84,51 +84,51 @@
                  <!-- /. ROW  -->
                  <!-- /. ROW  -->
                 
-                
+                 <form method="POST" action="{{ route('/update', $user->id) }}">
 
 
                 <div class="input-group">
                     <h5>Codice Fiscale</h5>
-                    <input name='codicefiscale' id='codicefiscale' type="text" value="{{ $data[$id]->codicefiscale }}" class="form-control"  />
+                    <input name='codicefiscale' id='codicefiscale' type="text" value="{{ $user->codicefiscale }}" class="form-control"  />
                 </div>
                 
                 
                 
                 <div class="input-group">
                      <h5>Cognome</h5>
-                    <input name='cognome' id='cognome' type="text"  value="{{ $data[$id]->cognome }}" class="form-control" />
+                    <input name='cognome' id='cognome' type="text"  value="{{ $user->capcognome }}" class="form-control" />
                 </div>
             
                 
                 
                 <div class="input-group">
                     <h5>Nome</h5>
-                    <input name='nome' id='nome' type="text" value="{{ $data[$id]->nome }}"  class="form-control" />
+                    <input name='nome' id='nome' type="text" value="{{ $user->nome }}"  class="form-control" />
                 </div>
                             
                 
                 <div class="input-group">
                     <h5>Telefono</h5>  
-                    <input name='telefono' id='telefono' type="text" value="{{ $data[$id]->telefono }}" class="form-control"/>
+                    <input name='telefono' id='telefono' type="text" value="{{ $user->telefono }}" class="form-control"/>
                 </div>
             
                 
                 
                 <div class="input-group">
                     <h5>Luogo Di Nascita</h5>  
-                    <input name='luogonascita' id='luogonascita' type="text" value="{{ $data[$id]->luogonascita }}" class="form-control" />
+                    <input name='luogonascita' id='luogonascita' type="text" value="{{ $user->luogonascita }}" class="form-control" />
                 </div>
             
                 <div class="wrapper">
                     <h5>Data Di Nascita</h5>
                     <label>
-                        <input name='datanascita' id='datanascita' type="date"  value="{{ $data[$id]->datanascita }}" class="dateselect" required="required"/>
+                        <input name='datanascita' id='datanascita' type="date"  value="{{ $user->datanascita }}" class="dateselect" required="required"/>
                     </label>
                 </div>
 
 
              
-                <a href="update/{{$data[$id]->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> Salva modifiche </button></a> 
+                 <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> Salva modifiche </button></a> 
         
                 
                 <button type=”submit”> Elimina profilo </button>
@@ -137,7 +137,7 @@
                 
                 <div class="input-group" id='residenza' style = "position:relative; left:260px; top:-492px; ">
                     <h5>Residenza</h5>   
-                    <input name='residenza' type="text" value="{{ $data[$id]->residenza }}" class="form-control"/>
+                    <input name='residenza' type="text" value="{{ $user->residenza }}" class="form-control"/>
                 </div>
             
                 
@@ -145,26 +145,26 @@
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Città</h5>  
-                    <input name='citta' id='citta' type="text" value="{{ $data[$id]->citta }}" class="form-control"  />
+                    <input name='citta' id='citta' type="text" value="{{ $user->citta }}" class="form-control"  />
                 </div>
             
                 
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Provincia</h5>  
-                    <input name='provincia' id='provincia' type="text" value="{{ $data[$id]->provincia }}" class="form-control"  />
+                    <input name='provincia' id='provincia' type="text" value="{{ $user->provincia }}" class="form-control"  />
                 </div>
             
                 
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>CAP</h5>  
-                    <input name='cap' id='cap' type="text" value="{{ $data[$id]->cap }}" class="form-control"  />
+                    <input name='cap' id='cap' type="text" value="{{ $user->cap }}" class="form-control"  />
                 </div>
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-492px; ">
                     <h5>Nazione</h5>
-                    <select name="nazione" id='nazione' type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ $data[0]->nazione}}" required autocomplete="nazione" autofocus>
+                    <select name="nazione" id='nazione' type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ $user->nazione}}" required autocomplete="nazione" autofocus>
                         <option value="AF">Afghanistan</option>
                         <option value="AL">Albania</option>
                         <option value="DZ">Algeria</option>
@@ -419,16 +419,16 @@
             
                 <div class="input-group"  style = "position:relative; left:260px; top:-492px; ">
                     <h5>Email</h5>  
-                    <input name='email' id='email' type="text" value="{{ $data[$id]->email }}" class="form-control"/>
+                    <input name='email' id='email' type="text" value="{{ $user->email }}" class="form-control"/>
                 </div>
                 
                 <div class="input-group"  style = "position:relative; left:490px; top:-560px; ">
                     <h5>Password</h5>  
-                    <input name='password' id='password' type="password" value="{{ $data[$id]->password }}" class="form-control" />
+                    <input name='password' id='password' type="password" value="{{ $user->password }}" class="form-control" />
                 </div>
 
 
-                          
+            </form>          
                   
 
               

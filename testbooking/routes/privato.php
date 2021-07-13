@@ -14,7 +14,7 @@ Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
 Route::get('/modifica','HomeController@mostraAnagrafica');
-Route::get('/update/{id}','HomeController@modificaAnagrafica');
+Route::get('/update/{id}','HomeController@modificaAnagrafica')->name('prova');
 
 
 // Login
