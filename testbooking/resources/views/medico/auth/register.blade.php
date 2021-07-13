@@ -141,9 +141,16 @@
 									@enderror
 					</div>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Inserisci la provincia" style = "position:relative; left:-180px; top:-10px; ">
-						<input id="provincia" type="text" class="input100 @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
-						<span class="focus-input100" data-placeholder="Provincia"></span>
+
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Scegli la nazione "style = "position:relative; left:-180px; top:-10px; ">
+						<select name="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
+							<option value="BA">Bari</option>
+							<option value="TA">Taranto</option>
+							<option value="FG">Foggia</option>
+							<option value="BT">Barletta-Andria-Trani</option>
+						  </select>
+						<span class="focus-input100" data-placeholder="Provincia" style = "position:relative; left:-145px; top:-40px; "></span>
+						
 						@error('provincia')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
