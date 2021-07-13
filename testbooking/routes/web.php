@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\Privato\HomeController;
-use app\Http\Controllers\Privato\LoginController;
+use App\Http\Controllers\Privato\HomeController;
+use App\Http\Controllers\Privato\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +27,8 @@ Route::get('/lapoli', function () {
     return view('infolab.labpoli');
 });
 
-/*Route::get('/home',function() {
+Route::get('/home',function() {
     return view ('privato.home');
-});*/
+});
 
 

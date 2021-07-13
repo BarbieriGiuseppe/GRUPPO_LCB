@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use app\Http\Controllers\Privato\HomeController;
+use App\Http\Controllers\Privato\HomeController;
 use App\Controllers\Privato\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
 
 
 class RedirectIfPrivato
@@ -21,7 +22,7 @@ class RedirectIfPrivato
     public function handle($request, Closure $next, $guard = 'privato')
     {
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('privato.home');
+            return redirect('/privato/home');
         }
 
         return $next($request);
