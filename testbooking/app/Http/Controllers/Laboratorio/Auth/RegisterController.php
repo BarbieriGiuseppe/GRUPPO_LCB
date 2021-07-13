@@ -92,7 +92,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             
         ]);
-
+        
         $data['email'] = $user->email;
         Mail::send('laboratorio.emails.codiceprivato', $data, function($message) use ($data)
         {

@@ -35,4 +35,6 @@ class HomeController extends Controller
     public function modifica() {
         return view('asl.modifica');
     }
+
+    
 }

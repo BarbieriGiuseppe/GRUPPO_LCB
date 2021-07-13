@@ -15,14 +15,14 @@ class CreatePrezzoTamponeTable extends Migration
     {
         Schema::create('Prezzo_Tampone', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('tipologia')->unique();
-            $table->string('codicelabpubblico')->unique();
+            $table->string('tipologia');
+            $table->string('codicelabpub');
             $table->string('prezzo');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->primary(array('id','tipologia','codicelabpubblico'));
-            $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
+            $table->primary('id');
+            $table->foreign('codicelabpub')->references('codicelabpubblico')->on('laboratorios');
         });
         DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }

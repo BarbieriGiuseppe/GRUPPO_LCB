@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    @mapstyles
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Area Riservata</title>
@@ -10,11 +11,13 @@
     <link href="<?php echo url('/areariservatalayout'); ?>/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/custom.css" rel="stylesheet" />
+
+    <link href="<?php echo url('/areariservatalayout'); ?>/css/progress.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
-     
+     @mapscripts
            
           
     <div id="wrapper">
@@ -76,6 +79,13 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
+                <div class="container">
+                    <ul class="progressbar">
+                        <li class="active"> Dati Tamponato</li>
+                        <li>Preventivo Tampone - Selezione Appuntamento</li>
+                        <li>add friends</li>
+                        <li>View map</li>
+                </ul>
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Prenotazione Tampone </h2>   
@@ -417,42 +427,86 @@
                     @enderror
     </div>
 
-    
-    <br><button type=”submit”> Prenota il tampone </button>
-
-    <div class="input-group" style = "position:relative; left:260px; top:-907px; ">
+    <div class="input-group" style = "position:relative; left:260px; top:-845px;">
         <h5>Laboratorio</h5>  
-        
-        <input type="text" class="form-control" placeholder="" />
-
+            <div>
+                <select class="form-control formselect required" placeholder="Laboratorio"
+                    id="sub_category_name">
+                    <option value="0" disabled selected>Seleziona un Laboratorio</option>
+                    @foreach($data as $laboratorio)
+                    <option  value="{{ $laboratorio->codicelabpubblico }}">
+                        {{ ucfirst($laboratorio->nomelaboratorio) }}</option>
+                    @endforeach
+                </select>
+            </div>
     </div>
 
-    <div class="input-group"  style = "position:relative; left:260px; top:-907px; ">
+    <div class="input-group"  style = "position:relative; left:260px; top:-840px;">
         <h5>Tipologia tampone</h5>
-        <select name="tipologia" type="text" class="form-control @error('tipologia') is-invalid @enderror" name="tipologia" value="{{ old('tipologia') }}" required autocomplete="tipologia" autofocus>
-            <option value="R">Tampone Rapido</option>
-            <option value="M">Tampone Molecolare</option>
-            <option value="S">Tampone Sierologico</option>
-            <option value="A">Tampone Antigenico</option>    
-        </select>
         <span class="focus-input100" data-placeholder="tipologia" style = "position:relative; left:-145px; top:-40px; "></span>
-        
-        @error('tipologia')
-                <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                </span>
-        @enderror
-        
+        <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="sub_category">
+        </select>
     </div>
 
-    <div class="wrapper" style = "position:relative; left:260px; top:-907px; ">
-        <h5>Data e ora</h5>
-        <label>
-            <input type="datetime-local"  class="dateselect" required="required"/>
-        </label>
+</div>
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script>
+        $(document).ready(function () {
+        $('#sub_category_name').on('change', function () {
+        let codicelabpub = $(this).val();
+        $('#sub_category').empty();
+        $('#sub_category').append(`<option value="0" disabled selected>Caricamento...</option>`);
+        $.ajax({
+        type: 'GET',
+        url: 'prenotazione/' + codicelabpub,
+        success: function (response) {
+        var response = JSON.parse(response);
+        console.log(response);   
+        $('#sub_category').empty();
+        $('#sub_category').append(`<option value="0" disabled selected>Seleziona una tipologia</option>`);
+        response.forEach(element => {
+            $('#sub_category').append(`<option value="${element['codicelabpubblico']}">${element['tipologia']}</option>`);
+            });
+        }
+    });
+});
+});
+</script>
+
+    
+    <br><button type="button"> <a class="btn" href="{{ route('privato.preventivo') }}"> Avanti </a></button>
+
+
+    <div  style = "position:relative; left:260px; top:-800px; "> 
+        @map([
+            'lat' => 41.008091,
+            'lng' => 16.726910,
+            'zoom' => 8,
+            'markers' => [
+                [
+                    'title' => 'Laboratorio Dib',
+                    'lat' => 41.109684,
+                    'lng' => 16.881524,
+                    'popup' => '<h3>Laboratorio Dib</h3><p>Clicca per <a href="/labdib">Informazioni</a>.</p>',
+                    'icon' => '/img/laboratorio.png',
+                    'icon_size' => [20, 40],
+                    'icon_anchor' => [0, 32],
+                ],
+                [
+                    'title' => 'Laboratorio Poli',
+                    'lat' => 41.108969,
+                    'lng' => 16.878512,
+                    'popup' => '<h3>Laboratorio Poli</h3><p>Clicca per <a href="/labpoli">Informazioni</a>.</p>',
+                    'icon' => '/img/laboratorio.png',
+                    'icon_size' => [20, 40],
+                    'icon_anchor' => [0, 32],
+                ],
+            ],
+        ])
+        
     </div>
-
-
+    
 </div>
 
 

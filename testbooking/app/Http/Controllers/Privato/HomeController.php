@@ -40,7 +40,11 @@ class HomeController extends Controller
         return view('privato.prenotazione');
     }
 
-    
+    public function preventivo() {
+        return view('privato.preventivo');
+    }
+
+
     /**
      * Show the Privato modifica.
      *
@@ -56,6 +60,7 @@ class HomeController extends Controller
         $data = DB::select('select * from prenotazione_privato'); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?)' , [$id])
         return view('privato/home',['data'=>$data]);
     }
+
 
     public  function cancellaPrenotazione($id)
     {
