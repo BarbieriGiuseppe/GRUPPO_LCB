@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use app\Http\Controllers\Laboratorio\HomeController;
+use App\Controllers\Laboratorio\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
 
 class RedirectIfLaboratorio
 {
@@ -18,7 +21,7 @@ class RedirectIfLaboratorio
     public function handle($request, Closure $next, $guard = 'laboratorio')
     {
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('laboratorio.home');
+            return redirect('/laboratorio/home');
         }
 
         return $next($request);

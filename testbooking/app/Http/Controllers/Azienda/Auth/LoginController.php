@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Azienda\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use app\Http\Controllers\Azienda\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,6 +73,6 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect()->route('azienda.home');
+        return $this->loggedOut($request) ?: redirect()->back();
     }
 }

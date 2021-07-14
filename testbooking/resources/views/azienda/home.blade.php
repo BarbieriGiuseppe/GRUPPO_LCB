@@ -89,53 +89,49 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nome</th>
-                                    <th>Cognome</th>
-                                    <th>Data</th>
-                                    <th>Ora</th>
-                                    <th>Laboratorio</th>
-                                    <th>Esito</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>dffd</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/areariservatalayout'); ?>/img/deleteicon.jpg" /></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/areariservatalayout'); ?>/img/deleteicon.jpg" /></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td> <img src="<?php echo url('/areariservatalayout'); ?>/img/deleteicon.jpg" /></td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
+                        <table id="table" border=1px solid black  style="width:100%">
+                            <tr>
+                                <th>Codice Fiscale </th>
+                                <th>Codice Lab Pubblico </th>
+                                <th>Data Tampone </th>
+                                <th>Tipologia </th>
+                                <th>Pagato </th>
+                                <th>Esito</th>
+                               
+                                <td></td>
+                            </tr>
+    
+                   
+                    @foreach ($data as $prenotazione_azienda)
+
+                        <tr>
+
+
+                        <td>{{ $prenotazione_azienda->codicefiscalepaziente }}</td>
+
+                        <td>{{ $prenotazione_azienda->codicelabpubblico }}</td>
+
+                        <td>{{ $prenotazione_azienda->datatampone }}</td> 
+
+                        <td>{{ $prenotazione_azienda->tipologia }}</td>     
+
+                        <td>{{ $prenotazione_azienda->pagato }}</td>
+
+                        <td>{{ $prenotazione_azienda->esito }}</td>
+
+
+                        <td>
+                        <a href="click_delete/{{$prenotazione_azienda->id}}" >  <button id="deleteicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /> </button></a> 
+                        </td>
+
+                        <td></td>
+
+                        </tr>
+
+                        @endforeach
+ 
+
+                        </table>    
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->

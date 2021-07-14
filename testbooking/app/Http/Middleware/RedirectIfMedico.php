@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use app\Http\Controllers\Privato\HomeController;
+use App\Controllers\Privato\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
 
 class RedirectIfMedico
 {
@@ -18,7 +21,7 @@ class RedirectIfMedico
     public function handle($request, Closure $next, $guard = 'medico')
     {
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('medico.home');
+            return redirect('/medico/home');
         }
 
         return $next($request);
