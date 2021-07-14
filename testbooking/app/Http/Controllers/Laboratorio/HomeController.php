@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Laboratorio;
 
 use App\Http\Controllers\Controller;
 use App\Models\Medico;
+use App\Models\Azienda;
+use App\Models\Privato;
+
 use App\Controllers\Laboratorio\Auth\LoginController;
-use App\Controllers\Laboratorio\Auth;
+use Auth;
 use Illuminate\Support\Facades\DB;
 use app\Http\Middleware\RedirectIfLaboratorio;
 use app\Http\Middleware\RedirectIfNotLaboratorio;
@@ -52,7 +55,14 @@ class HomeController extends Controller
 
     public function mostraPrenotazioni()
     { 
-        $data = DB::select('select * from prenotazione_medico'); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?)' , [$id])
-        return view('laboratorio/home',['data'=>$data]);
+        $id = Auth::guard('laboratorio')->user()->id;
+        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)' , [$id]);
+        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)' , [$id]); 
+        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)' , [$id]); 
+
+        return view('laboratorio/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
     }
+
+
+  
 }

@@ -88,9 +88,10 @@
                 
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <h5><b>LISTA PRENOTAZIONI MEDICI</b></h5>
-                        <table id="table" border=1px solid black  style="width:100%">
+                        <h5><b>LISTA PRENOTAZIONI PRIVATI</b></h5>
+                        <table id="table" border=1px  style="width:100%">
                             <tr>
+                                <th>ID </th>
                                 <th>Codice Fiscale </th>
                                 <th>Codice Lab Pubblico </th>
                                 <th>Data Tampone </th>
@@ -102,26 +103,26 @@
                             </tr>
     
                    
-                    @foreach ($data as $prenotazione_medico)
+                    @foreach ($t_privati as $prenotazioniprivati)
 
                         <tr>
+                        <td>{{ $prenotazioniprivati->id}}</td>
 
+                        <td>{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
 
-                        <td>{{ $prenotazione_medico->codicefiscalepaziente }}</td>
+                        <td>{{ $prenotazioniprivati->codicelabpubblico }}</td>
 
-                        <td>{{ $prenotazione_medico->codicelabpubblico }}</td>
+                        <td>{{ $prenotazioniprivati->datatampone }}</td> 
 
-                        <td>{{ $prenotazione_medico->datatampone }}</td> 
+                        <td>{{ $prenotazioniprivati->tipologia }}</td>     
 
-                        <td>{{ $prenotazione_medico->tipologia }}</td>     
+                        <td>{{ $prenotazioniprivati->pagato }}</td>
 
-                        <td>{{ $prenotazione_medico->pagato }}</td>
-
-                        <td>{{ $prenotazione_medico->esito }}</td>
+                        <td>{{ $prenotazioniprivati->esito }}</td>
 
 
                         <td>
-                        <a href="click_delete/{{$prenotazione_medico->id}}" >  <button id="deleteicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/deleteicon.jpg" /> </button></a> 
+                        <a href="click_edit/{{$prenotazioniprivati->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
                         </td>
 
                         <td></td>
@@ -130,6 +131,100 @@
 
                         @endforeach
                     </table> 
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <h5><b>LISTA PRENOTAZIONI PAZIENTI</b></h5>
+                            <table id="table" border=1px style="width:100%">
+                                <tr>
+                                    <th>ID </th>
+                                    <th>Codice Fiscale </th>
+                                    <th>Codice Lab Pubblico </th>
+                                    <th>Data Tampone </th>
+                                    <th>Tipologia </th>
+                                    <th>Pagato </th>
+                                    <th>Esito</th>
+                                   
+                                    <td></td>
+                                </tr>
+        
+                       
+                        @foreach ($t_pazienti as $prenotazionipazienti)
+    
+                            <tr>
+    
+                            <td>{{ $prenotazionipazienti->id}}</td>
+
+                            <td>{{ $prenotazionipazienti->codicefiscalepaziente}}</td>
+    
+                            <td>{{ $prenotazionipazienti->codicelabpubblico }}</td>
+    
+                            <td>{{ $prenotazionipazienti->datatampone }}</td> 
+    
+                            <td>{{ $prenotazionipazienti->tipologia }}</td>     
+    
+                            <td>{{ $prenotazionipazienti->pagato }}</td>
+    
+                            <td>{{ $prenotazionipazienti->esito }}</td>
+    
+    
+                            <td>
+                            <a href="click_edit/{{$prenotazionipazienti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                            </td>
+    
+                            <td></td>
+    
+                            </tr>
+    
+                            @endforeach
+                        </table> 
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <h5><b>LISTA PRENOTAZIONI DIPENDENTI</b></h5>
+                                <table id="table" border=1px  style="width:100%">
+                                    <tr>
+                                        <th>ID </th>
+                                        <th>Codice Fiscale </th>
+                                        <th>Codice Lab Pubblico </th>
+                                        <th>Data Tampone </th>
+                                        <th>Tipologia </th>
+                                        <th>Pagato </th>
+                                        <th>Esito</th>
+                                       
+                                        <td></td>
+                                    </tr>
+            
+                           
+                            @foreach ($t_dipendenti as $prenotazionidipendenti)
+        
+                                <tr>
+                                <td>{{ $prenotazionidipendenti->id}}</td>
+
+        
+                                <td>{{ $prenotazionidipendenti->codicefiscaledipendente}}</td>
+        
+                                <td>{{ $prenotazionidipendenti->codicelabpubblico }}</td>
+        
+                                <td>{{ $prenotazionidipendenti->datatampone }}</td> 
+        
+                                <td>{{ $prenotazionidipendenti->tipologia }}</td>     
+        
+                                <td>{{ $prenotazionidipendenti->pagato }}</td>
+        
+                                <td>{{ $prenotazionidipendenti->esito }}</td>
+        
+        
+                                <td>
+                                <a href="click_edit/{{$prenotazionidipendenti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                                </td>
+        
+                                <td></td>
+        
+                                </tr>
+        
+                                @endforeach
+                            </table> 
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->

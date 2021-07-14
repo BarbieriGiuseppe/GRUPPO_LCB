@@ -107,7 +107,7 @@
                         <tr>
 
 
-                        <td>{{ $prenotazione_azienda->codicefiscalepaziente }}</td>
+                        <td>{{ $prenotazione_azienda->codicefiscaledipendente }}</td>
 
                         <td>{{ $prenotazione_azienda->codicelabpubblico }}</td>
 
