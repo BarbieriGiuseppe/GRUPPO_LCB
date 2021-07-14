@@ -69,22 +69,50 @@ class HomeController extends Controller
         return redirect('privato/home');
     }
     
-    public  function mostraAnagrafica()
+    public  function Profilo()
+    {                 
+        return view('privato/modifica');
+    }
+
+    public  function mostraProfilo()
     {   
         $id = Auth::guard('privato')->user()->id-1;
         $data = DB::select('select * from privatos');               
         return view('privato/modifica',['data'=>$data,'id'=>$id]);
     }
 
-    public  function modificaAnagrafica($id,$codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-    $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password )
+
+    public  function modificaAnagrafica($id)
     {   
+        $id = Auth::guard('privato')->user()->id-1;
+        $user = DB::select('select * from privatos');              
+        return view('privato/editanagrafica',['user'=>$user,'id'=>$id]);
+    }
+
+    public  function updateAnagrafica($id)
+    {   
+
+        /*$codicefiscale = 'wert';//$req->input('codicefiscale');
+        $cognome = 'DiStefano';//$req->input('cognome');
+        $nome = 'Pinuccio';//$req->input('nome');
+        $telefono = '45354';//$req->input('telefono');
+        $datanascita = '2018-09-08';//$req->input('datanascita');
+        $luogonascita = 'Bari';//$req->input('luogonascita');
+        $residenza = 'piazza';//$req->input('residenza');
+        $citta = 'Capurso';//$req->input('citta');
+        $provincia = 'BA';//$req->input('provincia');
+        $cap = '32874';//$req->input('cap');
+        $nazione = 'Italia';//$req->input('nazione');
+        $email = 'ccp@libero.it';//$req->input('email');
+        $password = '$2y$10$LeT55rE465IMYNvRWao0q.m0l7Oh2gxqi8S12o8JN03gtgzPTBUJm';//$req->input('password');
+
+
         DB::update('update privatos set codicefiscale = ? ,
         cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
         luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
         cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
         [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);
+        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);*/
         
         return redirect('privato/modifica');
     }
