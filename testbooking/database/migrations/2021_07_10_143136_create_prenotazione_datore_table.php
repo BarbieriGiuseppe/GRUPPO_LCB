@@ -18,9 +18,10 @@ class CreatePrenotazioneDatoreTable extends Migration
             $table->string('codicefiscaledipendente',16);
             $table->string('codicelabpubblico');
             $table->string('emaildatore');
-            $table->timestamp('datatampone');
+            $table->date('datatampone');
+            $table->time('orario');
             $table->string('tipologia');
-            $table->boolean('pagato');
+            $table->string('pagato');
             $table->string('esito');           
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

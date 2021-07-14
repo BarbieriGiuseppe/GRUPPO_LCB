@@ -18,9 +18,10 @@ class CreatePrenotazionePrivatoTable extends Migration
             $table->string('codicefiscaletamponato',16);
             $table->string('codicelabpubblico');
             $table->string('emailprivato');
-            $table->timestamp('datatampone');
+            $table->date('datatampone');
+            $table->time('orario');
             $table->string('tipologia');
-            $table->boolean('pagato');
+            $table->string('pagato');
             $table->string('esito');        
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

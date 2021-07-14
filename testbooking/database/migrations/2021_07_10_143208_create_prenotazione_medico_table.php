@@ -18,9 +18,10 @@ class CreatePrenotazioneMedicoTable extends Migration
             $table->string('codicefiscalepaziente',16)->unique();
             $table->string('codicelabpubblico')->unique();
             $table->string('emailmedico')->unique();
-            $table->timestamp('datatampone');
+            $table->date('datatampone');
+            $table->time('orario');
             $table->string('tipologia');
-            $table->boolean('pagato');
+            $table->string('pagato');
             $table->string('esito');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
