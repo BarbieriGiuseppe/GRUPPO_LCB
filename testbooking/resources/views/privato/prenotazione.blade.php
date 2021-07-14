@@ -179,7 +179,7 @@
 
     <div class="input-group"> 
         <h5> Data Di Nascita</h5>
-       <input id="datanascita" type="date" class="input100 @error('datanascita') is-invalid @enderror" name="datanascita" value="{{ old('datanascita') }}" required autocomplete="datanascita" autofocus>
+       <input id="datanascita" type="date" min="1920-01-01" max="2018-01-01" class="input100 @error('datanascita') is-invalid @enderror" name="datanascita" value="{{ old('datanascita') }}" required autocomplete="datanascita" autofocus>
        @error('datanascita')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>

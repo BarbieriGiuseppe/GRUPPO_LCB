@@ -19,7 +19,7 @@ class Privato extends Authenticatable
      */
     protected $fillable = [
         'id','codicefiscaletamponato','codicelabpubblico',
-        'emailprivato','datatampone','tipologia',
+        'emailprivato','datatampone','orario','tipologia',
         'pagato','esito'
     ];
 

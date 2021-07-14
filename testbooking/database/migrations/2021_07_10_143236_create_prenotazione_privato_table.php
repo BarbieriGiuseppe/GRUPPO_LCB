@@ -21,8 +21,9 @@ class CreatePrenotazionePrivatoTable extends Migration
             $table->date('datatampone');
             $table->time('orario');
             $table->string('tipologia');
-            $table->string('pagato');
-            $table->string('esito');        
+            $table->string('metodopagamento')->nullable();
+            $table->string('pagato')->default('no');
+            $table->string('esito')->default('nd');        
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
@@ -31,7 +32,7 @@ class CreatePrenotazionePrivatoTable extends Migration
             $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
             $table->foreign('emailprivato')->references('email')->on('privatos');
         });
-        DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE Prenotazione_Privato MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

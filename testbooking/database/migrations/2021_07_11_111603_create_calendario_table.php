@@ -16,11 +16,12 @@ class CreateCalendarioTable extends Migration
         Schema::create('Calendario', function (Blueprint $table) {
             $table->integer('id')->unique();
             $table->string('codicelabpubblico')->unique();
-            $table->timestamp('dataora')->unique();
+            $table->date('data')->unique();
+            $table->time('orario');
             $table->boolean('occupata');
             $table->rememberToken();
             $table->timestamps();
-            $table->primary(array('id', 'codicelabpubblico','dataora')); 
+            $table->primary(array('id', 'codicelabpubblico','data')); 
             $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
             
         });
