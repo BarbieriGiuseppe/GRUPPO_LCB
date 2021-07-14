@@ -108,7 +108,7 @@
 									@enderror
 					</div>
 					
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Scegli la nazione "style = "position:relative; left:-180px; top:-10px; ">
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Scegli la nazione "style = "position:relative; left: 20px; top:-20px; ">
 						<select name="provincia" type="text" class="form-control @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
 							<option value="BA">Bari</option>
 							<option value="TA">Taranto</option>

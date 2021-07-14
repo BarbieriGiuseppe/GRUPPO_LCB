@@ -9,6 +9,7 @@
         "bmatovu/multi-auth": "^10.4",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
+        "gonoware/laravel-maps": "^1.4",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",

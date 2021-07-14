@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Privato;
 use App\Http\Controllers\Controller;
 use App\Models\Privato;
 use App\Controllers\Privato\Auth\LoginController;
-use App\Controllers\Privato\Auth;
+use Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfPrivato;
 use app\Http\Middleware\RedirectIfNotPrivato;
 
@@ -40,7 +42,11 @@ class HomeController extends Controller
         return view('privato.prenotazione');
     }
 
-    
+    public function preventivo() {
+        return view('privato.preventivo');
+    }
+
+
     /**
      * Show the Privato modifica.
      *
@@ -53,9 +59,11 @@ class HomeController extends Controller
 //
     public function mostraPrenotazioni()
     { 
-        $data = DB::select('select * from prenotazione_privato'); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?)' , [$id])
+        $id = Auth::guard('privato')->user()->id;
+        $data = DB::select('select * from prenotazione_privato where emailprivato = (select email from privatos where id = ?)' , [$id]); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?) , [$id]
         return view('privato/home',['data'=>$data]);
     }
+
 
     public  function cancellaPrenotazione($id)
     {
@@ -63,15 +71,16 @@ class HomeController extends Controller
         return redirect('privato/home');
     }
     
-    public  function mostraAnagrafica(/*$id*/)
+    public  function mostraAnagrafica()
     {   
-        
-        $data = DB::select('select * from privatos');       //where id = ?',[$id]
-        return view('privato/modifica',['data'=>$data]);
+        $id = Auth::guard('privato')->user()->id-1;
+        $user = DB::select('select * from privatos');              
+        return view('privato/modifica',['data'=>$user]);
     }
 
-    public  function modificaAnagrafica(Request $request,$id)
+    /*public  function modificaAnagrafica(Request $request,$id)
     {   
+        
         $codicefiscale = $request->input('codicefiscale');
         $cognome = $request->input('cognome');
         $nome = $request->input('nome');
@@ -83,17 +92,49 @@ class HomeController extends Controller
         $provincia = $request->input('provincia');
         $cap = $request->input('cap');
         $nazione = $request->input('nazione');
-        $email = $request->input('email');
+        $email =  $request->input('email');
         $password = $request->input('password');
 
         DB::update('update privatos set codicefiscale = ? ,
-        cognome = ? nome = ? ,telefono = ? ,datanascita = ? ,
+        cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
         luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
         cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
         [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
         $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);
+        
+        return redirect('privato/modifica')->with('success','Data Updated');
+    }*/
 
-        return redirect('privato/modifica')->with('succes','Data Updated');
+    public  function modificaAnagrafica(Request $request,$id)
+    {   
+        
+        $user = Privato::findOrFail($id);
+        $user = $request->get('codicefiscale');
+        $user = $request->get('cognome');
+        $user = $request->get('nome');
+        $user = $request->get('telefono');
+        $user = $request->get('datanascita');
+        $user = $request->get('luogonascita');
+        $user= $request->get('residenza');
+        $user = $request->get('citta');
+        $user = $request->get('provincia');
+        $user = $request->get('cap');
+        $user = $request->get('nazione');
+        $user =  $request->get('email');
+        $user = $request->get('password');
+
+        $user->save();
+
+        return \Redirect::route('privato/modifica', [$user->id])->with('message', 'User has been updated!');
+
+      /*  DB::update('update privatos set codicefiscale = ? ,
+        cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
+        luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
+        cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
+        [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
+        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);
+        
+        return redirect('privato/modifica')->with('success','Data Updated');*/
     }
   
 }

@@ -8,12 +8,13 @@ use app\routes\web;
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
+Route::get('/preventivo', 'HomeController@preventivo')->name('preventivo');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
 Route::get('/modifica','HomeController@mostraAnagrafica');
-Route::get('/update/{id}','HomeController@modificaAnagrafica');
+Route::get('/update/{id}','HomeController@modificaAnagrafica')->name('prova');
 
 
 // Login
@@ -40,3 +41,5 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
+Route::get('/prenotazione','PrenotazioneController@elencoLaboratori');
+Route::get('/prenotazione/{codicelabpub}','PrenotazioneController@elencoTipologie');
