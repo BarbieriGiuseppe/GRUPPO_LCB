@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\Asl\HomeController;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');

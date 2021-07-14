@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Asl;
 
 use App\Http\Controllers\Controller;
+use App\Models\Asl;
+use App\Controllers\Asl\Auth\LoginController;
+use App\Controllers\Asl\Auth;
+use Illuminate\Support\Facades\DB;
+use app\Http\Middleware\RedirectIfAsl;
+use app\Http\Middleware\RedirectIfNotAsl;
 
 
 

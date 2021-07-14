@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use app\Http\Controllers\Asl\HomeController;
+use App\Controllers\Asl\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
 
 class RedirectIfAsl
 {
@@ -18,7 +21,7 @@ class RedirectIfAsl
     public function handle($request, Closure $next, $guard = 'asl')
     {
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('asl.home');
+            return redirect('/asl/home');
         }
 
         return $next($request);

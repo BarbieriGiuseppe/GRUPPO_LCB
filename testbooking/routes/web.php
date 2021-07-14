@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Privato\HomeController;
 use App\Http\Controllers\Privato\Auth\LoginController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

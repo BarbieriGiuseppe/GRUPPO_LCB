@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Mail\CodicePrivatoMail;
+use app\Http\Controllers\Laboratorio\HomeController;
 use Illuminate\Support\Facades\Mail;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prezzotampone', 'HomeController@prenotazione')->name('prezzotampone');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+Route::get('/home', 'HomeController@mostraPrenotazioni');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

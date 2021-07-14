@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Laboratorio\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use app\Http\Controllers\Laboratorio\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,7 +73,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect()->route('laboratorio.home');
+        return $this->loggedOut($request) ?: redirect()->back();
     }
 
     public function codiceLabPrivato()
@@ -93,7 +94,7 @@ class LoginController extends Controller
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'codicelabprivato';
         if(auth()->guard('laboratorio')->attempt(array($fieldType => $input['codicelabprivato'], 'password' => $input['password'])))
         {
-            return redirect()->route('laboratorio.home');
+            return redirect('laboratorio/home');
         }else{
             return redirect()->route('laboratorio.login')
                 ->with('error','Email-Address And Password Are Wrong.');

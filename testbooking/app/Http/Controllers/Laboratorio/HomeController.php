@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Laboratorio;
 
 use App\Http\Controllers\Controller;
+use App\Models\Medico;
+use App\Controllers\Laboratorio\Auth\LoginController;
+use App\Controllers\Laboratorio\Auth;
+use Illuminate\Support\Facades\DB;
+use app\Http\Middleware\RedirectIfLaboratorio;
+use app\Http\Middleware\RedirectIfNotLaboratorio;
 
 class HomeController extends Controller
 {
@@ -42,5 +48,11 @@ class HomeController extends Controller
      */
     public function modifica() {
         return view('laboratorio.modifica');
+    }
+
+    public function mostraPrenotazioni()
+    { 
+        $data = DB::select('select * from prenotazione_medico'); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?)' , [$id])
+        return view('laboratorio/home',['data'=>$data]);
     }
 }
