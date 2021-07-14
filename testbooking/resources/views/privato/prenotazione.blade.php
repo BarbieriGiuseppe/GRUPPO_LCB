@@ -427,7 +427,9 @@
                     @enderror
     </div>
 
-    <div class="input-group" style = "position:relative; left:260px; top:-845px;">
+    <br><button type="button"> <a class="btn" href="{{ route('privato.preventivo') }}"> Avanti </a></button>
+
+    <div class="input-group" style = "position:relative; left:260px; top:-910px;">
         <h5>Laboratorio</h5>  
             <div>
                 <select class="form-control formselect required" placeholder="Laboratorio"
@@ -441,44 +443,14 @@
             </div>
     </div>
 
-    <div class="input-group"  style = "position:relative; left:260px; top:-840px;">
+    <div class="input-group"  style = "position:relative; left:260px; top:-900px;">
         <h5>Tipologia tampone</h5>
         <span class="focus-input100" data-placeholder="tipologia" style = "position:relative; left:-145px; top:-40px; "></span>
         <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="sub_category">
         </select>
     </div>
 
-</div>
-<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
-
-<script>
-        $(document).ready(function () {
-        $('#sub_category_name').on('change', function () {
-        let codicelabpub = $(this).val();
-        $('#sub_category').empty();
-        $('#sub_category').append(`<option value="0" disabled selected>Caricamento...</option>`);
-        $.ajax({
-        type: 'GET',
-        url: 'prenotazione/' + codicelabpub,
-        success: function (response) {
-        var response = JSON.parse(response);
-        console.log(response);   
-        $('#sub_category').empty();
-        $('#sub_category').append(`<option value="0" disabled selected>Seleziona una tipologia</option>`);
-        response.forEach(element => {
-            $('#sub_category').append(`<option value="${element['codicelabpubblico']}">${element['tipologia']}</option>`);
-            });
-        }
-    });
-});
-});
-</script>
-
-    
-    <br><button type="button"> <a class="btn" href="{{ route('privato.preventivo') }}"> Avanti </a></button>
-
-
-    <div  style = "position:relative; left:260px; top:-800px; "> 
+    <div  style = "position:relative; left:260px; top:-830px;"> 
         @map([
             'lat' => 41.008091,
             'lng' => 16.726910,
@@ -506,6 +478,39 @@
         ])
         
     </div>
+
+   
+
+
+</div>
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script>
+        $(document).ready(function () {
+        $('#sub_category_name').on('change', function () {
+        let codicelabpub = $(this).val();
+        $('#sub_category').empty();
+        $('#sub_category').append(`<option value="0" disabled selected>Caricamento...</option>`);
+        $.ajax({
+        type: 'GET',
+        url: 'prenotazione/' + codicelabpub,
+        success: function (response) {
+        var response = JSON.parse(response);
+        console.log(response);   
+        $('#sub_category').empty();
+        $('#sub_category').append(`<option value="0" disabled selected>Seleziona una tipologia</option>`);
+        response.forEach(element => {
+            $('#sub_category').append(`<option value="${element['codicelabpubblico']}">${element['tipologia']}</option>`);
+            });
+        }
+    });
+});
+});
+</script>
+    
+
+
+    
     
 </div>
 
