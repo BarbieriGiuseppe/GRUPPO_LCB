@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Privato extends Authenticatable
+class Tamponato_Privato extends Authenticatable
 {
+    protected $table = 'tamponato_privato';
     use HasFactory, Notifiable;
 
     /**

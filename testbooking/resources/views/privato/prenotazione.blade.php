@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,11 +14,21 @@
     <link href="<?php echo url('/areariservatalayout'); ?>/css/custom.css" rel="stylesheet" />
 
     <link href="<?php echo url('/areariservatalayout'); ?>/css/progress.css" rel="stylesheet" />
+
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   
 </head>
 <body>
-     @mapscripts
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+	@endif
            
           
     <div id="wrapper">
@@ -82,7 +93,7 @@
                 <div class="container">
                     <ul class="progressbar">
                         <li class="active"> Dati Tamponato</li>
-                        <li>Preventivo Tampone - Selezione Appuntamento</li>
+                        <li>Selezione Appuntamento</li>
                         <li>add friends</li>
                         <li>View map</li>
                 </ul>
@@ -97,82 +108,132 @@
                 </div>              
                  <!-- /. ROW  -->
                  <!-- /. ROW  --> 
+     <form method="POST" action="{{ route('privato.registerTamponato') }}">
+		@csrf
     
-    
-    <div class="input-group">
-        <h5>Codice Fiscale</h5>
-        <input selected="selected" type="text" class="form-control" placeholder="" />
+    <div class="input-group"> 
+         <h5> Codice Fiscale</h5>
+        <input id="codicefiscaletamponato" type="text" required class="form-control" name = "codicefiscaletamponato">
+        @error('codicefiscaletamponato')
+            <div class = "error text-danger"> {{ $message }} </div>
+        @enderror
     </div>
     
-    
-    
-    <div class="input-group">
-         <h5>Cognome</h5>
-        <input type="text" class="form-control" placeholder="" />
-    </div>
-
-    
-    
-    <div class="input-group">
-        <h5>Nome</h5>
-        <input type="text" class="form-control" placeholder="" />
-    </div>
-
-    
-    
-    <div class="input-group">
-        <h5>Mail</h5>  
-        <input type="text" class="form-control" placeholder="" />
+    <div class="input-group"> 
+         <h5> Cognome</h5>
+        <input id="cognome" type="text" class="input100 @error('cognome') is-invalid @enderror" name="cognome" value="{{ old('cognome') }}" required autocomplete="cognome" autofocus>
+        @error('cognome')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
     </div>
 
     
     
-    <div class="input-group">
-        <h5>Telefono</h5>  
-        <input type="text" class="form-control" placeholder="" />
+    <div class="input-group"> 
+        <h5> Nome</h5>
+       <input id="nome" type="text" class="input100 @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus>
+       @error('nome')
+                       <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                       </span>
+                   @enderror
+   </div>
+
+    
+    
+   <div class="input-group"> 
+         <h5> Mail</h5>
+         <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+         @error('email')
+                   <span class="invalid-feedback" role="alert">
+                       <strong>{{ $message }}</strong>
+                   </span>
+               @enderror
     </div>
 
     
     
-    <div class="input-group">
-        <h5>Luogo Di Nascita</h5>  
-        <input type="text" class="form-control" placeholder="" />
-    </div>
-
-    <div class="wrapper">
-        <h5>Data Di Nascita</h5>
-        <label>
-            <input type="date"  class="dateselect" required="required"/>
-        </label>
-    </div>
-    
-    
-    
-    <div class="input-group">
-        <h5>Residenza</h5>   
-        <input type="text" class="form-control" placeholder="" />
-    </div>
-
-
-    
-    <div class="input-group">
-        <h5>Città</h5>  
-        <input type="text" class="form-control" placeholder="" />
-    </div>
+    <div class="input-group"> 
+        <h5> Telefono</h5>
+       <input id="telefono" type="text" class="input100 @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" required autocomplete="telefono" autofocus>
+       @error('telefono')
+                       <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                       </span>
+                   @enderror
+   </div>
 
     
     
-    <div class="input-group">
-        <h5>Provincia</h5>  
-        <input type="text" class="form-control" placeholder="" />
+   <div class="input-group"> 
+    <h5> Luogo Di Nascita</h5>
+   <input id="luogonascita" type="text" class="input100 @error('luogonascita') is-invalid @enderror" name="luogonascita" value="{{ old('luogonascita') }}" required autocomplete="luogonascita" autofocus>
+   @error('luogonascita')
+                   <span class="invalid-feedback" role="alert">
+                       <strong>{{ $message }}</strong>
+                   </span>
+               @enderror
     </div>
+
+    <div class="input-group"> 
+        <h5> Data Di Nascita</h5>
+       <input id="datanascita" type="date" class="input100 @error('datanascita') is-invalid @enderror" name="datanascita" value="{{ old('datanascita') }}" required autocomplete="datanascita" autofocus>
+       @error('datanascita')
+                       <span class="invalid-feedback" role="alert">
+                           <strong>{{ $message }}</strong>
+                       </span>
+                   @enderror
+        </div>
+    
+    
+    
+        <div class="input-group"> 
+            <h5> Residenza</h5>
+           <input id="residenza" type="text" class="input100 @error('residenza') is-invalid @enderror" name="residenza" value="{{ old('residenza') }}" required autocomplete="residenza" autofocus>
+           @error('residenza')
+                           <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                           </span>
+                       @enderror
+        </div>
+
+
+    
+        <div class="input-group"> 
+            <h5>Città</h5>
+           <input id="citta" type="text" class="input100 @error('citta') is-invalid @enderror" name="citta" value="{{ old('citta') }}" required autocomplete="citta" autofocus>
+           @error('citta')
+                           <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                           </span>
+                       @enderror
+        </div>
 
     
     
-    <div class="input-group">
-        <h5>CAP</h5>  
-        <input type="text" class="form-control" placeholder="" />
-    </div>
+        <div class="input-group"> 
+            <h5>Provincia</h5>
+           <input id="provincia" type="text" class="input100 @error('provincia') is-invalid @enderror" name="provincia" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus>
+           @error('provincia')
+                           <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                           </span>
+                       @enderror
+        </div>
+
+    
+    
+        <div class="input-group"> 
+            <h5>CAP</h5>
+           <input id="cap" type="text" class="input100 @error('cap') is-invalid @enderror" name="cap" value="{{ old('cap') }}" required autocomplete="cap" autofocus>
+           @error('cap')
+                           <span class="invalid-feedback" role="alert">
+                               <strong>{{ $message }}</strong>
+                           </span>
+                       @enderror
+        </div>
 
     <div class="input-group">
         <h5>Nazione</h5>
@@ -418,7 +479,7 @@
             <option value="ZM">Zambia</option>
             <option value="ZW">Zimbabwe</option>
           </select>
-        <span class="focus-input100" data-placeholder="nazione" style = "position:relative; left:-145px; top:-40px; "></span>
+        <span class="focus-input100"  style = "position:relative; left:-145px; top:-40px; "></span>
         
         @error('nazione')
                         <span class="invalid-feedback" role="alert">
@@ -426,94 +487,15 @@
                         </span>
                     @enderror
     </div>
+     
+    <div class="input-group"> 
+        <h5> Email Privato</h5>
+       <input id="emailprivato" type="text" name = "emailprivato" readonly value=' {{ Auth::guard('privato')->user()->email }}'>
+   </div>
 
-    <br><button type="button"> <a class="btn" href="{{ route('privato.preventivo') }}"> Avanti </a></button>
-
-    <div class="input-group" style = "position:relative; left:260px; top:-910px;">
-        <h5>Laboratorio</h5>  
-            <div>
-                <select class="form-control formselect required" placeholder="Laboratorio"
-                    id="sub_category_name">
-                    <option value="0" disabled selected>Seleziona un Laboratorio</option>
-                    @foreach($data as $laboratorio)
-                    <option  value="{{ $laboratorio->codicelabpubblico }}">
-                        {{ ucfirst($laboratorio->nomelaboratorio) }}</option>
-                    @endforeach
-                </select>
-            </div>
-    </div>
-
-    <div class="input-group"  style = "position:relative; left:260px; top:-900px;">
-        <h5>Tipologia tampone</h5>
-        <span class="focus-input100" data-placeholder="tipologia" style = "position:relative; left:-145px; top:-40px; "></span>
-        <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="sub_category">
-        </select>
-    </div>
-
-    <div  style = "position:relative; left:260px; top:-830px;"> 
-        @map([
-            'lat' => 41.008091,
-            'lng' => 16.726910,
-            'zoom' => 8,
-            'markers' => [
-                [
-                    'title' => 'Laboratorio Dib',
-                    'lat' => 41.109684,
-                    'lng' => 16.881524,
-                    'popup' => '<h3>Laboratorio Dib</h3><p>Clicca per <a href="/labdib">Informazioni</a>.</p>',
-                    'icon' => '/img/laboratorio.png',
-                    'icon_size' => [20, 40],
-                    'icon_anchor' => [0, 32],
-                ],
-                [
-                    'title' => 'Laboratorio Poli',
-                    'lat' => 41.108969,
-                    'lng' => 16.878512,
-                    'popup' => '<h3>Laboratorio Poli</h3><p>Clicca per <a href="/labpoli">Informazioni</a>.</p>',
-                    'icon' => '/img/laboratorio.png',
-                    'icon_size' => [20, 40],
-                    'icon_anchor' => [0, 32],
-                ],
-            ],
-        ])
-        
-    </div>
-
-   
-
-
-</div>
-<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
-
-<script>
-        $(document).ready(function () {
-        $('#sub_category_name').on('change', function () {
-        let codicelabpub = $(this).val();
-        $('#sub_category').empty();
-        $('#sub_category').append(`<option value="0" disabled selected>Caricamento...</option>`);
-        $.ajax({
-        type: 'GET',
-        url: 'prenotazione/' + codicelabpub,
-        success: function (response) {
-        var response = JSON.parse(response);
-        console.log(response);   
-        $('#sub_category').empty();
-        $('#sub_category').append(`<option value="0" disabled selected>Seleziona una tipologia</option>`);
-        response.forEach(element => {
-            $('#sub_category').append(`<option value="${element['codicelabpubblico']}">${element['tipologia']}</option>`);
-            });
-        }
-    });
-});
-});
-</script>
-    
-
-
-    
-    
-</div>
-
+    <br> <button type="submit">
+        {{ __('Avanti') }}
+    </button>	
 
 
 </div>
@@ -528,7 +510,7 @@
                           <hr />
                   
 
-              
+            </form>  
                  <!-- /. ROW  -->           
     </div>
              <!-- /. PAGE INNER  -->

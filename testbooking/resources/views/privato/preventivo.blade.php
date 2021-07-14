@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    @mapstyles
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Area Riservata</title>
@@ -12,13 +13,13 @@
     <link href="<?php echo url('/areariservatalayout'); ?>/css/custom.css" rel="stylesheet" />
 
     <link href="<?php echo url('/areariservatalayout'); ?>/css/progress.css" rel="stylesheet" />
+    
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
-     
+    @mapscripts
            
-          
     <div id="wrapper">
          <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
@@ -81,7 +82,7 @@
                 <div class="container">
                     <ul class="progressbar">
                         <li> Dati Tamponato</li>
-                        <li class="active">Preventivo Tampone - Selezione Appuntamento</li>
+                        <li class="active">Selezione Appuntamento</li>
                         <li>add friends</li>
                         <li>View map</li>
                 </ul>
@@ -96,13 +97,135 @@
                 </div>              
                  <!-- /. ROW  -->
                  <!-- /. ROW  --> 
+     <form method="POST" action="{{ route('privato.registerTamponato') }}">
+					@csrf
+ 
+    <div class="input-group">
+        <h5>Laboratorio</h5>  
+            <div>
+                <select class="form-control formselect required" placeholder="Laboratorio"
+                    id="sub_category_name">
+                    <option value="0" disabled selected>Seleziona un Laboratorio</option>
+                    @foreach($data as $laboratorio)
+                    <option  value="{{ $laboratorio->codicelabpubblico }}">
+                        {{ ucfirst($laboratorio->nomelaboratorio) }}</option>
+                    @endforeach
+                </select>
+            </div>
+    </div>
+
+    <div class="input-group">
+        <h5>Tipologia tampone</h5>
+        <span class="focus-input100" data-placeholder="tipologia" style = "position:relative; left:-145px; top:-40px; "></span>
+        <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="sub_category">
+        </select>
+    </div>
+
+    <div> 
+        @map([
+            'lat' => 41.008091,
+            'lng' => 16.726910,
+            'zoom' => 8,
+            'markers' => [
+                [
+                    'title' => 'Laboratorio Dib',
+                    'lat' => 41.109684,
+                    'lng' => 16.881524,
+                    'popup' => '<h3>Laboratorio Dib</h3><p>Clicca per <a href="/labdib">Informazioni</a>.</p>',
+                    'icon' => '/img/laboratorio.png',
+                    'icon_size' => [20, 40],
+                    'icon_anchor' => [0, 32],
+                ],
+                [
+                    'title' => 'Laboratorio Poli',
+                    'lat' => 41.108969,
+                    'lng' => 16.878512,
+                    'popup' => '<h3>Laboratorio Poli</h3><p>Clicca per <a href="/labpoli">Informazioni</a>.</p>',
+                    'icon' => '/img/laboratorio.png',
+                    'icon_size' => [20, 40],
+                    'icon_anchor' => [0, 32],
+                ],
+            ],
+        ])
+        
+    </div>
+
+   
+
+
+</div>
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+
+<script>
+        $(document).ready(function () {
+        $('#sub_category_name').on('change', function () {
+        let codicelabpub = $(this).val();
+        $('#sub_category').empty();
+        $('#sub_category').append(`<option value="0" disabled selected>Caricamento...</option>`);
+        $.ajax({
+        type: 'GET',
+        url: 'preventivo/' + codicelabpub,
+        success: function (response) {
+        var response = JSON.parse(response);
+        console.log(response);   
+        $('#sub_category').empty();
+        $('#sub_category').append(`<option value="0" disabled selected>Seleziona una tipologia</option>`);
+        response.forEach(element => {
+            $('#sub_category').append(`<option value="${element['codicelabpubblico']}">${element['tipologia']}</option>`);
+            });
+        }
+    });
+});
+});
+</script>
+    
+
+
     
     
-
-
-
 </div>
 
 
 
 </div>
+
+
+                        
+                    
+</div>
+
+
+                            
+                          <hr />
+                  
+
+              
+                 <!-- /. ROW  -->           
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+    <div class="footer">
+      
+    
+             <div class="row">
+                <div class="col-lg-50" >
+                    &copy;  ©2021 Realizzato da <a href="https://github.com/BarbieriGiuseppe/GRUPPO_LCB">Gruppo LCB</a>
+                </div>
+        </div>
+        </div>
+          
+
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="<?php echo url('/areariservatalayout'); ?>/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="<?php echo url('/areariservatalayout'); ?>/js/bootstrap.min.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+     <script src="<?php echo url('/areariservatalayout'); ?>/js/custom.js"></script>
+    
+   
+</body>
+</html>

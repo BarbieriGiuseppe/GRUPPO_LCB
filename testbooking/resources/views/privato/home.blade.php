@@ -90,7 +90,7 @@
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
                         
                         
-                        <table id="table" border=1px solid black  style="width:100%">
+                        <table id="table" border="1px" solid black  style="width:100%">
                                                        <tr>
                                                            <th>Codice Fiscale </th>
                                                            <th>Codice Lab Pubblico </th>

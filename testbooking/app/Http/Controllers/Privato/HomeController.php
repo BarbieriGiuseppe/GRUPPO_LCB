@@ -42,7 +42,10 @@ class HomeController extends Controller
         return view('privato.prenotazione');
     }
 
-    
+    public function preventivo(){
+        return view('privato.preventivo');
+    }
+
     /**
      * Show the Privato modifica.
      *

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\Privato\HomeController;
+use App\Http\Controllers\Privato\HomeController;
+use App\Http\Controllers\Privato\PrenotazioneController;
 use app\routes\web;
 
 
@@ -42,5 +43,7 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-Route::get('/prenotazione','PrenotazioneController@elencoLaboratori');
-Route::get('/prenotazione/{codicelabpub}','PrenotazioneController@elencoTipologie');
+Route::get('/preventivo','PrenotazioneController@elencoLaboratori');
+Route::get('/preventivo/{codicelabpub}','PrenotazioneController@elencoTipologie');
+Route::get('registerTamponato', 'PrenotazioneController@showTamponatoForm')->name('registerTamponato');
+Route::post('registerTamponato', 'PrenotazioneController@registerTamponato');
