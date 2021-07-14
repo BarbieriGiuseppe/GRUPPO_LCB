@@ -9,13 +9,14 @@ use app\routes\web;
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
 Route::get('/preventivo', 'HomeController@preventivo')->name('preventivo');
-Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+//Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
-Route::get('/modifica','HomeController@mostraAnagrafica');
-Route::get('/update/{id,codicefiscale ,cognome , nome ,telefono ,datanascita ,luogonascita ,
-    residenza ,citta ,provincia ,cap ,nazione ,email  ,password }','HomeController@modificaAnagrafica');
+Route::get('/modifica','HomeController@Profilo');
+Route::get('/modifica','HomeController@mostraProfilo');
+Route::get('/click_edit/{id}','HomeController@modificaAnagrafica');
+Route::post('/update/{id}','HomeController@updateAnagrafica');
 
 
 // Login
