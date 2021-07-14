@@ -64,5 +64,63 @@ class HomeController extends Controller
     }
 
 
+
+
+    public  function modificaEsitoPrivato($id)
+    {   
+        $e_privato = DB::select('select * from prenotazione_privato where id = ?' , [$id]);              
+        return view('laboratorio/esito',['e_privato'=>$e_privato]);
+    }
+
+    public  function modificaEsitoPaziente($id)
+    {   
+        $e_paziente = DB::select('select * from prenotazione_medico where id = ?' , [$id]);              
+        return view('laboratorio/esito',['e_paziente'=>$e_paziente]);
+    }
+
+    public  function modificaEsitoDipendente($id)
+    {   
+        $e_dipendente = DB::select('select * from prenotazione_datore where id = ?' , [$id]);              
+        return view('laboratorio/esito',['e_dipendente'=>$e_dipendente]);
+    }
+
+
+
+
+    public  function updateEsitoPrivato(Request $req,$id)
+    {   
+
+        $esito = $req-> input('esito');;
+    
+        DB::update('update prenotazione_privato set esito = ? where id = ?',
+        [$esito ,$id]);
+        
+        return redirect('laboratorio/home');
+    }
+
+    public  function updateEsitoPaziente(Request $req,$id)
+    {   
+
+        $esito = $req-> input('esito');
+
+
+        DB::update('update prenotazione_medico set esito = ? where id = ?',
+        [$esito ,$id]);
+        
+        return redirect('laboratorio/home');
+    }
+
+    public  function updateEsitoDipendente(Request $req,$id)
+    {   
+
+        $esito = $req-> input('esito');;
+
+
+        DB::update('update prenotazione_datore set esito = ? where id = ?',
+        [ $esito ,$id]);
+        
+        return redirect('laboratorio/home');
+    }
+
   
 }

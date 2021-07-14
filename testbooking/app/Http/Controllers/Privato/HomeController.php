@@ -69,10 +69,10 @@ class HomeController extends Controller
         return redirect('privato/home');
     }
     
-    public  function Profilo()
+    /*public  function Profilo()
     {                 
         return view('privato/modifica');
-    }
+    }*/
 
     public  function mostraProfilo()
     {   

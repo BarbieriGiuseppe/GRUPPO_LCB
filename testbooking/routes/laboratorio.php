@@ -10,6 +10,12 @@ Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prezzotampone', 'HomeController@prenotazione')->name('prezzotampone');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 Route::get('/home', 'HomeController@mostraPrenotazioni');
+Route::get('/click_edit_privato/{id}', 'HomeController@modificaEsitoPrivato');
+Route::get('/click_edit_paziente/{id}', 'HomeController@modificaEsitoPaziente');
+Route::get('/click_edit_dipendente/{id}', 'HomeController@modificaEsitoDipendente');
+Route::post('/update/{id}','HomeController@updateEsitoPrivato');
+Route::post('/update/{id}','HomeController@updateEsitoPaziente');
+Route::post('/update/{id}','HomeController@updateEsitoDipendente');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

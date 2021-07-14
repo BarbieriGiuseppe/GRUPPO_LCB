@@ -89,15 +89,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI PRIVATI</b></h5>
-                        <table id="table" border=1px  style="width:100%">
+                        <table id="table" border=1px  col span="1" style="width: 150%;"">
                             <tr>
-                                <th>ID </th>
-                                <th>Codice Fiscale </th>
-                                <th>Codice Lab Pubblico </th>
-                                <th>Data Tampone </th>
-                                <th>Tipologia </th>
-                                <th>Pagato </th>
-                                <th>Esito</th>
+                                <th style="text-align:center">ID </th>
+                                <th style="text-align:center">Codice Fiscale </th>
+                                <th style="text-align:center">Email Privato </th>
+                                <th style="text-align:center">Data Tampone </th>
+                                <th style="text-align:center">Tipologia </th>
+                                <th style="text-align:center">Pagato </th>
+                                <th style="text-align:center">Esito</th>
+                                <th style="text-align:center">Referto</th>
                                
                                 <td></td>
                             </tr>
@@ -106,23 +107,23 @@
                     @foreach ($t_privati as $prenotazioniprivati)
 
                         <tr>
-                        <td>{{ $prenotazioniprivati->id}}</td>
+                        <td style="text-align:center">{{ $prenotazioniprivati->id}}</td>
 
-                        <td>{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
+                        <td style="text-align:center">{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
 
-                        <td>{{ $prenotazioniprivati->codicelabpubblico }}</td>
+                        <td style="text-align:center">{{ $prenotazioniprivati->emailprivato }}</td>
 
-                        <td>{{ $prenotazioniprivati->datatampone }}</td> 
+                        <td style="text-align:center">{{ $prenotazioniprivati->datatampone }}</td> 
 
-                        <td>{{ $prenotazioniprivati->tipologia }}</td>     
+                        <td style="text-align:center">{{ $prenotazioniprivati->tipologia }}</td>     
 
-                        <td>{{ $prenotazioniprivati->pagato }}</td>
+                        <td style="text-align:center">{{ $prenotazioniprivati->pagato }}</td>
 
-                        <td>{{ $prenotazioniprivati->esito }}</td>
+                        <td style="text-align:center">{{ $prenotazioniprivati->esito }}</td>
 
 
-                        <td>
-                        <a href="click_edit/{{$prenotazioniprivati->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                        <td style="text-align:center">
+                        <a href="click_edit_privato/{{$prenotazioniprivati->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
                         </td>
 
                         <td></td>
@@ -133,17 +134,18 @@
                     </table> 
 
                     <div class="row">
-                        <div class="col-lg-6 col-md-6">
+                        <div class="col-lg-12 col-md-12">
                             <h5><b>LISTA PRENOTAZIONI PAZIENTI</b></h5>
-                            <table id="table" border=1px style="width:100%">
-                                <tr>
-                                    <th>ID </th>
-                                    <th>Codice Fiscale </th>
-                                    <th>Codice Lab Pubblico </th>
-                                    <th>Data Tampone </th>
-                                    <th>Tipologia </th>
-                                    <th>Pagato </th>
-                                    <th>Esito</th>
+                            <table id="table" border=1px col span="1" style="width:150%">
+                                <tr >
+                                    <th style="text-align:center";>ID </th>
+                                    <th style="text-align:center">Codice Fiscale </th>
+                                    <th style="text-align:center">Email Medico </th>
+                                    <th style="text-align:center">Data Tampone </th>
+                                    <th style="text-align:center">Tipologia </th>
+                                    <th style="text-align:center">Pagato </th>
+                                    <th style="text-align:center">Esito</th>
+                                    <th style="text-align:center">Referto</th>
                                    
                                     <td></td>
                                 </tr>
@@ -153,23 +155,23 @@
     
                             <tr>
     
-                            <td>{{ $prenotazionipazienti->id}}</td>
+                            <td style="text-align:center">{{ $prenotazionipazienti->id}}</td>
 
-                            <td>{{ $prenotazionipazienti->codicefiscalepaziente}}</td>
+                            <td style="text-align:center">{{ $prenotazionipazienti->codicefiscalepaziente}}</td>
+
+                            <td style="text-align:center">{{ $prenotazionipazienti->emailmedico }}</td> 
     
-                            <td>{{ $prenotazionipazienti->codicelabpubblico }}</td>
+                            <td style="text-align:center">{{ $prenotazionipazienti->datatampone }}</td> 
     
-                            <td>{{ $prenotazionipazienti->datatampone }}</td> 
+                            <td style="text-align:center">{{ $prenotazionipazienti->tipologia }}</td>     
     
-                            <td>{{ $prenotazionipazienti->tipologia }}</td>     
+                            <td style="text-align:center">{{ $prenotazionipazienti->pagato }}</td>
     
-                            <td>{{ $prenotazionipazienti->pagato }}</td>
-    
-                            <td>{{ $prenotazionipazienti->esito }}</td>
+                            <td style="text-align:center">{{ $prenotazionipazienti->esito }}</td>
     
     
-                            <td>
-                            <a href="click_edit/{{$prenotazionipazienti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                            <td style="text-align:center">
+                            <a href="click_edit_paziente/{{$prenotazionipazienti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
                             </td>
     
                             <td></td>
@@ -180,17 +182,18 @@
                         </table> 
 
                         <div class="row">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-12 col-md-12">
                                 <h5><b>LISTA PRENOTAZIONI DIPENDENTI</b></h5>
-                                <table id="table" border=1px  style="width:100%">
+                                <table id="table" border=1px col span="1" style="width:150%">
                                     <tr>
-                                        <th>ID </th>
-                                        <th>Codice Fiscale </th>
-                                        <th>Codice Lab Pubblico </th>
-                                        <th>Data Tampone </th>
-                                        <th>Tipologia </th>
-                                        <th>Pagato </th>
-                                        <th>Esito</th>
+                                        <th style="text-align:center">ID </th>
+                                        <th style="text-align:center">Codice Fiscale </th>
+                                        <th style="text-align:center">Email Datore</th>
+                                        <th style="text-align:center">Data Tampone </th>
+                                        <th style="text-align:center">Tipologia </th>
+                                        <th style="text-align:center">Pagato </th>
+                                        <th style="text-align:center">Esito</th>
+                                        <th style="text-align:center">Referto</th>
                                        
                                         <td></td>
                                     </tr>
@@ -199,24 +202,24 @@
                             @foreach ($t_dipendenti as $prenotazionidipendenti)
         
                                 <tr>
-                                <td>{{ $prenotazionidipendenti->id}}</td>
+                                <td style="text-align:center">{{ $prenotazionidipendenti->id}}</td>
 
         
-                                <td>{{ $prenotazionidipendenti->codicefiscaledipendente}}</td>
+                                <td style="text-align:center">{{ $prenotazionidipendenti->codicefiscaledipendente}}</td>
+                                
+                                <td style="text-align:center">{{ $prenotazionidipendenti->emaildatore }}</td>
         
-                                <td>{{ $prenotazionidipendenti->codicelabpubblico }}</td>
+                                <td style="text-align:center">{{ $prenotazionidipendenti->datatampone }}</td> 
         
-                                <td>{{ $prenotazionidipendenti->datatampone }}</td> 
+                                <td style="text-align:center">{{ $prenotazionidipendenti->tipologia }}</td>     
         
-                                <td>{{ $prenotazionidipendenti->tipologia }}</td>     
+                                <td style="text-align:center">{{ $prenotazionidipendenti->pagato }}</td>
         
-                                <td>{{ $prenotazionidipendenti->pagato }}</td>
-        
-                                <td>{{ $prenotazionidipendenti->esito }}</td>
+                                <td style="text-align:center">{{ $prenotazionidipendenti->esito }}</td>
         
         
-                                <td>
-                                <a href="click_edit/{{$prenotazionidipendenti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                                <td style="text-align:center">
+                                <a href="click_edit_dipendente/{{$prenotazionidipendenti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
                                 </td>
         
                                 <td></td>
