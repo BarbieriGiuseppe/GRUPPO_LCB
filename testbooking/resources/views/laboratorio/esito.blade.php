@@ -84,7 +84,7 @@
                                 <td style="text-align:center">{{ $e_privato[0]->pagato }}</td>
 
                                 
-                        <form action="/update/{{ $e_privato[0]->id }}" method="post">
+                        <form action="/update/{{ $e_privato[0]->id }}" method="get">
 
                                 <td style="text-align:center">
                                     <select name="esito" id="esito" type="text" >
@@ -108,7 +108,7 @@
     
                             </tr>                         
 
-                            <button type="submit" name="submit">Salva Esito</button>
+                           <a href ="/update/{{ $e_privato[0]->id }}"><button type="submit" name="submit">Salva Esito</button></a>
 
 
 
@@ -131,7 +131,7 @@
                                 <td style="text-align:center">{{ $e_paziente[0]->pagato }}</td>
 
                         
-                        <form action="/update/{{ $e_paziente[0]->id }}" method="post">
+                        <form action="/update/{{ $e_paziente[0]->id }}" method="get">
 
                                 <td style="text-align:center">
                                     <select name="esito" id="esito" type="text"  >
@@ -154,7 +154,7 @@
                                 
                             </tr>
 
-                            <button type="submit" name="submit">Salva Esito</button>
+                            <a href ="/update/{{ $e_paziente[0]->id }}"> <button type="submit" name="submit">Salva Esito</button></a>
 
 
                         </form>
@@ -177,7 +177,7 @@
                                 <td style="text-align:center">
                         
                         
-                        <form action="/update/{{ $e_dipendente[0]->id }}" method="post">
+                        <form action="/update/{{ $e_dipendente[0]->id }}" method="get">
 
                                     <select name="esito" id="esito" type="text" >
 

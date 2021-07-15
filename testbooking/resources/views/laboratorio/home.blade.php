@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI PRIVATI</b></h5>
-                        <table id="table" border=1px  col span="1" style="width: 150%;"">
+                        <table id="table" border=1px  col span="1" style="width: 150%;">
                             <tr>
                                 <th style="text-align:center">ID </th>
                                 <th style="text-align:center">Codice Fiscale </th>
