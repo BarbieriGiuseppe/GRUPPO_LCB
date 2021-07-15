@@ -15,9 +15,9 @@ Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_edit_privato/{id}', 'HomeController@modificaEsitoPrivato');
 Route::get('/click_edit_paziente/{id}', 'HomeController@modificaEsitoPaziente');
 Route::get('/click_edit_dipendente/{id}', 'HomeController@modificaEsitoDipendente');
-Route::post('/update/{id}','HomeController@updateEsitoPrivato');
-Route::post('/update/{id}','HomeController@updateEsitoPaziente');
-Route::post('/update/{id}','HomeController@updateEsitoDipendente');
+Route::get('/update/{id}','HomeController@updateEsitoPrivato');
+Route::get('/update/{id}','HomeController@updateEsitoPaziente');
+Route::get('/update/{id}','HomeController@updateEsitoDipendente');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
