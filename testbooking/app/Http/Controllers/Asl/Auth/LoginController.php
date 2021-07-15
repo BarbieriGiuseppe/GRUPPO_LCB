@@ -74,7 +74,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect()->route('asl.home');
+        return $this->loggedOut($request) ?: redirect()->back();
     }
 
     public function login(Request $request)
@@ -89,9 +89,9 @@ class LoginController extends Controller
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'codprivato';
         if(auth()->guard('asl')->attempt(array($fieldType => $input['codprivato'], 'password' => $input['password'])))
         {
-            return redirect()->route('asl.home');
+            return redirect('asl/home');
         }else{
-            return redirect()->route('asl.login')
+            return redirect('asl.login')
                 ->with('error','Email-Address And Password Are Wrong.');
         }
           

@@ -13,14 +13,13 @@ Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
 Route::get('/preventivo', 'HomeController@preventivo')->name('preventivo');
 Route::get('/riepilogo','HomeController@riepilogo')->name('riepilogo');
-//Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
-//Route::get('/modifica','HomeController@Profilo');
-Route::get('/modifica','HomeController@mostraProfilo');
-Route::get('/click_edit/{id}','HomeController@modificaAnagrafica');
-Route::get('/update/{id}','HomeController@updateAnagrafica');
+Route::get('/modifica','ModificaController@mostraProfilo');
+Route::get('/click_edit/{id}','ModificaController@modificaAnagrafica');
+Route::post('/update/{id}','ModificaController@updateAnagrafica');
 
 
 // Login

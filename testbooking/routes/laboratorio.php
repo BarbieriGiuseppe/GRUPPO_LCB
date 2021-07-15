@@ -7,15 +7,17 @@ use Illuminate\Support\Facades\Mail;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
-Route::get('/prezzotampone', 'HomeController@prenotazione')->name('prezzotampone');
+Route::get('/prezzotamponi', 'HomeController@prezzotamponi')->name('prezzotamponi');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+
+
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_edit_privato/{id}', 'HomeController@modificaEsitoPrivato');
 Route::get('/click_edit_paziente/{id}', 'HomeController@modificaEsitoPaziente');
 Route::get('/click_edit_dipendente/{id}', 'HomeController@modificaEsitoDipendente');
-Route::post('/update/{id}','HomeController@updateEsitoPrivato');
-Route::post('/update/{id}','HomeController@updateEsitoPaziente');
-Route::post('/update/{id}','HomeController@updateEsitoDipendente');
+Route::get('/update/{id}','HomeController@updateEsitoPrivato');
+Route::get('/update/{id}','HomeController@updateEsitoPaziente');
+Route::get('/update/{id}','HomeController@updateEsitoDipendente');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -42,4 +44,5 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
-
+Route::get('/prezzotamponi', 'PrezzoTamponiController@showPrezzoTamponiForm');
+Route::post('savePrezzoTampone/{tipologia,codicelabpubblico}', 'PrezzoTamponiController@registerPrezzoTampone')->name('savePrezzoTampone');

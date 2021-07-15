@@ -39,8 +39,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function prezzotampone() {
-        return view('laboratorio.prezzotampone');
+    public function prezzotamponi() {
+        return view('laboratorio.prezzotamponi');
     }
 
     

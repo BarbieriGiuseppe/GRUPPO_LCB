@@ -46,7 +46,7 @@
                 
                 
                 
-<form action="/update/{{ $user[$id]->id }}" method="get">
+<form action="/update/{{ $user[$id]->id }}" method="post">
 
     
 

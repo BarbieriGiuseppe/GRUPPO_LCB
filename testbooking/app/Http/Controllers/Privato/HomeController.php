@@ -77,51 +77,5 @@ class HomeController extends Controller
         return view('privato/modifica');
     }*/
 
-    public  function mostraProfilo()
-    {   
-        $id = Auth::guard('privato')->user()->id-1;
-        $data = DB::select('select * from privatos');               
-        return view('privato/modifica',['data'=>$data,'id'=>$id]);
-    }
-
-
-    public  function modificaAnagrafica($id)
-    {   
-        $id = Auth::guard('privato')->user()->id-1;
-        $user = DB::select('select * from privatos');              
-        return view('privato/editanagrafica',['user'=>$user,'id'=>$id]);
-    }
-
-    public  function updateAnagrafica($id)
-    {   
-
-        /*$codicefiscale = $req->input('codicefiscale');
-        $cognome = $req->input('cognome');
-        $nome = $req->input('nome');
-        $telefono = $req->input('telefono');
-        $datanascita = $req->input('datanascita');
-        $luogonascita = $req->input('luogonascita');
-        $residenza = $req->input('residenza');
-        $citta = $req->input('citta');
-        $provincia = $req->input('provincia');
-        $cap =$req->input('cap');
-        $nazione = $req->input('nazione');
-        $email = $req->input('email');
-        $password =$req->input('password');
-
-
-        DB::update('update privatos set codicefiscale = ? ,
-        cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
-        luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
-        cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
-        [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);*/
-
-
-        echo "proba";
-        return "ciao";
-        
-        //return redirect('privato/modifica');
-    }
   
 }
