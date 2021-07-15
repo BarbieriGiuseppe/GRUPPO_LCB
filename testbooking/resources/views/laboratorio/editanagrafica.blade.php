@@ -61,7 +61,7 @@
                    
 
                     <li class="active-link">
-                        <a href="prezzotamponi"><i class="fa fa-table "></i>Prezzo Tamponi  <span class="badge"></span></a>
+                        <a href="prezzotampone"><i class="fa fa-table "></i>Prezzo Tamponi  <span class="badge"></span></a>
                     </li>
 
                     <li class="active-link">

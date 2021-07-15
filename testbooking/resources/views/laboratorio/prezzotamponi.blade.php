@@ -41,7 +41,7 @@
                     
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('laboratorio')->user()->nome }}  {{ Auth::guard('laboratorio')->user()->cognome }}<span class="caret"></span>
+                            Laboratorio: {{ Auth::guard('laboratorio')->user()->nomelaboratorio }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -61,7 +61,7 @@
                    
 
                     <li class="active-link">
-                        <a href="prezzotampone"><i class="fa fa-table "></i>Prezzo Tampone  <span class="badge"></span></a>
+                        <a href="prezzotamponi"><i class="fa fa-table "></i>Prezzo Tamponi  <span class="badge"></span></a>
                     </li>
 
                     <li class="active-link">
@@ -84,39 +84,60 @@
                  <!-- /. ROW  -->
                  <!-- /. ROW  -->
                 
-                
+<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Rapido , $codice }}') }}">
+    
+    @csrf               
   
                 <div class="input-group">
                     <h5>Tampone Rapido</h5>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input type="text" class="form-control" id="prezzotamponerapido" name="prezzo" />
                 </div>
-                
-                
-                
-                <div class="input-group">
-                     <h5>Tampone Molecolare</h5>
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                
-                <div class="input-group">
-                    <h5>Tampone Sierologico</h5>
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                
-                <div class="input-group">
-                    <h5>Tampone Antigenico</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-            
                 
                 <br><button type=”submit”> Salva Modifiche </button> 
+
+
+</form> 
+              
+
+<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Molecolare ,$codice }}') }}">
+    
+    @csrf
+
+                <div class="input-group">
+                     <h5>Tampone Molecolare</h5>
+                    <input type="text" class="form-control" id="prezzotamponemolecolare" name="prezzo" />
+                </div>
+            
+                <br><button type=”submit”> Salva Modifiche </button> 
+
+</form>                
+
+
+<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Sierologico ,$codice }}') }}">
+    
+    @csrf
+
+                <div class="input-group">
+                    <h5>Tampone Sierologico</h5>
+                    <input type="text" class="form-control" id="prezzotamponesierologico" name="prezzo" />
+                </div>
+            
+                <br><button type=”submit”> Salva Modifiche </button> 
+
+</form> 
+
+
+<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Antigenico ,$codice }}') }}">
+
+    @csrf
+                <div class="input-group">
+                    <h5>Tampone Antigenico</h5>  
+                    <input type="text" class="form-control" id="prezzotamponeantigenico" name="prezzo" />
+                </div>
+            
+                <br><button type=”submit”> Salva Modifiche </button> 
                         
-                
+</form>               
 
                  <!-- /. ROW  -->           
     </div>

@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Mail;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
-Route::get('/prezzotampone', 'HomeController@prenotazione')->name('prezzotampone');
+Route::get('/prezzotamponi', 'HomeController@prezzotamponi')->name('prezzotamponi');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+
+
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_edit_privato/{id}', 'HomeController@modificaEsitoPrivato');
 Route::get('/click_edit_paziente/{id}', 'HomeController@modificaEsitoPaziente');
@@ -42,4 +44,5 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
-
+Route::get('/prezzotamponi', 'PrezzoTamponiController@showPrezzoTamponiForm');
+Route::post('savePrezzoTampone/{tipologia,codicelabpubblico}', 'PrezzoTamponiController@registerPrezzoTampone')->name('savePrezzoTampone');
