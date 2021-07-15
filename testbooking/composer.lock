@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38c9deff96deab7cfafef66380e007b1",
+    "content-hash": "904a3b2525953298e062fefd18b4c51e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -489,6 +489,63 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "epmnzava/paypal-laravel",
+            "version": "1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbrax/paypal-laravel.git",
+                "reference": "7c019f25ac23677f2d99097347b1ae4cf0a9d748"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbrax/paypal-laravel/zipball/7c019f25ac23677f2d99097347b1ae4cf0a9d748",
+                "reference": "7c019f25ac23677f2d99097347b1ae4cf0a9d748",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5.44|^6.0|^7.0|^8.0",
+                "php": "^7.1|^7.2|^7.3|^7.4|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Epmnzava\\PaypalLaravel\\PaypalLaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "PaypalLaravel": "Epmnzava\\PaypalLaravel\\PaypalLaravelFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Epmnzava\\PaypalLaravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emmanuel Mnzava",
+                    "email": "epmnzava@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is a laravel package for intergration with paypal",
+            "homepage": "https://github.com/dbrax/paypal-laravel",
+            "keywords": [
+                "epmnzava",
+                "paypal-laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/dbrax/paypal-laravel/issues",
+                "source": "https://github.com/dbrax/paypal-laravel/tree/1.5"
+            },
+            "time": "2021-02-26T10:44:50+00:00"
         },
         {
             "name": "fideloper/proxy",

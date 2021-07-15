@@ -94,8 +94,8 @@
                     <ul class="progressbar">
                         <li class="active"> Dati Tamponato</li>
                         <li>Selezione Appuntamento</li>
-                        <li>add friends</li>
-                        <li>View map</li>
+                        <li>Riepilogo e Pagamento</li>
+
                 </ul>
                 <div class="row">
                     <div class="col-md-12">

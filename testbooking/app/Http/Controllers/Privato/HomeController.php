@@ -46,6 +46,9 @@ class HomeController extends Controller
         return view('privato.preventivo');
     }
 
+    public function riepilogo(){
+        return view('privato.riepilogo');
+    }
     /**
      * Show the Privato modifica.
      *

@@ -107,7 +107,8 @@ class PrenotazioneController extends Controller
         $tamponato->save();
 
 
-        return redirect('privato/preventivo')->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato]);
+        return redirect('privato/preventivo')->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato,
+        'email'=>$request->email]);
     }
 
  

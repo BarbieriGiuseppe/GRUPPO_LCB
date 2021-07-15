@@ -30,16 +30,16 @@
    <script>
 $(function() {
   var holidays = [
-    '1.1.2020',
-    '2.1.2020',
-    '20.2.2020',
-    '19.1.2020',
-    '1.8.2020',
-    '15.8.2020',
-    '1.11.2020',
-    '8.12.2020',
-    '25.12.2020',
-    '26.12.2020'
+    '1.1.2021',
+    '2.1.2021',
+    '20.2.2021',
+    '19.1.2021',
+    '1.8.2021',
+    '15.8.2021',
+    '1.11.2021',
+    '8.12.2021',
+    '25.12.2021',
+    '26.12.2021'
   ];
   function noSundaysOrHolidays(date) {
     var day = date.getDay();
@@ -59,7 +59,7 @@ $(function() {
   }
 
   $('#datatampone').datepicker({
-    onClose: function(dateText, inst) { 
+    onClose: function(datatampone, inst) { 
         $(this).attr("disabled", false);
     },
     beforeShow: function(input, inst) {
@@ -67,9 +67,10 @@ $(function() {
     },
     beforeShowDay: noSundaysOrHolidays,
     minDate: 0,
-    dateFormat: 'dd-mm-yy',
+    dateFormat: 'yy-mm-dd',
   });
 });
+
     </script>
 
 
@@ -151,14 +152,14 @@ $(function() {
                  <!-- /. ROW  -->
                  
                  <!-- /. ROW  --> 
-     <form method="POST" action="{{ route('privato.registerTamponato') }}">
+     <form method="POST" action="{{ route('privato.registerPreventivo') }}">
 					@csrf
  
     <div class="input-group" style = "position:relative; left:-280px; top:48px;">
         <h5>Laboratorio</h5>  
             <div>
                 <select class="form-control formselect required" placeholder="Laboratorio"
-                    id="sub_category_name">
+                    id="codicelabpubblico" name="codicelabpubblico">
                     <option value="0" disabled selected>Seleziona un Laboratorio</option>
                     @foreach($data as $laboratorio)
                     <option  value="{{ $laboratorio->codicelabpubblico }}">
@@ -171,18 +172,18 @@ $(function() {
     <div class="input-group" style = "position:relative; left: 25px; top: -20px;">
         <h5>Tipologia tampone</h5>
         <span class="focus-input100" ></span>
-        <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="sub_category">
+        <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="tipologia" name="tipologia">
         </select>
     </div>
     
     <div class="input-group" style = "position:relative; left: 290px; top: -90px;">
         <h5>Data Appuntamento</h5>
-        <input type="text" id="datatampone"/>
+        <input type="text" id="datatampone" name="datatampone">
     </div>
    
     <div class="input-group "style = "position:relative; left: 550px; top: -163px;"> 
         <h5>Orario</h5>
-       <input id="orario" type="time" class="input100 @error('orario') is-invalid @enderror" name="orario" value="{{ old('cap') }}" required autocomplete="orario" autofocus min="08:00:00" max="20:00:00">
+       <input id="orario" type="time" class="input100 @error('orario') is-invalid @enderror" name="orario" value="{{ old('orario') }}" required autocomplete="orario" autofocus min="08:00:00" max="20:00:00">
        @error('orario')
                        <span class="invalid-feedback" role="alert">
                            <strong>{{ $message }}</strong>
@@ -195,9 +196,20 @@ $(function() {
        <input id="emailprivato" type="text" name = "emailprivato" readonly value=' {{ Auth::guard('privato')->user()->email }}'>
    </div>
 
+
    <div id="divCheckbox" style="display: none;">>
     <h5> Email Privato</h5>
    <input id="codicefiscaletamponato" type="text" name = "codicefiscaletamponato" readonly value=' {{Session::get('codicefiscaletamponato');}}'>
+</div>
+
+<div id="divCheckbox" style="display: none;">>
+    <h5> Pagato</h5>
+   <input id="codicefiscaletamponato" type="text" name = "pagato" readonly value='no'>
+</div>
+
+<div id="divCheckbox" style="display: none;">>
+    <h5> Esito</h5>
+   <input id="esito" type="text" name = "esito" readonly value='n/d'>
 </div>
 
     <br> <button type="submit" style = "position:relative; left:-280px; top: -180px;">
@@ -250,20 +262,20 @@ $(function() {
 
 <script>
         $(document).ready(function () {
-        $('#sub_category_name').on('change', function () {
+        $('#codicelabpubblico').on('change', function () {
         let codicelabpub = $(this).val();
-        $('#sub_category').empty();
-        $('#sub_category').append(`<option value="0" disabled selected>Caricamento...</option>`);
+        $('#tipologia').empty();
+        $('#tipologia').append(`<option value="0" disabled selected>Caricamento...</option>`);
         $.ajax({
         type: 'GET',
         url: 'preventivo/' + codicelabpub,
         success: function (response) {
         var response = JSON.parse(response);
         console.log(response);   
-        $('#sub_category').empty();
-        $('#sub_category').append(`<option value="0" disabled selected>Seleziona una tipologia</option>`);
+        $('#tipologia').empty();
+        $('#tipologia').append(`<option value="0" disabled selected id='tipologia' name="tipologia">Seleziona una tipologia</option>`);
         response.forEach(element => {
-            $('#sub_category').append(`<option value="${element['codicelabpubblico']}">${element['tipologia']}</option>`);
+            $('#tipologia').append(`<option value="${element['tipologia']}">${element['tipologia']}</option>`);
             });
         }
     });

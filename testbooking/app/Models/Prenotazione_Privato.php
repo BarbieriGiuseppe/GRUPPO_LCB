@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Privato extends Authenticatable
+class Prenotazione_Privato extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+    protected $table = 'prenotazione_privato';
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +19,7 @@ class Privato extends Authenticatable
      */
     protected $fillable = [
         'id','codicefiscaletamponato','codicelabpubblico',
-        'emailprivato','datatampone','orario','tipologia',
+        'emailprivato','datatampone','orario','tipologia','metodopagamento',
         'pagato','esito'
     ];
 
