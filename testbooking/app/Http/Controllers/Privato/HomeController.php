@@ -92,19 +92,19 @@ class HomeController extends Controller
     public  function updateAnagrafica($id)
     {   
 
-        /*$codicefiscale = 'wert';//$req->input('codicefiscale');
-        $cognome = 'DiStefano';//$req->input('cognome');
-        $nome = 'Pinuccio';//$req->input('nome');
-        $telefono = '45354';//$req->input('telefono');
-        $datanascita = '2018-09-08';//$req->input('datanascita');
-        $luogonascita = 'Bari';//$req->input('luogonascita');
-        $residenza = 'piazza';//$req->input('residenza');
-        $citta = 'Capurso';//$req->input('citta');
-        $provincia = 'BA';//$req->input('provincia');
-        $cap = '32874';//$req->input('cap');
-        $nazione = 'Italia';//$req->input('nazione');
-        $email = 'ccp@libero.it';//$req->input('email');
-        $password = '$2y$10$LeT55rE465IMYNvRWao0q.m0l7Oh2gxqi8S12o8JN03gtgzPTBUJm';//$req->input('password');
+        /*$codicefiscale = $req->input('codicefiscale');
+        $cognome = $req->input('cognome');
+        $nome = $req->input('nome');
+        $telefono = $req->input('telefono');
+        $datanascita = $req->input('datanascita');
+        $luogonascita = $req->input('luogonascita');
+        $residenza = $req->input('residenza');
+        $citta = $req->input('citta');
+        $provincia = $req->input('provincia');
+        $cap =$req->input('cap');
+        $nazione = $req->input('nazione');
+        $email = $req->input('email');
+        $password =$req->input('password');
 
 
         DB::update('update privatos set codicefiscale = ? ,
@@ -113,8 +113,12 @@ class HomeController extends Controller
         cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
         [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
         $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);*/
+
+
+        echo "proba";
+        return "ciao";
         
-        return redirect('privato/modifica');
+        //return redirect('privato/modifica');
     }
   
 }
