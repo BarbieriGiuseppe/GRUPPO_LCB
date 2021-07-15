@@ -20,6 +20,7 @@ class CreatePrenotazioneMedicoTable extends Migration
             $table->string('emailmedico')->unique();
             $table->date('datatampone');
             $table->time('orario');
+            $table->decimal('prezzo', $precision = 6, $scale = 2);
             $table->string('tipologia');
             $table->string('pagato');
             $table->string('esito');

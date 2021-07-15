@@ -17,7 +17,7 @@ class CreatePrezzoTamponeTable extends Migration
             $table->integer('id')->unique();
             $table->string('tipologia');
             $table->string('codicelabpub');
-            $table->string('prezzo');
+            $table->decimal('prezzo', $precision = 6, $scale = 2);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
