@@ -29,33 +29,40 @@ class ModificaController extends Controller
         return view('privato/modifica',['user'=>$user,'id'=>$id]);
     }
 
-    public  function updateAnagrafica()
+    public  function updateAnagrafica(Request $request)
     {   
         var_dump(10);
-        // $codicefiscale = $req->input('codicefiscale');
-        // $cognome = $req->input('cognome');
-        // $nome = $req->input('nome');
-        // $telefono = $req->input('telefono');
-        // $datanascita = $req->input('datanascita');
-        // $luogonascita = $req->input('luogonascita');
-        // $residenza = $req->input('residenza');
-        // $citta = $req->input('citta');
-        // $provincia = $req->input('provincia');
-        // $cap =$req->input('cap');
-        // $nazione = $req->input('nazione');
-        // $email = $req->input('email');
-        // $password =$req->input('password');
 
+        $privato = Privato::where('codicefiscale',$request->codicefiscale)->first();
 
-        // DB::update('update privatos set codicefiscale = ? ,
-        // cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
-        // luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
-        // cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
-        // [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-        // $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);*/
+        $privato->codicefiscale = 'ciao';
+
+       $prenotazione->save();
+
+         /*$codicefiscale = $req->input('codicefiscale');
+         $cognome = $req->input('cognome');
+         $nome = $req->input('nome');
+         $telefono = $req->input('telefono');
+         $datanascita = $req->input('datanascita');
+         $luogonascita = $req->input('luogonascita');
+         $residenza = $req->input('residenza');
+         $citta = $req->input('citta');
+         $provincia = $req->input('provincia');
+         $cap =$req->input('cap');
+         $nazione = $req->input('nazione');
+         $email = $req->input('email');
+         $password =$req->input('password');
 
         
-        // return redirect('privato/modifica');
+         DB::update('update privatos set codicefiscale = ? ,
+         cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
+         luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
+         cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
+         [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
+        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);*/
+
+        
+       return redirect('privato/modifica');
     }
   
 }

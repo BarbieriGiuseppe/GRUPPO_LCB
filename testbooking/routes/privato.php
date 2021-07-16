@@ -20,7 +20,7 @@ Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
 //Route::get('/modifica','ModificaController@mostraProfilo');
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
-Route::get('/update/{id}','ModificaController@updateAnagrafica');
+//Route::get('/update/{id}','ModificaController@updateAnagrafica');
 Route::get('/modificaluca','ModificaController@updateAnagrafica');
 
 

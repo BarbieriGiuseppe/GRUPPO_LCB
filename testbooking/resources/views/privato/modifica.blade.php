@@ -87,46 +87,46 @@
                 
                 
                 
-<form action="/privato/modificaluca" method="get">
+        <form action= "/privato/modificaluca " method="get">
 
     
 
                 <div class="input-group">
                     <h4><b>Codice Fiscale</b></h4>
-                    <input name='codicefiscale' id='codicefiscale' type="text" value="{{ $user[$id]->codicefiscale }}" class="form-control"  />
+                    <input name='codicefiscale' id='codicefiscale' type="text" value="{{ Auth::guard('privato')->user()->codicefiscale }}" class="form-control"  />
                 </div>
                 
                 
                 
                 <div class="input-group">
                      <h4><b>Cognome</b></h4>
-                    <input name='cognome' id='cognome' type="text"  value="{{ $user[$id]->cognome }}" class="form-control" />
+                    <input name='cognome' id='cognome' type="text"  value="{{ Auth::guard('privato')->user()->cognome}}" class="form-control" />
                 </div>
             
                 
                 
                 <div class="input-group">
                     <h4><b>Nome</b></h4>
-                    <input name='nome' id='nome' type="text" value="{{ $user[$id]->nome }}"  class="form-control" />
+                    <input name='nome' id='nome' type="text" value="{{ Auth::guard('privato')->user()->nome }}"  class="form-control" />
                 </div>
                             
                 
                 <div class="input-group">
                     <h4><b>Telefono</b></h4>  
-                    <input name='telefono' id='telefono' type="text" value="{{ $user[$id]->telefono }}" class="form-control"/>
+                    <input name='telefono' id='telefono' type="text" value="{{ Auth::guard('privato')->user()->telefono }}" class="form-control"/>
                 </div>
             
                 
                 
                 <div class="input-group">
                     <h4><b>Luogo Di Nascita</b></h4>  
-                    <input name='luogonascita' id='luogonascita' type="text" value="{{ $user[$id]->luogonascita }}" class="form-control" />
+                    <input name='luogonascita' id='luogonascita' type="text" value="{{ Auth::guard('privato')->user()->luogonascita }}" class="form-control" />
                 </div>
             
                 <div class="wrapper">
                     <h4><b>Data Di Nascita</b></h4>
                     <label>
-                        <input name='datanascita' id='datanascita' type="date"  value="{{ $user[$id]->datanascita }}" class="dateselect" required="required"/>
+                        <input name='datanascita' id='datanascita' type="date"  value="{{ Auth::guard('privato')->user()->datanascita }}" class="dateselect" required="required"/>
                     </label>
 
                 </div>                
@@ -134,7 +134,7 @@
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
                     <h4><b>Residenza</b></h4>   
-                    <input name='residenza' id='residenza' type="text" value="{{ $user[$id]->residenza }}" class="form-control"/>
+                    <input name='residenza' id='residenza' type="text" value="{{ Auth::guard('privato')->user()->residenza }}" class="form-control"/>
                 </div>
             
                 
@@ -142,26 +142,26 @@
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
                     <h4><b>Città</b></h4>  
-                    <input name='citta' id='citta' type="text" value="{{ $user[$id]->citta }}" class="form-control"  />
+                    <input name='citta' id='citta' type="text" value="{{ Auth::guard('privato')->user()->citta }}" class="form-control"  />
                 </div>
             
                 
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
                     <h4><b>Provincia</b></h4>  
-                    <input name='provincia' id='provincia' type="text" value="{{ $user[$id]->provincia }}" class="form-control"  />
+                    <input name='provincia' id='provincia' type="text" value="{{ Auth::guard('privato')->user()->provincia }}" class="form-control"  />
                 </div>
             
                 
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
                     <h4><b>CAP</b></h4>  
-                    <input name='cap' id='cap' type="text" value="{{ $user[$id]->cap }}" class="form-control"  />
+                    <input name='cap' id='cap' type="text" value="{{ Auth::guard('privato')->user()->cap }}" class="form-control"  />
                 </div>
                 
                 <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
                     <h4><b>Nazione</b></h4>
-                    <select name="nazione" id='nazione' type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ $user[$id]->nazione}}" required autocomplete="nazione" autofocus>
+                    <select name="nazione" id='nazione' type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ Auth::guard('privato')->user()->nazione}}" required autocomplete="nazione" autofocus>
                         <option value="AF">Afghanistan</option>
                         <option value="AL">Albania</option>
                         <option value="DZ">Algeria</option>
@@ -403,7 +403,7 @@
                         <option value="ZM">Zambia</option>
                         <option value="ZW">Zimbabwe</option>
                       </select>
-                    <span class="focus-input100" data-placeholder="nazione" style = "position:relative; left:-145px; top:-40px; "></span>
+                    <span class="focus-input100"  style = "position:relative; left:-145px; top:-40px; "></span>
                     
                     @error('nazione')
                                     <span class="invalid-feedback" role="alert">
@@ -418,12 +418,12 @@
             
                 <div class="input-group"  style = "position:relative; left:260px; top:-473px; ">
                     <h4><b>Email</b></h4>  
-                    <input name='email' id='email' type="text" value="{{ $user[$id]->email }}" class="form-control"/>
+                    <input name='email' id='email' type="text" value="{{ Auth::guard('privato')->user()->email }}" class="form-control"/>
                 </div>
                 
                 <<div class="input-group"  style = "position:relative; left:490px; top:-494px; ">
                     <h5>Password</h5>  
-                    <input name='password' id='password' type="password" value="{{ $user[$id]->password }}" class="form-control" />
+                    <input name='password' id='password' type="password" value="{{ Auth::guard('privato')->user()->password }}" class="form-control" />
                 </div>
 
 
