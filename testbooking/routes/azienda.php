@@ -8,10 +8,13 @@ use app\routes\web;
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
-Route::get('/modifica','HomeController@mostraAnagrafica');
-Route::get('/update/{id}','HomeController@modificaAnagrafica');
+
+Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
+Route::get('/aggiorna','ModificaController@updateAnagrafica');
+
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');

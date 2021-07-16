@@ -61,45 +61,5 @@ class HomeController extends Controller
         DB::delete('delete from prenotazione_datore where id = ?', [$id]);
         return redirect('azienda/home');
     }
-    
-    public  function mostraAnagrafica(/*$id*/)
-    {   
-        
-        $data = DB::select('select * from aziendas');       //where id = ?',[$id]
-        return view('azienda/modifica',['data'=>$data]);
-    }
-
-    public  function modificaAnagrafica(Request $request,$id)
-    {   
-        $codicefiscale = $request->input('codicefiscale');
-        $cognome = $request->input('cognome');
-        $nome = $request->input('nome');
-        $telefono = $request->input('telefono');
-        $datanascita = $request->input('datanascita');
-        $luogonascita = $request->input('luogonascita');
-        $residenza= $request->input('residenza');
-        $citta = $request->input('citta');
-        $provincia = $request->input('provincia');
-        $cap = $request->input('cap');
-        $nazione = $request->input('nazione');
-        $nomestudiomedico = $request->input('ragionesociale');
-        $partitaiva = $request->input('partitaiva');
-        $cittastudio = $request->input('cittaazienda');
-        $indirizzostudio = $request->input('indirizzoazienda');
-        $provinciastudio = $request->input('provinciaazienda');
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        DB::update('update aziendas set codicefiscale = ? ,
-        cognome = ? nome = ? ,telefono = ? ,datanascita = ? ,
-        luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
-        cap = ? ,nazione = ? ,ragionesociale = ?,partitaiva = ?,
-        cittaazienda = ?,indirizzoazienda = ?,provinciaazienda = ?,
-        email = ? ,password = ?,  where id = ?',
-        [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$ragionesociale,$partitaiva,
-        $cittaazienda,$indirizzoazienda, $provinciaazienda,$email  ,$password ,$id]);
-
-        return redirect('azienda/modifica')->with('succes','Data Updated');
-    }
+  
 }

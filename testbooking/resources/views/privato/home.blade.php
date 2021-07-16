@@ -90,18 +90,19 @@
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
                         
                         
-                        <table id="table" border="1px" solid black  style="width:100%">
-                                                       <tr>
-                                                           <th>Codice Fiscale </th>
-                                                           <th>Codice Lab Pubblico </th>
-                                                           <th>Data Tampone </th>
-                                                           <th>Tipologia </th>
-                                                           <th> Metodo Pagamento </th>
-                                                           <th>Pagato </th>
-                                                           <th>Esito</th>
+                        <table id="table" border="1px" solid black  style="width:150%">
+                            <tr>
+                                <th style="text-align:center">Codice Fiscale </th>
+                                <th style="text-align:center">Codice Lab Pubblico </th>
+                                <th style="text-align:center">Data Tampone </th>
+                                <th style="text-align:center">Ora Tampone </th>
+                                <th style="text-align:center">Tipologia </th>
+                                <th style="text-align:center">Metodo Pagamento </th>
+                                <th style="text-align:center">Pagato </th>
+                                <th style="text-align:center">Esito</th>
+                                <th style="text-align:center">Disdici</th>
                                                           
-                                                           <td></td>
-                                                       </tr>
+                            </tr>
                                
                                               
                        @foreach ($data as $prenotazione_privato)
@@ -109,19 +110,21 @@
                        <tr>
                        
                        
-                        <td>{{ $prenotazione_privato->codicefiscaletamponato }}</td>
+                        <td style="text-align:center">{{ $prenotazione_privato->codicefiscaletamponato }}</td>
                        
-                        <td>{{ $prenotazione_privato->codicelabpubblico }}</td>
+                        <td style="text-align:center">{{ $prenotazione_privato->codicelabpubblico }}</td>
                         
-                        <td>{{ $prenotazione_privato->datatampone }}</td> 
+                        <td style="text-align:center">{{ $prenotazione_privato->datatampone }}</td> 
 
-                        <td>{{ $prenotazione_privato->tipologia }}</td>     
+                        <td style="text-align:center">{{ $prenotazione_privato->orario}}</td>
+
+                        <td style="text-align:center">{{ $prenotazione_privato->tipologia }}</td>     
                         
-                        <td>{{ $prenotazione_privato->metodopagamento }} </td>
+                        <td style="text-align:center">{{ $prenotazione_privato->metodopagamento }} </td>
 
-                        <td>{{ $prenotazione_privato->pagato }}</td>
+                        <td style="text-align:center">{{ $prenotazione_privato->pagato }}</td>
 
-                        <td>{{ $prenotazione_privato->esito }}</td>
+                        <td style="text-align:center">{{ $prenotazione_privato->esito }}</td>
                        
                         <td>
                             

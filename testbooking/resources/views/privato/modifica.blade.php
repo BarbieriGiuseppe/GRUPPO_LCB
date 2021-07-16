@@ -87,13 +87,13 @@
                 
                 
                 
-        <form action= "/privato/modificaluca " method="get">
+        <form action= "/privato/aggiorna " method="get">
 
     
 
                 <div class="input-group">
                     <h4><b>Codice Fiscale</b></h4>
-                    <input name='codicefiscale' id='codicefiscale' type="text" value="{{ Auth::guard('privato')->user()->codicefiscale }}" class="form-control"  />
+                    <input name='codicefiscale' id='codicefiscale' type="text" readonly value="{{ Auth::guard('privato')->user()->codicefiscale }}" class="form-control"  />
                 </div>
                 
                 
@@ -132,7 +132,7 @@
                 </div>                
                 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-450px; ">
                     <h4><b>Residenza</b></h4>   
                     <input name='residenza' id='residenza' type="text" value="{{ Auth::guard('privato')->user()->residenza }}" class="form-control"/>
                 </div>
@@ -140,26 +140,26 @@
                 
             
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-450px; ">
                     <h4><b>Città</b></h4>  
                     <input name='citta' id='citta' type="text" value="{{ Auth::guard('privato')->user()->citta }}" class="form-control"  />
                 </div>
             
                 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-450px; ">
                     <h4><b>Provincia</b></h4>  
                     <input name='provincia' id='provincia' type="text" value="{{ Auth::guard('privato')->user()->provincia }}" class="form-control"  />
                 </div>
             
                 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-450px; ">
                     <h4><b>CAP</b></h4>  
                     <input name='cap' id='cap' type="text" value="{{ Auth::guard('privato')->user()->cap }}" class="form-control"  />
                 </div>
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-473px; ">
+                <div class="input-group" style = "position:relative; left:260px; top:-450px; ">
                     <h4><b>Nazione</b></h4>
                     <select name="nazione" id='nazione' type="text" class="form-control @error('nazione') is-invalid @enderror" name="nazione" value="{{ Auth::guard('privato')->user()->nazione}}" required autocomplete="nazione" autofocus>
                         <option value="AF">Afghanistan</option>
@@ -416,20 +416,20 @@
 
 
             
-                <div class="input-group"  style = "position:relative; left:260px; top:-473px; ">
+                <div class="input-group"  style = "position:relative; left:260px; top:-450px; ">
                     <h4><b>Email</b></h4>  
                     <input name='email' id='email' type="text" value="{{ Auth::guard('privato')->user()->email }}" class="form-control"/>
                 </div>
                 
-                <<div class="input-group"  style = "position:relative; left:490px; top:-494px; ">
+                <!--<<div class="input-group"  style = "position:relative; left:490px; top:-450px; ">
                     <h5>Password</h5>  
                     <input name='password' id='password' type="password" value="{{ Auth::guard('privato')->user()->password }}" class="form-control" />
-                </div>
+                </div>-->
 
 
-                <div class="input-group"  style = "position:relative; left:0px; top:-450px; "> 
+                <div class="input-group"  style = "position:relative; left:0px; top:-420px; "> 
 
-                 <button type="submit" name="submit">Salva Modifiche</button>
+                    <button type="submit" name="submit">Salva Modifiche</button>
                     
                 </div>
 

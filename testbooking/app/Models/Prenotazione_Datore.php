@@ -19,7 +19,7 @@ class Prenotazione_Datore extends Authenticatable
      */
     protected $fillable = [
         'id','codicefiscaledipendente','codicelabpubblico',
-        'emaildatore','datatampone','tipologia',
+        'emaildatore','datatampone','tipologia','metodopagamento',
         'pagato','esito'
     ];
 

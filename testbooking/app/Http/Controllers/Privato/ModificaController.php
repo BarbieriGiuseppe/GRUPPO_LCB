@@ -9,8 +9,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\AuthManager;
-use app\Http\Middleware\RedirectIfPrivato;
-use app\Http\Middleware\RedirectIfNotPrivato;
+use App\Http\Middleware\RedirectIfPrivato;
+use App\Http\Middleware\RedirectIfNotPrivato;
 
 class ModificaController extends Controller
 {
@@ -23,46 +23,32 @@ class ModificaController extends Controller
     */
 
     public  function modificaAnagrafica()
-    {   
-        $id = Auth::guard('privato')->user()->id-1;
-        $user = DB::select('select * from privatos');              
-        return view('privato/modifica',['user'=>$user,'id'=>$id]);
+    {                
+        return view('privato/modifica');
     }
 
     public  function updateAnagrafica(Request $request)
     {   
-        var_dump(10);
 
         $privato = Privato::where('codicefiscale',$request->codicefiscale)->first();
 
-        $privato->codicefiscale = 'ciao';
+        $privato->codicefiscale = $request['codicefiscale'];
+        $privato->cognome = $request['cognome'];
+        $privato->nome = $request['nome'];
+        $privato->telefono= $request['telefono'];
+        $privato->datanascita= $request['datanascita'];
+        $privato->luogonascita = $request['luogonascita'];
+        $privato->residenza = $request['residenza'];
+        $privato->citta = $request['citta'];
+        $privato->provincia = $request['provincia'];
+        $privato->cap = $request['cap'];
+        $privato->nazione = $request['nazione'];
+        $privato->email = $request['email'];
+        //$privato->password = $request['password'];
+        $privato->save();
 
-       $prenotazione->save();
-
-         /*$codicefiscale = $req->input('codicefiscale');
-         $cognome = $req->input('cognome');
-         $nome = $req->input('nome');
-         $telefono = $req->input('telefono');
-         $datanascita = $req->input('datanascita');
-         $luogonascita = $req->input('luogonascita');
-         $residenza = $req->input('residenza');
-         $citta = $req->input('citta');
-         $provincia = $req->input('provincia');
-         $cap =$req->input('cap');
-         $nazione = $req->input('nazione');
-         $email = $req->input('email');
-         $password =$req->input('password');
-
-        
-         DB::update('update privatos set codicefiscale = ? ,
-         cognome = ?, nome = ? ,telefono = ? ,datanascita = ? ,
-         luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
-         cap = ? ,nazione = ? ,email = ? ,password = ?  where id = ?',
-         [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$email  ,$password ,$id]);*/
-
-        
-       return redirect('privato/modifica');
+ 
+       return redirect('privato/modifica')->with('succes','Dati Salvati');
     }
   
 }

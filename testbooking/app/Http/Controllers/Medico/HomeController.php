@@ -63,44 +63,5 @@ class HomeController extends Controller
         return redirect('medico/home');
     }
     
-    public  function mostraAnagrafica(/*$id*/)
-    {   
-        
-        $data = DB::select('select * from medicos');       //where id = ?',[$id]
-        return view('medico/modifica',['data'=>$data]);
-    }
-
-    public  function modificaAnagrafica(Request $request,$id)
-    {   
-        $codicefiscale = $request->input('codicefiscale');
-        $cognome = $request->input('cognome');
-        $nome = $request->input('nome');
-        $telefono = $request->input('telefono');
-        $datanascita = $request->input('datanascita');
-        $luogonascita = $request->input('luogonascita');
-        $residenza= $request->input('residenza');
-        $citta = $request->input('citta');
-        $provincia = $request->input('provincia');
-        $cap = $request->input('cap');
-        $nazione = $request->input('nazione');
-        $nomestudiomedico = $request->input('nomestudiomedico');
-        $partitaiva = $request->input('partitaiva');
-        $cittastudio = $request->input('cittastudio');
-        $indirizzostudio = $request->input('indirizzostudio');
-        $provinciastudio = $request->input('provinciastudio');
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        DB::update('update medicos set codicefiscale = ? ,
-        cognome = ? nome = ? ,telefono = ? ,datanascita = ? ,
-        luogonascita = ? ,residenza = ? ,citta = ? ,provincia = ? ,
-        cap = ? ,nazione = ? ,nomestudiomedico = ?,partitaiva = ?,
-        cittastudio = ?,indirizzostudio = ?,provinciastudio = ?,
-        email = ? ,password = ?,  where id = ?',
-        [ $codicefiscale ,$cognome , $nome ,$telefono ,$datanascita ,$luogonascita ,
-        $residenza ,$citta ,$provincia ,$cap ,$nazione ,$nomestudiomedico,$partitaiva,
-        $cittastudio,$indirizzostudio, $provinciastudio,$email  ,$password ,$id]);
-
-        return redirect('medico/modifica')->with('succes','Data Updated');
-    }
+    
 }

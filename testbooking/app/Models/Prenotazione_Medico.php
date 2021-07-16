@@ -19,7 +19,7 @@ class Prenotazione_Medico extends Authenticatable
      */
     protected $fillable = [
         'id','codicefiscalepaziente','codicelabpubblico',
-        'emailmedico','datatampone','tipologia',
+        'emailmedico','datatampone','tipologia','metodopagamento',
         'pagato','esito'
     ];
 

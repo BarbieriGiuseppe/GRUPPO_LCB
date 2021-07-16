@@ -45,7 +45,7 @@
                  
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('azienda')->user()->nome }}  {{ Auth::guard('azienda')->user()->cognome }}<span class="caret"></span>
+                           Datore: {{ Auth::guard('azienda')->user()->nome }}  {{ Auth::guard('azienda')->user()->cognome }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -89,14 +89,17 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
-                        <table id="table" border=1px solid black  style="width:100%">
+                        <table id="table" border=1px solid black  style="width:150%">
                             <tr>
-                                <th>Codice Fiscale </th>
-                                <th>Codice Lab Pubblico </th>
-                                <th>Data Tampone </th>
-                                <th>Tipologia </th>
-                                <th>Pagato </th>
-                                <th>Esito</th>
+                                <th style="text-align:center">Codice Fiscale </th>
+                                <th style="text-align:center">Codice Lab Pubblico </th>
+                                <th style="text-align:center">Data Tampone </th>
+                                <th style="text-align:center">Ora Tampone </th>
+                                <th style="text-align:center">Tipologia </th>
+                                <th style="text-align:center">Metodo Pagamento </th>
+                                <th style="text-align:center">Pagato </th>
+                                <th style="text-align:center">Esito</th>
+                                <th style="text-align:center">Disdici</th>
                                
                                 <td></td>
                             </tr>
@@ -107,17 +110,21 @@
                         <tr>
 
 
-                        <td>{{ $prenotazione_azienda->codicefiscaledipendente }}</td>
+                        <td style="text-align:center">{{ $prenotazione_azienda->codicefiscaledipendente }}</td>
 
-                        <td>{{ $prenotazione_azienda->codicelabpubblico }}</td>
+                        <td style="text-align:center">{{ $prenotazione_azienda->codicelabpubblico }}</td>
 
-                        <td>{{ $prenotazione_azienda->datatampone }}</td> 
+                        <td style="text-align:center">{{ $prenotazione_azienda->datatampone }}</td> 
 
-                        <td>{{ $prenotazione_azienda->tipologia }}</td>     
+                        <td style="text-align:center">{{ $prenotazione_azienda->orario }}</td> 
 
-                        <td>{{ $prenotazione_azienda->pagato }}</td>
+                        <td style="text-align:center">{{ $prenotazione_azienda->tipologia }}</td> 
+                        
+                        <td style="text-align:center">{{ $prenotazione_azienda->metodopagamento }} </td>
 
-                        <td>{{ $prenotazione_azienda->esito }}</td>
+                        <td style="text-align:center">{{ $prenotazione_azienda->pagato }}</td>
+
+                        <td style="text-align:center">{{ $prenotazione_azienda->esito }}</td>
 
 
                         <td>

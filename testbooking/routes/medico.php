@@ -1,17 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\Medico\HomeController;
-use app\routes\web;
+use App\Http\Controllers\Medico\HomeController;
+use App\routes\web;
+use App\Http\Controllers\Medico\TamponatoController;
+use App\Http\Controllers\Medico\RiepilogoController;
+use App\Http\Controllers\Medico\Controller;
+use App\Http\Controllers\Medico\PaymentController;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
-Route::get('/modifica','HomeController@mostraAnagrafica');
-Route::get('/update/{id}','HomeController@modificaAnagrafica');
+
+Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
+Route::get('/aggiorna','ModificaController@updateAnagrafica');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
