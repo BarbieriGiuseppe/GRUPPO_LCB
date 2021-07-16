@@ -152,7 +152,7 @@ $(function() {
                  <!-- /. ROW  -->
                  
                  <!-- /. ROW  --> 
-     <form method="POST" action="{{ route('privato.registerPreventivo') }}">
+     <form method="POST" action="{{ route('privato.registerAppuntamento') }}">
 					@csrf
  
     <div class="input-group" style = "position:relative; left:-280px; top:48px;">
@@ -197,14 +197,19 @@ $(function() {
    </div>
 
 
-   <div id="divCheckbox" style="display: none;">>
-    <h5> Email Privato</h5>
+   <div id="divCheckbox" style="display: none;">
+    <h5> prezzo</h5>
+   <input id="codicefiscaletamponato" type="text" name = "prezzo" readonly value='00.00'>
+</div>
+
+   <div id="divCheckbox" style="display: none;">
+    <h5> Codice F Tamponato</h5>
    <input id="codicefiscaletamponato" type="text" name = "codicefiscaletamponato" readonly value=' {{Session::get('codicefiscaletamponato');}}'>
 </div>
 
 <div id="divCheckbox" style="display: none;">>
     <h5> Pagato</h5>
-   <input id="codicefiscaletamponato" type="text" name = "pagato" readonly value='no'>
+   <input id="pagato" type="text" name = "pagato" readonly value='no'>
 </div>
 
 <div id="divCheckbox" style="display: none;">>
@@ -268,7 +273,7 @@ $(function() {
         $('#tipologia').append(`<option value="0" disabled selected>Caricamento...</option>`);
         $.ajax({
         type: 'GET',
-        url: 'preventivo/' + codicelabpub,
+        url: 'appuntamento/' + codicelabpub,
         success: function (response) {
         var response = JSON.parse(response);
         console.log(response);   

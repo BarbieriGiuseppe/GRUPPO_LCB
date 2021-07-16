@@ -19,7 +19,7 @@ class Prenotazione_Privato extends Authenticatable
      */
     protected $fillable = [
         'id','codicefiscaletamponato','codicelabpubblico',
-        'emailprivato','datatampone','orario','tipologia','metodopagamento',
+        'emailprivato','datatampone','orario','tipologia','metodopagamento','prezzo',
         'pagato','esito'
     ];
 

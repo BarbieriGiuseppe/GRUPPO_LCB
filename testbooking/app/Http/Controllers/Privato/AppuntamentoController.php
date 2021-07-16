@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Privato\Auth;
 
-class PreventivoController extends Controller
+class AppuntamentoController extends Controller
 {
     protected function validator(array $data)
     {
@@ -21,6 +21,7 @@ class PreventivoController extends Controller
             'emailprivato' => ['required', 'string', 'max:255'],
             'datatampone' => ['required', 'date', 'max:255'],
             'orario' => ['required', 'date_format:h:i', 'max:255'],
+            'prezzo' => [ 'string', 'max:255'],
             'tipologia' => ['required', 'string', 'max:255'],
             'datanascita' => ['required', 'date', 'max:255'],
             'metodopagamento' => ['required', 'string', 'max:255'],
@@ -44,6 +45,7 @@ class PreventivoController extends Controller
             'emailprivato' => $data['emailprivato'],
             'datatampone' => $data['datatampone'],
             'orario' => $data['orario'],
+            'prezzo' => $data['prezzo'],
             'tipologia' => $data['tipologia'],
             'metodopagamento' => $data['metodopagamento'],
             'pagato' => $data['pagato'],
@@ -57,18 +59,19 @@ class PreventivoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showPreventivoForm()
+    public function showAppuntamentoForm()
     {
-        return view('privato.preventivo');
+        return view('privato.appuntamento');
     }
 
-    public function registerPreventivo(Request $request){
+    public function registerAppuntamento(Request $request){
         $preventivo = new Prenotazione_Privato();
         $preventivo->codicefiscaletamponato = $request->codicefiscaletamponato;
         $preventivo->codicelabpubblico = $request->codicelabpubblico;
         $preventivo->emailprivato = $request->emailprivato;
         $preventivo->datatampone = $request->datatampone;
         $preventivo->orario = $request->orario;
+        $preventivo->prezzo = $request->prezzo;
         $preventivo->tipologia = $request->tipologia;
         $preventivo->metodopagamento = $request->metodopagamento;
         $preventivo->pagato = $request->pagato;

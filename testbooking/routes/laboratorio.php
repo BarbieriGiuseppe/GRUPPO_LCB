@@ -45,5 +45,5 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
-Route::get('/savePrezzoTampone', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');
-Route::post('/savePrezzoTampone', 'PrezzoTamponiController@registerPrezzoTampone');
+Route::get('savePrezzoTampone', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');
+Route::post('savePrezzoTampone', 'PrezzoTamponiController@savePrezzoTampone');

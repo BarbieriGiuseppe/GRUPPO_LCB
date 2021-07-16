@@ -99,7 +99,10 @@
                     <h5>Prezzo Tampone</h5>
                     <input type="text" class="form-control" id="prezzo" name="prezzo" />
                 </div>
-                
+                <div id="divCheckbox" style="display: none;">>
+                    <h5> Email Privato</h5>
+                   <input id="codicelabpub" type="text" name = "codicelabpub" readonly value=' {{ Auth::guard('laboratorio')->user()->codicelabpubblico}}'>
+               </div>
                 <br><button type=”submit”> Salva Modifiche </button> 
                         
 </form>               

@@ -18,7 +18,7 @@ class Prezzo_Tampone extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','tipologia','codicelabpubblico',
+        'id','tipologia','codicelabpub',
         'prezzo'
     ];
 

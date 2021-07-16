@@ -106,15 +106,26 @@
                  </div>      
                  <!-- /. ROW  -->
                  <!-- /. ROW  --> 
-     <form method="POST" action="{{ route('privato.registerPreventivo') }}">
-		@csrf
+    
+		
      @php
      use App\Models\Prenotazione_Privato;
      use App\Models\Tamponato_Privato;
      use App\Models\Prezzo_Tampone;
-    // $valore = DB::select('select prezzo from prezzo_tampone where codicelabpub = ? and tipologia = ?', ['codicelabpubblico','tipologia']);
-
+        $id=Prenotazione_Privato::latest()->first()->id;
+    $tipo = Prenotazione_Privato::latest()->first()->tipologia;
+  /* $prezzo = DB::table('prezzo_tampone')
+        ->select('prezzo')
+       ->where('tipologia', '=', is_null($tipo)?0:$tipo)
+       ->get()
+       ->groupBy('codicelabpub')
+       ->first();*/
+       $prezzo = Prezzo_Tampone::where('tipologia',is_null($tipo)?0:$tipo)->value('prezzo');
+       //$cancella = Prenotazione_Privato::latest()->first()->id->delete();
+       // <a href="click_delete/{{$prenotazione_privato->id}}" > 
      @endphp
+      <form method="POST" action="{{  route('privato.registerRiepilogo') }}">
+        @csrf
        <h4>Dati del Prenotato</h4>
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 20px;">
             <h5> Codice Fiscale Tamponato</h5>
@@ -122,13 +133,22 @@
           
         </div>
 
-         <div id="divCheckbox" style = "position:relative; left: 50px; top: 20px;">
-            <h5> Costo Totale</h5>
-            
-                        <input id="prezzo" type="text" style= "border: none;" name = "prezzo" readonly value=' {{ Prezzo_Tampone::latest()->first()->prezzo}} '>
-           
-           
-          
+
+      
+
+         <div id="divCheckbox" style = "position:relative; left: 300px; top: 480px;">
+            <h5> Costo Totale</h5> 
+                <input id="prezzo" type="text" style= "border: none;" name = "prezzo" readonly value=' {{  $prezzo  }} '>
+        </div>
+
+        <div id="divCheckbox" style="display: none;">>
+            <h5> Pagato</h5>
+           <input id="pagato" type="text" name = "pagato" readonly value='no'>
+        </div>
+        
+        <div id="divCheckbox" style="display: none;">>
+            <h5> Esito</h5>
+           <input id="esito" type="text" name = "esito" readonly value='n/d'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 30px;">
@@ -176,6 +196,7 @@
     <button id= "conferma "type="submit" style = "position:relative; left: 333px; top: -60px;">
         {{ __('Conferma') }}
     </button>	
+    
        </div>
     <div class="online box">
         <h6>Pagamento con PayPal </h6>
@@ -186,7 +207,7 @@
                     
         </div>
 
-
+       
                             
                           <hr />
                   

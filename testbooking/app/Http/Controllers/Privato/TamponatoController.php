@@ -8,15 +8,15 @@ use App\Models\Tamponato_Privato;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Privato\Auth;
+use App\Http\Controllers\Privato\RiepilogoController;
 
-
-class PrenotazioneController extends Controller
+class TamponatoController extends Controller
 {
 
 
     public function elencoLaboratori() {
         $data = DB::table('laboratorios')->get();
-        return view('privato.preventivo')->with('data', $data);
+        return view('privato.appuntamento')->with('data', $data);
     }
 
 
@@ -24,6 +24,9 @@ class PrenotazioneController extends Controller
          echo json_encode(DB::table('prezzo_tampone')->where('codicelabpub', $codicelabpub)->get());
     }
     
+    public function elencoPrezzi($codicelabpub,$prezzo){
+        echo json_encode(DB::table('prezzo_tampone')->where('codicelabpub', $codicelabpub)->get());
+   }
     
     /**
      * Get a validator for an incoming registration request.
@@ -84,9 +87,9 @@ class PrenotazioneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showPrenotazioneForm()
+    public function showTamponatoForm()
     {
-        return view('privato.prenotazione');
+        return view('privato.tamponato');
     }
 
     public function registerTamponato(Request $request){
@@ -107,7 +110,7 @@ class PrenotazioneController extends Controller
         $tamponato->save();
 
 
-        return redirect('privato/preventivo')->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato,
+        return redirect('privato/appuntamento')->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato,
         'email'=>$request->email]);
     }
 

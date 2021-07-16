@@ -24,7 +24,7 @@ class CreatePrezzoTamponeTable extends Migration
             $table->primary('id');
             $table->foreign('codicelabpub')->references('codicelabpubblico')->on('laboratorios');
         });
-        DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE Prezzo_Tampone MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

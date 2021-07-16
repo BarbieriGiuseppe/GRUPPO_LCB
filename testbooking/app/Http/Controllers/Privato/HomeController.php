@@ -38,12 +38,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function prenotazione() {
-        return view('privato.prenotazione');
+    public function tamponato() {
+        return view('privato.tamponato');
     }
 
-    public function preventivo(){
-        return view('privato.preventivo');
+    public function appuntamento(){
+        return view('privato.appuntamento');
     }
 
     public function riepilogo(){
