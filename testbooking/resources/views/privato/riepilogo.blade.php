@@ -113,7 +113,7 @@
      use App\Models\Tamponato_Privato;
      use App\Models\Prezzo_Tampone;
         $id=Prenotazione_Privato::latest()->first()->id;
-    $tipo = Prenotazione_Privato::latest()->first()->tipologia;
+        $tipo = Prenotazione_Privato::latest()->first()->tipologia;
   /* $prezzo = DB::table('prezzo_tampone')
         ->select('prezzo')
        ->where('tipologia', '=', is_null($tipo)?0:$tipo)
@@ -135,6 +135,7 @@
 
 
       
+        <form action="" method="GET">
 
          <div id="divCheckbox" style = "position:relative; left: 300px; top: 480px;">
             <h5> Costo Totale</h5> 
@@ -206,6 +207,7 @@
                         
                     
         </div>
+    </form>
 
        
                             

@@ -96,6 +96,7 @@
                                                            <th>Codice Lab Pubblico </th>
                                                            <th>Data Tampone </th>
                                                            <th>Tipologia </th>
+                                                           <th> Metodo Pagamento </th>
                                                            <th>Pagato </th>
                                                            <th>Esito</th>
                                                           
@@ -116,11 +117,12 @@
 
                         <td>{{ $prenotazione_privato->tipologia }}</td>     
                         
+                        <td>{{ $prenotazione_privato->metodopagamento }} </td>
+
                         <td>{{ $prenotazione_privato->pagato }}</td>
 
                         <td>{{ $prenotazione_privato->esito }}</td>
                        
-                        
                         <td>
                             
                             

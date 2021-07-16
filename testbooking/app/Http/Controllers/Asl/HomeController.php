@@ -11,6 +11,8 @@ use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfAsl;
 use app\Http\Middleware\RedirectIfNotAsl;
 use DB;
+use App\Models\Prenotazione_Privato;
+use DataTables;
 
 
 
@@ -44,6 +46,19 @@ class HomeController extends Controller
         return view('asl.modifica');
     }
 
+    public function tabellaprivati() {
+        return view('asl.tabellaprivati');
+    }
+
+    public function tabelladipendenti() {
+        return view('asl.tabelladipendenti');
+    }
+
+    public function tabellaassistiti() {
+        return view('asl.tabellaassistiti');
+    }
+/*
+    
     public function mostraPrenotazioni()
     { 
         $id = Auth::guard('asl')->user()->id;
@@ -53,7 +68,8 @@ class HomeController extends Controller
        
         return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
     }
-
+*/
+/*
     public function mostraNumeroTamponi()
     { 
         $id = Auth::guard('asl')->user()->id;
@@ -68,7 +84,8 @@ class HomeController extends Controller
 
         return view('asl/home')->compact('n_privati','n_pazienti','n_dipendenti');
     }
-
+*/
+/*
     public function visualizzaPositivi()
     { 
         $id = Auth::guard('asl')->user()->id;
@@ -78,7 +95,8 @@ class HomeController extends Controller
         $lab = DB::select('select * from laboratorios where provincia = (select provincia from asls where id = ?) and esito like "Positivo"' , [$id]); 
         return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'lab'=>$lab]);
     }
-
+*/
+/*
     public function visualizzaPositiviNegativi()
     { 
         $id = Auth::guard('asl')->user()->id;
@@ -88,4 +106,6 @@ class HomeController extends Controller
        
         return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
     }
+    */
+
 }

@@ -55,8 +55,6 @@ Route::get('registerAppuntamento','AppuntamentoController@showAppuntamentoForm')
 Route::post('registerAppuntamento','AppuntamentoController@registerAppuntamento');
 
 Route::get('registerRiepilogo', 'RiepilogoController@showAggiornaForm')->name('registerRiepilogo');
-    
-
 Route::post('registerRiepilogo', 'RiepilogoController@registerRiepilogo');
 
 

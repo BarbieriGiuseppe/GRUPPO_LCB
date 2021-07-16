@@ -11,7 +11,8 @@
         <!-- CUSTOM STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
      
@@ -63,7 +64,17 @@
                         <a href="home" ><i class="fa fa-desktop "></i>Dashboard <span class="badge"></span></a>
                     </li>
                    
-       
+                    <li class="active-link">
+                        <a href="tabellaprivati" ><i class="fa fa-desktop "></i>Tabella Privati <span class="badge"></span></a>
+                    </li>
+                    
+                    <li class="active-link">
+                        <a href="tabellaassistiti" ><i class="fa fa-desktop "></i>Tabella Assistiti <span class="badge"></span></a>
+                    </li>
+
+                    <li class="active-link">
+                        <a href="tabelladipendenti" ><i class="fa fa-desktop "></i>Tabella Dipendenti <span class="badge"></span></a>
+                    </li>
                     
                 </ul>
                             </div>
@@ -78,160 +89,7 @@
                     </div>
                 </div>       
                        
-                <a href="/click_positivi" > <button id="positivi" type = "submit" class = "btn btn-default" data-dismiss="modal">Visualizza Positivi  </button></a>
-                    <a href="/click_positivi_negativi" > <button id="positivi_negativi" type = "submit" class = "btn btn-default" data-dismiss="modal">Visualizza Positivi/Negativi  </button></a>
-                        
 
-                    <button id="positivi" type = "submit" class = "btn btn-default" >Applica Filtro</button>
-
-                    <div class="input-group" style = "position:relative; left:0px; top:0px;">
-            <h4><b>Filtra Per:</b></h4>  
-            <h5>Laboratorio</h5>     
-            <div>
-                
-                <select class="form-control formselect required" placeholder="Laboratorio"
-                    id="codicelabpubblico" name="codicelabpubblico">
-                    <option value="0" disabled selected>Seleziona un Laboratorio</option>
-                    
-                </select>
-            </div>       
-                    </div>
-            
-            <div class="input-group" style = "position:relative; left:250px; top:-69px;">
-            <h5>Data</h5>        
-            <div>
-                
-                <input class="form-control formselect required" placeholder="Laboratorio" 
-                    id="codicelabpubblico" name="codicelabpubblico" type="date">
-                    
-                </select>
-            </div>   
-            </div>   
-            
-            
-            <div class="input-group" style = "position:relative; left:465px; top:-138px;">
-
-            <h5>Ora</h5>  
-            <input class="form-control formselect required" placeholder="Laboratorio"
-                    id="codicelabpubblico" name="codicelabpubblico" type ="time">
-            </div>
-                
-        </div>
-
-       <br>
-                    <div class="row">
-                    <div class="col-lg-6 col-md-6" style = "position:relative; left:10px; top:-870px;">
-                        <h5><b>LISTA TAMPONI</b></h5>
-                        <table id="table" border=1px  style="width:100%">
-                            <tr>
-                                <th>ID </th>
-                                <th>Codice Fiscale </th>
-                                <th>Codice Lab Pubblico </th>
-                                <th>Data </th>
-                                <th>Ora </th>
-                                <th>Tipologia </th>
-                                <th>Pagato </th>
-                                <th>Esito</th>
-                               
-                                <td></td>
-                            </tr>
-    
-                   
-                        @foreach ($t_privati as $prenotazioniprivati)
-
-                        <tr>
-                        <td>{{ $prenotazioniprivati->id}}</td>
-
-                        <td>{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
-
-                        <td>{{ $prenotazioniprivati->codicelabpubblico }}</td>
-
-                        <td>{{ $prenotazioniprivati->datatampone }}</td> 
-
-                        <td>{{ $prenotazioniprivati->orario }}</td> 
-
-                        <td>{{ $prenotazioniprivati->tipologia }}</td>     
-
-                        <td>{{ $prenotazioniprivati->pagato }}</td>
-
-                        <td>{{ $prenotazioniprivati->esito }}</td>
-
-
-
-                       
-
-                        @endforeach
-
-                        @foreach ($t_pazienti as $prenotazionipazienti)
-
-                        <td>{{ $prenotazionipazienti->id}}</td>
-
-                        <td>{{ $prenotazionipazienti->codicefiscalepaziente}}</td>
-
-                        <td>{{ $prenotazionipazienti->codicelabpubblico }}</td>
-
-                        <td>{{ $prenotazionipazienti->datatampone }}</td> 
-
-                        <td>{{ $prenotazionipazienti->tipologia }}</td>     
-
-                        <td>{{ $prenotazionipazienti->pagato }}</td>
-
-                        <td>{{ $prenotazionipazienti->esito }}</td>
-
-                        @endforeach
-
-                        @foreach ($t_dipendenti as $prenotazionidipendenti)
-        
-                                <tr>
-                                <td>{{ $prenotazionidipendenti->id}}</td>
-
-        
-                                <td>{{ $prenotazionidipendenti->codicefiscaledipendente}}</td>
-        
-                                <td>{{ $prenotazionidipendenti->codicelabpubblico }}</td>
-        
-                                <td>{{ $prenotazionidipendenti->datatampone }}</td> 
-        
-                                <td>{{ $prenotazionidipendenti->tipologia }}</td>     
-        
-                                <td>{{ $prenotazionidipendenti->pagato }}</td>
-        
-                                <td>{{ $prenotazionidipendenti->esito }}</td>
-
-                                @endforeach
-                                
-                        </tr>
-
-                        
-                    </table> 
-                   &ensp; <div class="row">
-                        <div class="col-lg-6 col-md-6" style = "position:relative; left:840px; top:-160px;" >
-                          
-                            <table id="table1" border=1px  >
-                                <tr>
-                                    <th>Numero Tamponi</th>
-                                </tr>
-                                
-                        <tr>
-                        <td ><label id="n_dipendenti" type="text" name = "n_dipendenti" readonly value=' {{Session::get('n_dipendenti');}}'></td>
-                                
-                        </tr>
-                    </table>
-                   
-<br>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6" >
-                          
-                            <table id="table1" border=1px width = 70%>
-                                <tr>
-                                    <th>Numero Positivi</th>
-                                </tr>
-                                
-                        <tr>
-                        <td ><label id="n_dipendenti" type="text" name = "n_dipendenti" readonly value=' {{Session::get('n_dipendenti');}}'></td>
-                                
-                        </tr>
-                    </table>
                     
              <!-- /. PAGE INNER  -->
             </div>

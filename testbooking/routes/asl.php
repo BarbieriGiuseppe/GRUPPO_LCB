@@ -6,10 +6,10 @@ use app\Http\Controllers\Asl\HomeController;
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
-Route::get('/home', 'HomeController@mostraPrenotazioni');
-Route::get('/home', 'HomeController@mostraNumeroTamponi');
-Route::get('/click_positivi', 'HomeController@visualizzaPositivi');
-Route::get('/click_positivi_negativi', 'HomeController@visualizzaPositiviNegativi');
+//Route::get('/home', 'HomeController@mostraPrenotazioni');
+//Route::get('/home', 'HomeController@mostraNumeroTamponi');
+//Route::get('/click_positivi', 'HomeController@visualizzaPositivi');
+//Route::get('/click_positivi_negativi', 'HomeController@visualizzaPositiviNegativi');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -34,3 +34,4 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+Route::get('users', ['uses'=>'UserController@index', 'as'=>'users.index']);
