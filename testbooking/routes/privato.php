@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Privato\HomeController;
 use App\Http\Controllers\Privato\PrenotazioneController;
+use App\Http\Controllers\Privato\Controller;
 use app\routes\web;
+use App\Http\Controllers\Privato\PaymentController;
 
 
 // Home
@@ -50,3 +52,9 @@ Route::get('registerTamponato', 'PrenotazioneController@showTamponatoForm')->nam
 Route::post('registerTamponato', 'PrenotazioneController@registerTamponato');
 Route::get('registerPreventivo','PreventivoController@showPreventivoForm')->name('registerPreventivo');
 Route::post('registerPreventivo','PreventivoController@registerPreventivo');
+
+
+Route::get('paypal/pay', 'PaymentController@payWithPayPal');
+Route::get('paypal/status', 'PaymentController@payPalStatus');
+
+Route::get('prezzi','RiepilogoController@prezzi');

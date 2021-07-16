@@ -111,41 +111,54 @@
      @php
      use App\Models\Prenotazione_Privato;
      use App\Models\Tamponato_Privato;
+     use App\Models\Prezzo_Tampone;
+    // $valore = DB::select('select prezzo from prezzo_tampone where codicelabpub = ? and tipologia = ?', ['codicelabpubblico','tipologia']);
+
      @endphp
        <h4>Dati del Prenotato</h4>
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 20px;">
             <h5> Codice Fiscale Tamponato</h5>
-           <input id="codicefiscaletamponato" type="text" name = "codicefiscaletamponato" readonly value=' {{Prenotazione_Privato::latest()->first()->codicefiscaletamponato}}'>
+           <input id="codicefiscaletamponato" type="text" style= "border: none;" name = "codicefiscaletamponato" readonly value=' {{Prenotazione_Privato::latest()->first()->codicefiscaletamponato}}'>
+          
+        </div>
+
+         <div id="divCheckbox" style = "position:relative; left: 50px; top: 20px;">
+            <h5> Costo Totale</h5>
+            
+                        <input id="prezzo" type="text" style= "border: none;" name = "prezzo" readonly value=' {{ Prezzo_Tampone::latest()->first()->prezzo}} '>
+           
+           
+          
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 30px;">
             <h5> Codice Laboratorio </h5>
-           <input id="codicelabpubblico" type="text" name = "codicelabpubblico" readonly value=' {{Prenotazione_Privato::latest()->first()->codicelabpubblico}}' >
+           <input id="codicelabpubblico" type="text" style= "border: none;" name = "codicelabpubblico" readonly value=' {{Prenotazione_Privato::latest()->first()->codicelabpubblico}}' >
         </div>
         
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 40px;">
             <h5> Email Prenotante</h5>
-           <input id="emailprivato" type="text" name = "emailprivato" readonly value='{{ Auth::guard('privato')->user()->email }}'>
+           <input id="emailprivato" type="text" style= "border: none; width: 250px;" name = "emailprivato" readonly value='{{ Auth::guard('privato')->user()->email }}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 50px;">
             <h5> Email Prenotato</h5>
-           <input id="email" type="text" name = "email" readonly value=' {{Tamponato_Privato::latest()->first()->email}}'>
+           <input id="email" type="text" style= "border: none; width: 250px;" name = "email" readonly value=' {{Tamponato_Privato::latest()->first()->email}}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 60px;">
             <h5> Data Prenotazione</h5>
-           <input id="datatampone" type="text" name = "datatampone" readonly value=' {{Prenotazione_Privato::latest()->first()->datatampone}}'>
+           <input id="datatampone" type="text" style= "border: none;" name = "datatampone" readonly value=' {{Prenotazione_Privato::latest()->first()->datatampone}}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 70px;">
             <h5> Orario</h5>
-           <input id="orario" type="text" name = "orario" readonly value=' {{Prenotazione_Privato::latest()->first()->orario}}'>
+           <input id="orario" type="text" style= "border: none;" name = "orario" readonly value=' {{Prenotazione_Privato::latest()->first()->orario}}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 80px;">
             <h5> Tipologia</h5>
-           <input id="tipologia" type="text" name = "tipologia" readonly value=' {{Prenotazione_Privato::latest()->first()->tipologia}}''>
+           <input id="tipologia" style= "border: none;" type="text" name = "tipologia" readonly value=' {{Prenotazione_Privato::latest()->first()->tipologia}}'>
         </div>
  
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 80px;">
@@ -159,16 +172,15 @@
     <br> 
     <br> 
 
-    <div class="laboratorio box"><button id= "avanti "type="submit" style = "position:relative; left: 333px; top: -60px;">
-        {{ __('Avanti') }}
+    <div class="laboratorio box">
+    <button id= "conferma "type="submit" style = "position:relative; left: 333px; top: -60px;">
+        {{ __('Conferma') }}
     </button>	
        </div>
     <div class="online box">
         <h6>Pagamento con PayPal </h6>
-        <button id= "paga "type="submit" style = "position:relative; left: 333px; top: -60px;">
-        {{ __('Paga') }}
-    </button>	
-</div>
+         <a href="{{ url('privato/paypal/pay') }}" ><i class="fa fa-desktop "></i>Paga Online <span class="badge"></span></a>
+    </div>
 
                         
                     
@@ -215,11 +227,13 @@
                         $(".box").not("." + optionValue).hide();
                         $("." + optionValue).show();
                     } else{
+                        
                         $(".box").hide();
                     }
                 });
             }).change();
         });
+        document.getElementById("avanti").disabled = true;
     </script>
 </body>
 </html>

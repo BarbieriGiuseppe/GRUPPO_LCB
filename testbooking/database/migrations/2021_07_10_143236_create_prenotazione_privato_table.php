@@ -20,6 +20,7 @@ class CreatePrenotazionePrivatoTable extends Migration
             $table->string('emailprivato');
             $table->date('datatampone');
             $table->time('orario');
+            $table->decimal('prezzo', $precision = 6, $scale = 2);
             $table->string('tipologia');
             $table->string('metodopagamento')->nullable();
             $table->string('pagato')->default('no');

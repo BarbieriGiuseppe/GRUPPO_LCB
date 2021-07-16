@@ -76,8 +76,11 @@ class PreventivoController extends Controller
      
         $preventivo->save();
         $preventivo->email = $request->email;
-
+        
+     
         return redirect('privato/riepilogo');
+
+
         /*->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato
         ,'codicelabpubblico'=>$request->codicelabpubblico
         ,'emailprivato'=>$request->emailprivato

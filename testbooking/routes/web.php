@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Privato\HomeController;
 use App\Http\Controllers\Privato\Auth\LoginController;
-
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Privato\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,6 @@ Route::get('/lapoli', function () {
 Route::get('/home',function() {
     return view ('privato.home');
 });
+
 
 
