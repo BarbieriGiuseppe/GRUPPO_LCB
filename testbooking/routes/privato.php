@@ -18,9 +18,12 @@ Route::get('/riepilogo','HomeController@riepilogo')->name('riepilogo');
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
-Route::get('/modifica','ModificaController@mostraProfilo');
-Route::get('/click_edit/{id}','ModificaController@modificaAnagrafica');
-Route::post('/update/{id}','ModificaController@updateAnagrafica');
+//Route::get('/modifica','ModificaController@mostraProfilo');
+Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
+Route::get('/update/{id}','ModificaController@updateAnagrafica');
+Route::get('/modificaluca','ModificaController@updateAnagrafica');
+
+
 
 
 // Login
