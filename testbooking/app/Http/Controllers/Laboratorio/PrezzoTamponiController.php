@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Privato;
+namespace App\Http\Controllers\Laboratorio;
 
 use App\Http\Controllers\Controller;
-use App\Models\Privato;
+use App\Models\Laboratorio;
 use App\Models\Tamponato_Privato;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Privato\Auth;
+use App\Http\Controllers\Laboratorio\Auth;
 
-
-class PrenotazioneController extends Controller
+class PrezzoTamponiController extends Controller
 {
    
     
@@ -57,10 +56,13 @@ class PrenotazioneController extends Controller
         return view('laboratorio/prezzotamponi',['codice'=>$codice]);
     }
 
-    public function registerPrezzoTampone($tipologia,$codicelabpubblico,Request $request){
+    public function registerPrezzoTampone(Request $request){
+
+        //$codice = Auth::guard('laboratorio')->user()->codicelabpubblico;
+
         $prezzotampone = new Prezzo_Tampone();
-        $prezzotampone->tipologia = $tipologia;
-        $prezzotampone->codicelabpubblico = $codicelabpubblico;
+        $prezzotampone->tipologia = $request->tipologia;
+        $prezzotampone->codicelabpubblico = $codice;
         $prezzotampone->prezzo = $request->prezzo;
         $prezzotampone->save();
 

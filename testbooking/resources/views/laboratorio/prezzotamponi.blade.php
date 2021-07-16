@@ -84,57 +84,22 @@
                  <!-- /. ROW  -->
                  <!-- /. ROW  -->
                 
-<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Rapido , $codice }}') }}">
+<form method="POST" action="{{ route('laboratorio.savePrezzoTampone') }}">
     
     @csrf               
   
                 <div class="input-group">
-                    <h5>Tampone Rapido</h5>
-                    <input type="text" class="form-control" id="prezzotamponerapido" name="prezzo" />
+                    <h5>Tipologia Tampone</h5>
+                    <select name="tipologia" type="text" class="form-control">
+                        <option value="Rapido">Rapido</option>
+                        <option value="Molecolare">Molecolare</option>
+                        <option value="Sierologico">Sierologico</option>
+                        <option value="Antigenico">Antigenico</option>
+                    </select>
+                    <h5>Prezzo Tampone</h5>
+                    <input type="text" class="form-control" id="prezzo" name="prezzo" />
                 </div>
                 
-                <br><button type=”submit”> Salva Modifiche </button> 
-
-
-</form> 
-              
-
-<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Molecolare ,$codice }}') }}">
-    
-    @csrf
-
-                <div class="input-group">
-                     <h5>Tampone Molecolare</h5>
-                    <input type="text" class="form-control" id="prezzotamponemolecolare" name="prezzo" />
-                </div>
-            
-                <br><button type=”submit”> Salva Modifiche </button> 
-
-</form>                
-
-
-<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Sierologico ,$codice }}') }}">
-    
-    @csrf
-
-                <div class="input-group">
-                    <h5>Tampone Sierologico</h5>
-                    <input type="text" class="form-control" id="prezzotamponesierologico" name="prezzo" />
-                </div>
-            
-                <br><button type=”submit”> Salva Modifiche </button> 
-
-</form> 
-
-
-<form method="POST" action="{{ route('laboratorio.savePrezzoTampone/{{ Antigenico ,$codice }}') }}">
-
-    @csrf
-                <div class="input-group">
-                    <h5>Tampone Antigenico</h5>  
-                    <input type="text" class="form-control" id="prezzotamponeantigenico" name="prezzo" />
-                </div>
-            
                 <br><button type=”submit”> Salva Modifiche </button> 
                         
 </form>               

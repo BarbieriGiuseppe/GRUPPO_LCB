@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Mail\CodicePrivatoMail;
-use app\Http\Controllers\Laboratorio\HomeController;
+use App\Http\Controllers\Laboratorio\PrezzoTamponiController;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Laboratorio\Auth;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
-Route::get('/prezzotamponi', 'HomeController@prezzotamponi')->name('prezzotamponi');
+Route::get('/prezzotamponi', 'HomeController@prezzotamponi');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 
 
@@ -44,5 +45,5 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
-Route::get('/prezzotamponi', 'PrezzoTamponiController@showPrezzoTamponiForm');
-Route::post('savePrezzoTampone/{tipologia,codicelabpubblico}', 'PrezzoTamponiController@registerPrezzoTampone')->name('savePrezzoTampone');
+Route::get('/savePrezzoTampone', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');
+Route::post('/savePrezzoTampone', 'PrezzoTamponiController@registerPrezzoTampone');
