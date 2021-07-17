@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/style.css">
+ciao
 
 </head>
 
