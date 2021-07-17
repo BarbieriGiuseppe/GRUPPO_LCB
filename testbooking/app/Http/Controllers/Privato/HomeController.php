@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfPrivato;
 use app\Http\Middleware\RedirectIfNotPrivato;
+use \PDF;
 
 class HomeController extends Controller
 {
@@ -72,10 +73,19 @@ class HomeController extends Controller
         return redirect('privato/home');
     }
     
-    /*public  function Profilo()
-    {                 
-        return view('privato/modifica');
-    }*/
+ 
+    public  function downloadGuida()
+    {   
+        $file = public_path()."/guida_tampone.pdf";
+        $header = array('Content-Type: application/pdf',);
+        return Response::download($file,"Guida Tampone.pdf",$header);
+    }
 
+
+    public  function downloadQuestionario()
+    {
+        $pdf = PDF::loadView('welcome');
+        return $pdf->download('questionario.pdf');
+    }
   
 }

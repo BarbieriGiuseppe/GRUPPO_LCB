@@ -6,10 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Medico;
 use App\Models\Azienda;
 use App\Models\Privato;
-
+use App\Models\Prenotazione_Datore;
+use App\Models\Prenotazione_Privato;
+use App\Models\Prenotazione_Medico;
 use App\Controllers\Laboratorio\Auth\LoginController;
 use Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfLaboratorio;
 use app\Http\Middleware\RedirectIfNotLaboratorio;
 
@@ -65,61 +69,43 @@ class HomeController extends Controller
 
 
 
-
-    public  function modificaEsitoPrivato($id)
+    public  function updateEsitoPrivato(Request $request)
     {   
-        $e_privato = DB::select('select * from prenotazione_privato where id = ?' , [$id]);              
-        return view('laboratorio/esito',['e_privato'=>$e_privato]);
-    }
-
-    public  function modificaEsitoPaziente($id)
-    {   
-        $e_paziente = DB::select('select * from prenotazione_medico where id = ?' , [$id]);              
-        return view('laboratorio/esito',['e_paziente'=>$e_paziente]);
-    }
-
-    public  function modificaEsitoDipendente($id)
-    {   
-        $e_dipendente = DB::select('select * from prenotazione_datore where id = ?' , [$id]);              
-        return view('laboratorio/esito',['e_dipendente'=>$e_dipendente]);
-    }
-
-
-
-
-    public  function updateEsitoPrivato(Request $req,$id)
-    {   
-
-        $esito = $req-> input('esito');;
-    
-        DB::update('update prenotazione_privato set esito = ? where id = ?',
-        [$esito ,$id]);
         
-        return redirect('laboratorio/home');
+
+        $prenotazioneprivato = Prenotazione_Privato::where('id',$request->id)->first();
+
+        $prenotazioneprivato->esito = $request['esito'];
+       
+        $prenotazioneprivato->save();
+
+        return redirect('laboratorio/home')->with('succes','Dati Salvati');
+       
     }
 
-    public  function updateEsitoPaziente(Request $req,$id)
+    public  function updateEsitoPaziente(Request $request)
     {   
 
-        $esito = $req-> input('esito');
+        $prenotazionemedico = Prenotazione_Medico::where('id',$request->id);
 
+        $prenotazionemedico->esito = $request['esito'];
+       
+        $prenotazionemedico->save();
 
-        DB::update('update prenotazione_medico set esito = ? where id = ?',
-        [$esito ,$id]);
-        
-        return redirect('laboratorio/home');
+        return redirect('laboratorio/home')->with('succes','Dati Salvati');
+
     }
 
-    public  function updateEsitoDipendente(Request $req,$id)
+    public  function updateEsitoDipendente(Request $request)
     {   
 
-        $esito = $req-> input('esito');;
+        $prenotazionedatore = Prenotazione_Datore::where('id',$request->id)->first();
 
+        $prenotazionedatore->esito = $request['esito'];
+       
+        $prenotazionedatore->save();
 
-        DB::update('update prenotazione_datore set esito = ? where id = ?',
-        [ $esito ,$id]);
-        
-        return redirect('laboratorio/home');
+        return redirect('laboratorio/home')->with('succes','Dati Salvati');
     }
 
   
