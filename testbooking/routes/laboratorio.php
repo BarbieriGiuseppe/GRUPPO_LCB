@@ -20,6 +20,14 @@ Route::get('/update/{id}','HomeController@updateEsitoPrivato');
 Route::get('/update/{id}','HomeController@updateEsitoPaziente');
 Route::get('/update/{id}','HomeController@updateEsitoDipendente');
 
+
+Route::get('/prezzotamponi', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');
+Route::get('savePrezzoTampone', 'PrezzoTamponiController@savePrezzoTampone');
+
+
+Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
+Route::get('/aggiorna','ModificaController@updateAnagrafica');
+
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -45,5 +53,3 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
-Route::get('savePrezzoTampone', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');
-Route::post('savePrezzoTampone', 'PrezzoTamponiController@savePrezzoTampone');

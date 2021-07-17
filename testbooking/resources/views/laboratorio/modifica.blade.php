@@ -84,55 +84,69 @@
                  <!-- /. ROW  -->
                  <!-- /. ROW  -->
                 
-               
-  
-                  <div class="input-group">
-                    <h5>Nome Laboratorio</h5>
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
+                 <form action= "/laboratorio/aggiorna " method="get">
+
+    
+
+                    <div class="input-group">
+                        <h4><b>Nome Laboratorio</b></h4>
+                        <input name='nomelaboratorio' id='nomelaboratorio' type="text" value="{{ Auth::guard('laboratorio')->user()->nomelaboratorio }}" class="form-control"  />
+                    </div>
+                    
+                    
+                    
+                    <div class="input-group">
+                         <h4><b>Codice Laboratorio Pubblico</b></h4>
+                        <input name='codicelabpubblico' id='codicelabpubblico' readonly type="text"  value="{{ Auth::guard('laboratorio')->user()->codicelabpubblico}}" class="form-control" />
+                    </div>
                 
-                
-                
-                <div class="input-group">
-                     <h5>Codice Laboratorio Pubblico</h5>
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                            
-                <div class="input-group">
-                    <h5>Mail</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                
-                <div class="input-group">
-                    <h5>Telefono</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                
-                <div class="input-group">
-                    <h5>Città Laboratorio</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
-            
-                
-                <div class="input-group">
-                    <h5>Indirizzo Laboratorio</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
+                    
+                    
+                    <div class="input-group">
+                        <h4><b>Telefono</b></h4>
+                        <input name='telefono' id='telefono' type="text" value="{{ Auth::guard('laboratorio')->user()->telefono }}"  class="form-control" />
+                    </div>
+                    
+                     
+                    <div class="input-group">
+                        <h4><b>Indirizzo</b></h4>  
+                        <input name='indirizzo' id='indirizzo' type="text" value="{{ Auth::guard('laboratorio')->user()->indirizzo }}" class="form-control" />
+                    </div>
+
+                    
+                    <div class="input-group"  style = "position:relative; left:260px; top:-293px; ">
+                        <h4><b>Citta</b></h4>  
+                        <input name='citta' id='citta' type="text" value="{{ Auth::guard('laboratorio')->user()->citta }}" class="form-control"/>
+                    </div>
 
                 
-                <div class="input-group" style = "position:relative; left:260px; top:-561px; ">
-                    <h5>Provincia Laboratorio</h5>  
-                    <input type="text" class="form-control" placeholder="" />
-                </div>
+                    <div class="input-group" style = "position:relative; left:260px; top:-293px; ">
+                        <h4><b>Provincia</b></h4>  
+                        <input name='provincia' id='provincia' type="text" value="{{ Auth::guard('laboratorio')->user()->provincia }}" class="form-control" />
+                    </div>                
+                    
+                    
+                    <div class="input-group" style = "position:relative; left:260px; top:-293px; ">
+                        <h4><b>Cap</b></h4>   
+                        <input name='cap' id='cap' type="text" value="{{ Auth::guard('laboratorio')->user()->cap }}" class="form-control"/>
+                    </div>
+                
+                    
+                    <div class="input-group" style = "position:relative; left:260px; top:-293px; ">
+                        <h4><b>Email</b></h4>  
+                        <input name='email' id='email' type="text" value="{{ Auth::guard('laboratorio')->user()->email }}" class="form-control"  />
+                    </div>
+                
 
-                <br><button type=”submit”> Salva Modifiche </button> &nbsp; <button type=”submit”> Elimina convenzione </button>
-               
-                          
+                    <div class="input-group"  style = "position:relative; left:0px; top:-270px; "> 
+    
+                        <button type="submit" name="submit">Salva Modifiche</button>
+                        
+                    </div>
+    
+    
+    
+    </form>                       
                   
 
               

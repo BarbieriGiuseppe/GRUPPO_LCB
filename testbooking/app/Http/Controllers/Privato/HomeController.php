@@ -62,7 +62,7 @@ class HomeController extends Controller
     public function mostraPrenotazioni()
     { 
         $id = Auth::guard('privato')->user()->id;
-        $data = DB::select('select * from prenotazione_privato where emailprivato = (select email from privatos where id = ?)' , [$id]); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?) , [$id]
+        $data = DB::select('select * from prenotazione_privato where emailprivato = (select email from privatos where id = ?)' , [$id]); 
         return view('privato/home',['data'=>$data]);
     }
 

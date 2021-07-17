@@ -3,12 +3,18 @@
 namespace App\Http\Controllers\Laboratorio;
 
 use App\Http\Controllers\Controller;
-use App\Models\Laboratorio;
-use App\Models\Tamponato_Privato;
-use App\Models\Prezzo_Tampone;
-use Illuminate\Support\Facades\DB;
+use App\Models\Medico;
+use App\Models\Azienda;
+use App\Models\Privato;
+use App\Models\Prezzo_tampone;
+use App\Controllers\Laboratorio\Auth\LoginController;
+use Auth;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Laboratorio\Auth;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Support\Facades\DB;
+use app\Http\Middleware\RedirectIfLaboratorio;
+use app\Http\Middleware\RedirectIfNotLaboratorio;
+
 
 class PrezzoTamponiController extends Controller
 {
@@ -55,13 +61,14 @@ class PrezzoTamponiController extends Controller
      */
     public function showPrezzoTamponiForm()
     {
-   
-        return view('laboratorio.prezzotamponi');
+        $id = Auth::guard('laboratorio')->user()->id;
+        $prezzi = DB::select('select * from prezzo_tampone where codicelabpub = (select codicelabpubblico from laboratorios where id = ? )', [$id]);
+        return view('laboratorio.prezzotamponi',['prezzi'=>$prezzi]);
     }
 
     public function savePrezzoTampone(Request $request){
 
-        //$codice = Auth::guard('laboratorio')->user()->codicelabpubblico;
+       
 
         $prezzotampone = new Prezzo_Tampone();
         $prezzotampone->tipologia = $request->tipologia;

@@ -84,27 +84,54 @@
                  <!-- /. ROW  -->
                  <!-- /. ROW  -->
                 
-<form method="POST" action="{{ route('laboratorio.savePrezzoTampone') }}">
+<form method="get" action="/laboratorio/savePrezzoTampone ">
     
     @csrf               
   
                 <div class="input-group">
-                    <h5>Tipologia Tampone</h5>
+                    <h4><b>Tipologia Tampone</b></h4>
                     <select name="tipologia" type="text" class="form-control">
                         <option value="Rapido">Rapido</option>
                         <option value="Molecolare">Molecolare</option>
                         <option value="Sierologico">Sierologico</option>
                         <option value="Antigenico">Antigenico</option>
-                    </select>
-                    <h5>Prezzo Tampone</h5>
+                    </select><br><br>
+
+                    <h4><b>Prezzo Tampone</b></h4>
                     <input type="text" class="form-control" id="prezzo" name="prezzo" />
                 </div>
+
                 <div id="divCheckbox" style="display: none;">>
-                    <h5> Email Privato</h5>
+                    <h5> Codice Laboratori Pubblico</h5>
                    <input id="codicelabpub" type="text" name = "codicelabpub" readonly value=' {{ Auth::guard('laboratorio')->user()->codicelabpubblico}}'>
                </div>
                 <br><button type=”submit”> Salva Modifiche </button> 
                         
+
+                <div class="row" style = "position:relative; left:260px; top:-236px; ">
+                    <div class="col-lg-6 col-md-6">
+                        <h4><b>Listino Prezzi</b></h4>
+                        <table id="table" border=1px  col span="1" style="width: 50%;">
+                                <tr>
+                                    
+                                    <th style="text-align:center">Tipologia</th>
+                                    <th style="text-align:center">Prezzo</th>
+                            
+                                </tr>
+    
+                   
+                            @foreach ($prezzi as $prezzo)
+
+                            <tr>
+                        
+                                <td style="text-align:center">{{ $prezzo->tipologia}}</td>
+
+                                <td style="text-align:center">{{ $prezzo->prezzo }}</td>
+
+                            </tr>
+
+                            @endforeach
+                        </table>
 </form>               
 
                  <!-- /. ROW  -->           

@@ -14,13 +14,6 @@ use App\Http\Middleware\RedirectIfNotAzienda;
 
 class ModificaController extends Controller
 {
-   /* public  function mostraProfilo()
-    {   
-        $id = Auth::guard('privato')->user()->id-1;
-        $data = DB::select('select * from privatos');               
-        return view('privato/modifica',['data'=>$data,'id'=>$id]);
-    }
-    */
 
     public  function modificaAnagrafica()
     {              
