@@ -24,7 +24,7 @@ class CreatePrenotazionePrivatoTable extends Migration
             $table->string('tipologia');
             $table->string('metodopagamento')->nullable();
             $table->string('pagato')->default('no');
-            $table->string('esito')->default('nd');        
+            $table->string('esito')->default('n.d.');        
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -71,13 +71,13 @@ class HomeController extends Controller
 
     public  function updateEsitoPrivato(Request $request)
     {   
-        DB::update('update prenotazione_privato set esito = ? where id = ?', [$request['esito'],$request['id']]);
+        //DB::update('update prenotazione_privato set esito = ? where id = ?', [$request['esito'],$request['id']]);
 
-        /*$prenotazioneprivato = Prenotazione_Privato::where('id',$request->id)->first();
+        $prenotazioneprivato = Prenotazione_Privato::where('id',$request->id)->first();
 
         $prenotazioneprivato->esito = $request['esito'];
        
-        $prenotazioneprivato->save();*/
+        $prenotazioneprivato->save();
 
         return redirect('laboratorio/home');
        
