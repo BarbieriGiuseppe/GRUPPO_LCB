@@ -73,11 +73,11 @@
                     </li>
 
                     <li class="active-link">
-                        <a href="/downloadGuida"><i class="fa fa-edit "></i>Scarica Guida Tampone <span class="badge"></span></a>
+                        <a href="downloadGuida"><i class="fa fa-download "></i>Scarica Guida Tampone <span class="badge"></span></a>
                     </li>
 
                     <li class="active-link">
-                        <a href="/downloadQuestionario"><i class="fa fa-edit "></i>Scarica Questionario Anamnesi <span class="badge"></span></a>
+                        <a href="downloadQuestionario"><i class="fa fa-download "></i>Scarica Questionario Anamnesi <span class="badge"></span></a>
                     </li>
        
                     

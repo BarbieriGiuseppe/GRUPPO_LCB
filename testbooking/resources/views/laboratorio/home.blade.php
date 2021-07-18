@@ -93,10 +93,14 @@
 
 <form action="/laboratorio/aggiornaprivato" method="get">
 
+
+    @method('Patch')
+     @csrf
+
                         <table id="table" border=1px  col span="1" style="width: 150%;">
                                 <tr>
                                     
-                                    
+                                    <!--<th style="text-align:center">Id</th>-->
                                     <th style="text-align:center">Codice Fiscale Tamponato</th>
                                     <th style="text-align:center">Email Privato </th>
                                     <th style="text-align:center">Data Tampone </th>
@@ -112,8 +116,8 @@
                             @foreach ($t_privati as $prenotazioniprivati)
                             
                             <tr>
-                                <td style="display: none;">
-                                   <input id="id" type="text" name = "id" readonly value='{{ $prenotazioniprivati->id}}'>
+                                <td style="display:none;">
+                                   <input id="id" type="text" name = "id"  value='{{ $prenotazioniprivati->id}}'>
                                 </td>
 
                                 <td style="text-align:center">{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
@@ -130,22 +134,23 @@
 
                                 <td style="text-align:center">{{ $prenotazioniprivati->pagato }}</td>
 
-
+                                
 
 
                                 <td style="text-align:center">
                                     <select name="esito" id="esito" type="text">
     
                                         <option value="{{ $prenotazioniprivati->esito }}">{{ $prenotazioniprivati->esito }}</option>
-    
-                                        <@if( $prenotazioniprivati->esito  == 'n.d.')
+                                        
+
+                                        @if( $prenotazioniprivati->esito  == 'n.d.')
                                             <option value="Positivo">Positivo</option>
                                             <option value="Negativo">Negativo</option>
                                         @elseif( $prenotazioniprivati->esito  == 'Positivo')
-                                            <option value="n.d.">n.d.</option>
+                                            <!--<option value="n.d.">n.d.</option>-->
                                             <option value="Negativo">Negativo</option>
                                         @elseif( $prenotazioniprivati->esito == 'Negativo')
-                                            <option value="n.d.">n.d.</option>
+                                            <!--<option value="n.d.">n.d.</option>-->
                                             <option value="Positivo">Positivo</option>
                                         @endif
 
@@ -153,16 +158,17 @@
                                             
                                     </select>
                                 </td>
-                                
+                           
+                                @endforeach 
                                 <td style="text-align:center">
-                                    <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button>
+                                    <button id="editicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button>
                                </td>
-
-                            @endforeach
+                               
+                            </tr>
+                             
 
                         </table> 
 
-    
 
 </form>
 
@@ -230,7 +236,7 @@
                                 </td>
 
                                 <td >
-                                     <button id="deleteicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button> 
+                                     <button id="deleteicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button> 
                                 </td>
                             @endforeach
 
@@ -241,7 +247,7 @@
 
 
 
-<form action=" " method="get">
+<form action="/laboratorio/aggiornapaziente " method="get">
 
                         <div class="row">
                             <div class="col-lg-12 col-md-12">

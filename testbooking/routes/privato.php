@@ -21,15 +21,8 @@ Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
 Route::get('/aggiorna','ModificaController@updateAnagrafica');
 
-Route::get('/downloadGuida',function(){
-
-    $file = public_path()."/guida_tampone.pdf";
-    $header = array(
-        'Content-Type: application/pdf',
-    );
-    return Response::download($file,"Guida Tampone.pdf",$header);
-});
-Route::get('/downloadQuestionario','HomeController@downloadQuestionario');
+Route::get('/downloadGuida','HomeController@downloadGuida')->name('downloadGuida');
+Route::get('/downloadQuestionario','HomeController@downloadQuestionario')->name('downloadQuestionario');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

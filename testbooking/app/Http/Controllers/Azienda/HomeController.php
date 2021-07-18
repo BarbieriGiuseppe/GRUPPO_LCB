@@ -62,4 +62,20 @@ class HomeController extends Controller
         return redirect('azienda/home');
     }
   
+    
+    public  function downloadGuida()
+    {   
+
+        $file = public_path()."/guida_tampone.pdf";
+        $header = array('Content-Type: application/pdf',);
+        return response()->download($file, 'guida_tampone.pdf', $header);
+    }
+
+
+    public  function downloadQuestionario()
+    {
+        $file = public_path()."/questionario_anamnesi.pdf";
+        $header = array('Content-Type: application/pdf',);
+        return response()->download($file, 'questionario_anamnesi.pdf', $header);
+    }
 }

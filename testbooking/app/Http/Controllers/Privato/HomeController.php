@@ -7,6 +7,7 @@ use App\Models\Privato;
 use App\Controllers\Privato\Auth\LoginController;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Privato\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfPrivato;
@@ -76,16 +77,18 @@ class HomeController extends Controller
  
     public  function downloadGuida()
     {   
+
         $file = public_path()."/guida_tampone.pdf";
         $header = array('Content-Type: application/pdf',);
-        return Response::download($file,"Guida Tampone.pdf",$header);
+        return response()->download($file, 'guida_tampone.pdf', $header);
     }
 
 
     public  function downloadQuestionario()
     {
-        $pdf = PDF::loadView('welcome');
-        return $pdf->download('questionario.pdf');
+        $file = public_path()."/questionario_anamnesi.pdf";
+        $header = array('Content-Type: application/pdf',);
+        return response()->download($file, 'questionario_anamnesi.pdf', $header);
     }
   
 }

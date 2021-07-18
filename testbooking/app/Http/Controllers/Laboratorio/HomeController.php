@@ -59,10 +59,10 @@ class HomeController extends Controller
 
     public function mostraPrenotazioni()
     { 
-        $id = Auth::guard('laboratorio')->user()->id;
-        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)' , [$id]);
-        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)' , [$id]); 
-        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)' , [$id]); 
+        $cod = Auth::guard('laboratorio')->user()->codicelabpubblico;
+        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = ?' , [$cod]);
+        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = ?' , [$cod]); 
+        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = ?' , [$cod]); 
 
         return view('laboratorio/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
     }
@@ -71,28 +71,28 @@ class HomeController extends Controller
 
     public  function updateEsitoPrivato(Request $request)
     {   
-        
+        DB::update('update prenotazione_privato set esito = ? where id = ?', [$request['esito'],$request['id']]);
 
-        $prenotazioneprivato = Prenotazione_Privato::where('id',$request->id)->first();
+        /*$prenotazioneprivato = Prenotazione_Privato::where('id',$request->id)->first();
 
         $prenotazioneprivato->esito = $request['esito'];
        
-        $prenotazioneprivato->save();
+        $prenotazioneprivato->save();*/
 
-        return redirect('laboratorio/home')->with('succes','Dati Salvati');
+        return redirect('laboratorio/home');
        
     }
 
     public  function updateEsitoPaziente(Request $request)
     {   
 
-        $prenotazionemedico = Prenotazione_Medico::where('id',$request->id);
+        $prenotazionemedico = Prenotazione_Medico::where('id',$request->id)->first();
 
         $prenotazionemedico->esito = $request['esito'];
        
         $prenotazionemedico->save();
 
-        return redirect('laboratorio/home')->with('succes','Dati Salvati');
+        return redirect('laboratorio/home');
 
     }
 
@@ -105,7 +105,7 @@ class HomeController extends Controller
        
         $prenotazionedatore->save();
 
-        return redirect('laboratorio/home')->with('succes','Dati Salvati');
+        return redirect('laboratorio/home');
     }
 
   
