@@ -65,7 +65,7 @@
                    
 
                     <li class="active-link">
-                        <a href="prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                        <a href="tamponato"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
 
                     <li class="active-link">
