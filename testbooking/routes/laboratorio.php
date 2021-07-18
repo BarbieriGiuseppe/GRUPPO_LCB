@@ -13,12 +13,9 @@ Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 
 
 Route::get('/home', 'HomeController@mostraPrenotazioni');
-Route::get('/click_edit_privato/{id}', 'HomeController@modificaEsitoPrivato');
-Route::get('/click_edit_paziente/{id}', 'HomeController@modificaEsitoPaziente');
-Route::get('/click_edit_dipendente/{id}', 'HomeController@modificaEsitoDipendente');
-Route::get('/update/{id}','HomeController@updateEsitoPrivato');
-Route::get('/update/{id}','HomeController@updateEsitoPaziente');
-Route::get('/update/{id}','HomeController@updateEsitoDipendente');
+Route::get('/aggiornaprivato','HomeController@updateEsitoPrivato');
+Route::get('/aggiornapaziente','HomeController@updateEsitoPaziente');
+Route::get('/aggiornadipendente','HomeController@updateEsitoDipendente');
 
 
 Route::get('/prezzotamponi', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');

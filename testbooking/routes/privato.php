@@ -21,8 +21,8 @@ Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
 Route::get('/aggiorna','ModificaController@updateAnagrafica');
 
-
-
+Route::get('/downloadGuida','HomeController@downloadGuida')->name('downloadGuida');
+Route::get('/downloadQuestionario','HomeController@downloadQuestionario')->name('downloadQuestionario');
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

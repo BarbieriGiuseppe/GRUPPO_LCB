@@ -20,9 +20,11 @@ class CreatePrenotazioneDatoreTable extends Migration
             $table->string('emaildatore');
             $table->date('datatampone');
             $table->time('orario');
+            $table->decimal('prezzo', $precision = 6, $scale = 2);
             $table->string('tipologia');
-            $table->string('pagato');
-            $table->string('esito');           
+            $table->string('metodopagamento')->nullable();
+            $table->string('pagato')->default('no');
+            $table->string('esito')->default('n.d.');           
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
@@ -31,7 +33,7 @@ class CreatePrenotazioneDatoreTable extends Migration
             $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
             $table->foreign('emaildatore')->references('email')->on('aziendas');
         });
-        DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE Prenotazione_Datore MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

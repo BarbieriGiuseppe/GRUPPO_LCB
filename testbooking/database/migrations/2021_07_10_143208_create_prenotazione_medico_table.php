@@ -15,15 +15,16 @@ class CreatePrenotazioneMedicoTable extends Migration
     {
         Schema::create('Prenotazione_Medico', function (Blueprint $table) {
             $table->integer('id')->unique();
-            $table->string('codicefiscalepaziente',16)->unique();
-            $table->string('codicelabpubblico')->unique();
-            $table->string('emailmedico')->unique();
+            $table->string('codicefiscalepaziente',16);
+            $table->string('codicelabpubblico');
+            $table->string('emailmedico');
             $table->date('datatampone');
             $table->time('orario');
             $table->decimal('prezzo', $precision = 6, $scale = 2);
             $table->string('tipologia');
-            $table->string('pagato');
-            $table->string('esito');
+            $table->string('metodopagamento')->nullable();
+            $table->string('pagato')->default('no');
+            $table->string('esito')->default('n.d.');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
@@ -32,7 +33,7 @@ class CreatePrenotazioneMedicoTable extends Migration
             $table->foreign('codicelabpubblico')->references('codicelabpubblico')->on('laboratorios');
             $table->foreign('emailmedico')->references('email')->on('medicos');
         });
-        DB::statement('ALTER TABLE privatos MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
+        DB::statement('ALTER TABLE Prenotazione_Medico MODIFY id INTEGER NOT NULL AUTO_INCREMENT');
     }
 
     /**

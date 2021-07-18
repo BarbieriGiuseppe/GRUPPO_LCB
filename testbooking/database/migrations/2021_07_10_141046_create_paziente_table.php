@@ -27,7 +27,7 @@ class CreatePazienteTable extends Migration
             $table->string('cap',5);
             $table->string('nazione',40)->nullable();
             $table->string('email')->unique();
-            $table->string('emailmedico')->unique();
+            $table->string('emailmedico');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

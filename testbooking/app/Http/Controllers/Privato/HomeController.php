@@ -7,10 +7,12 @@ use App\Models\Privato;
 use App\Controllers\Privato\Auth\LoginController;
 use Auth;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Privato\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfPrivato;
 use app\Http\Middleware\RedirectIfNotPrivato;
+use \PDF;
 
 class HomeController extends Controller
 {
@@ -72,10 +74,21 @@ class HomeController extends Controller
         return redirect('privato/home');
     }
     
-    /*public  function Profilo()
-    {                 
-        return view('privato/modifica');
-    }*/
+ 
+    public  function downloadGuida()
+    {   
 
+        $file = public_path()."/guida_tampone.pdf";
+        $header = array('Content-Type: application/pdf',);
+        return response()->download($file, 'guida_tampone.pdf', $header);
+    }
+
+
+    public  function downloadQuestionario()
+    {
+        $file = public_path()."/questionario_anamnesi.pdf";
+        $header = array('Content-Type: application/pdf',);
+        return response()->download($file, 'questionario_anamnesi.pdf', $header);
+    }
   
 }

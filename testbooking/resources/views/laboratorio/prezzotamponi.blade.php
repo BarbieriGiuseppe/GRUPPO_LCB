@@ -101,7 +101,7 @@
                     <input type="text" class="form-control" id="prezzo" name="prezzo" />
                 </div>
 
-                <div id="divCheckbox" style="display: none;">>
+                <div id="divCheckbox" style="display: none;">
                     <h5> Codice Laboratori Pubblico</h5>
                    <input id="codicelabpub" type="text" name = "codicelabpub" readonly value=' {{ Auth::guard('laboratorio')->user()->codicelabpubblico}}'>
                </div>

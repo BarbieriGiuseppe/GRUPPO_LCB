@@ -85,13 +85,22 @@
                      <h2>Dashboard Laboratorio</h2>   
                     </div>
                 </div>              
-                
+   
+
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h4><b>LISTA PRENOTAZIONI PRIVATI</b></h4>
-                        <table id="table" border=1px  col span="1" style="width: 150%;">
+
+<form action="/laboratorio/aggiornaprivato" method="get">
+
+
+    @method('Patch')
+     @csrf
+
+                        <table id="table" border=1px  col span="1" style="width: 180%;">
                                 <tr>
                                     
+                                    <!--<th style="text-align:center">Id</th>-->
                                     <th style="text-align:center">Codice Fiscale Tamponato</th>
                                     <th style="text-align:center">Email Privato </th>
                                     <th style="text-align:center">Data Tampone </th>
@@ -100,15 +109,17 @@
                                     <th style="text-align:center">Metodo Pagamento </th>
                                     <th style="text-align:center">Pagato </th>
                                     <th style="text-align:center">Esito</th>
-                                    <th style="text-align:center">Referto</th>
-                     
+                                    <th style="text-align:center">Conferma Esito</th>
                                 </tr>
     
                    
                             @foreach ($t_privati as $prenotazioniprivati)
-
+                            
                             <tr>
-                        
+                                <td style="display:none;">
+                                   <input id="id" type="text" name = "id"  value={{ $prenotazioniprivati->id}}>
+                                </td>
+
                                 <td style="text-align:center">{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
 
                                 <td style="text-align:center">{{ $prenotazioniprivati->emailprivato }}</td>
@@ -123,25 +134,56 @@
 
                                 <td style="text-align:center">{{ $prenotazioniprivati->pagato }}</td>
 
-                                <td style="text-align:center">{{ $prenotazioniprivati->esito }}</td>
+                                
 
 
                                 <td style="text-align:center">
-                                    <a href="click_edit_privato/{{$prenotazioniprivati->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                                    <select name="esito" id="esito">
+    
+                                        <option value="{{ $prenotazioniprivati->esito }}">{{ $prenotazioniprivati->esito }}</option>
+                                        
+
+                                        @if( $prenotazioniprivati->esito  == 'n.d.')
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
+                                        @elseif( $prenotazioniprivati->esito  == 'Positivo')
+                                            <option value="n.d.">n.d.</option>
+                                            <option value="Negativo">Negativo</option>
+                                        @elseif( $prenotazioniprivati->esito == 'Negativo')
+                                            <option value="n.d.">n.d.</option>
+                                            <option value="Positivo">Positivo</option>
+                                        @endif
+
+
+                                            
+                                    </select>
                                 </td>
-
-
-                            </tr>
+                           
+                                
+                                <td style="text-align:center">
+                                    <button id="editicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button>
+                               </td>
 
                             @endforeach
+
+                            </tr>
+                             
+
                         </table> 
 
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12">
+
+</form>
+
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
                         <h4><b>LISTA PRENOTAZIONI PAZIENTI</b></h4>
-                        <table id="table" border=1px col span="1" style="width:150%">
-                                <tr >
-                                    
+
+<form action="/laboratorio/aggiornapaziente " method="get">
+
+                        <table id="table" border=1px  col span="1" style="width: 180%;">
+                                <tr>
+                
                                     <th style="text-align:center">Codice Fiscale Paziente</th>
                                     <th style="text-align:center">Email Medico </th>
                                     <th style="text-align:center">Data Tampone </th>
@@ -150,46 +192,75 @@
                                     <th style="text-align:center">Metodo Pagamento </th>
                                     <th style="text-align:center">Pagato </th>
                                     <th style="text-align:center">Esito</th>
-                                    <th style="text-align:center">Referto</th>
-                               
-                                </tr>
-        
-                       
-                            @foreach ($t_pazienti as $prenotazionipazienti)
-    
+                                    <th style="text-align:center">Conferma Esito</th>
+ 
+                                </tr>   
+
+
+                             @foreach ($t_pazienti as $prenotazionipazienti)
+
                             <tr>
-    
+                                <td style="display:none;">
+                                    <input id="id" type="text" name = "id"  value={{ $prenotazionipazienti->id}}>
+                                 </td>
+
                                 <td style="text-align:center">{{ $prenotazionipazienti->codicefiscalepaziente}}</td>
 
-                                <td style="text-align:center">{{ $prenotazionipazienti->emailmedico }}</td> 
-    
+                                <td style="text-align:center">{{ $prenotazionipazienti->emailmedico }}</td>
+
                                 <td style="text-align:center">{{ $prenotazionipazienti->datatampone }}</td> 
 
-                                <td style="text-align:center">{{ $prenotazionipazienti->orario }}</td> 
-    
-                                <td style="text-align:center">{{ $prenotazionipazienti->tipologia }}</td>   
-                            
+                                <td style="text-align:center">{{ $prenotazionipazienti->orario}}</td>
+
+                                <td style="text-align:center">{{ $prenotazionipazienti->tipologia }}</td>     
+
                                 <td style="text-align:center">{{ $prenotazionipazienti->metodopagamento }}</td> 
-    
+
                                 <td style="text-align:center">{{ $prenotazionipazienti->pagato }}</td>
-    
-                                <td style="text-align:center">{{ $prenotazionipazienti->esito }}</td>
-    
-    
+
+
+
+
                                 <td style="text-align:center">
-                                    <a href="click_edit_paziente/{{$prenotazionipazienti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                                    <select name="esito" id="esito" type="text" >
+
+                                        <option value="E">{{ $prenotazionipazienti->esito }}</option>
+
+                                        @if( $prenotazionipazienti->esito  == 'n.d.')
+                                            <option value="P">Positivo</option>
+                                            <option value="N">Negativo</option>
+                                        @elseif( $prenotazionipazienti->esito  == 'Positivo')
+                                            <option value="ND">n.d.</option>
+                                            <option value="N">Negativo</option>
+                                        @elseif( $prenotazionipazienti->esito == 'Negativo')
+                                            <option value="ND">n.d.</option>
+                                            <option value="P">Positivo</option>
+                                        @endif
+                        
+                                    </select>
                                 </td>
-    
-    
-                            </tr>
-    
+
+                                <td >
+                                     <button id="editicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button> 
+                                </td>
+
                             @endforeach
+                            
+                            </tr>
+
                         </table> 
+
+</form>
+
+
+
+
+<form action="/laboratorio/aggiornadipendente " method="get">
 
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                             <h4><b>LISTA PRENOTAZIONI DIPENDENTI</b></h4>
-                            <table id="table" border=1px col span="1" style="width:150%">
+                            <table id="table" border=1px col span="1" style="width:180%">
                                 <tr>
 
                                     <th style="text-align:center">Codice Fiscale Dipendente </th>
@@ -200,7 +271,7 @@
                                     <th style="text-align:center">Metodo Pagamento </th>
                                     <th style="text-align:center">Pagato </th>
                                     <th style="text-align:center">Esito</th>
-                                    <th style="text-align:center">Referto</th>
+                                    <th style="text-align:center">Conferma Esito</th>
                                        
                                 </tr>
             
@@ -209,7 +280,9 @@
         
                                 <tr>
 
-                                    <td style="text-align:center">{{ $prenotazionidipendenti->codicefiscaledipendente}}</td>
+                                    <td style="display:none;">
+                                        <input id="id" type="text" name = "id"  value={{ $prenotazionidipendenti->id}}>
+                                     </td>
                                 
                                     <td style="text-align:center">{{ $prenotazionidipendenti->emaildatore }}</td>
         
@@ -222,19 +295,40 @@
                                     <td style="text-align:center">{{ $prenotazionidipendenti->metodopagamento }}</td>
         
                                     <td style="text-align:center">{{ $prenotazionidipendenti->pagato }}</td>
-        
-                                    <td style="text-align:center">{{ $prenotazionidipendenti->esito }}</td>
-        
-        
+                                    
+
                                     <td style="text-align:center">
-                                        <a href="click_edit_dipendente/{{$prenotazionidipendenti->id}}" >  <button id="editicon" type = "submit" class = "btn btn-default" data-dismiss="modal"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button></a> 
+                                        <select name="esito" id="esito" type="text" >
+    
+                                            <option value="E">{{ $prenotazionipazienti->esito }}</option>
+    
+                                            @if( $prenotazionipazienti->esito  == 'n.d.')
+                                                <option value="P">Positivo</option>
+                                                <option value="N">Negativo</option>
+                                            @elseif( $prenotazionipazienti->esito  == 'Positivo')
+                                                <option value="ND">n.d.</option>
+                                                <option value="N">Negativo</option>
+                                            @elseif( $prenotazionipazienti->esito == 'Negativo')
+                                                <option value="ND">n.d.</option>
+                                                <option value="P">Positivo</option>
+                                            @endif
+                            
+                                        </select>
+                                    </td>
+    
+                                    <td >
+                                         <button id="editicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button> 
                                     </td>
         
-        
-                                </tr>
-        
                                 @endforeach
+
+                                </tr>
+
+
                             </table> 
+
+</form>
+
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
