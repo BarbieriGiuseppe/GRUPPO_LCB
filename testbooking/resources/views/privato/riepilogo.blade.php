@@ -144,7 +144,7 @@
 
         <div id="divCheckbox" style="display: none;">>
             <h5> Pagato</h5>
-           <input id="pagato" type="text" name = "pagato" readonly value='no'>
+           <input id="pagato" type="text" name = "pagato" readonly value='si'>
         </div>
         
         <div id="divCheckbox" style="display: none;">>
@@ -247,16 +247,17 @@
                 $(this).find("option:selected").each(function(){
                     var optionValue = $(this).attr("value");
                     if(optionValue){
-                        $(".box").not("." + optionValue).hide();
-                        $("." + optionValue).show();
+                      //  $(".box").not("." + optionValue).hide();
+                       // $("." + optionValue).show().disabled = true;
                     } else{
                         
                         $(".box").hide();
+                    document.getElementById(".box").disabled = true;
                     }
                 });
             }).change();
         });
-        document.getElementById("avanti").disabled = true;
+        
     </script>
 </body>
 </html>
