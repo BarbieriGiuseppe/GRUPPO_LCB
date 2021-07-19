@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Privato;
+namespace App\Http\Controllers\Medico;
 
 use App\Http\Controllers\Controller;
-use App\Models\Privato;
-use App\Models\Tamponato_Privato;
-use App\Models\Prenotazione_Privato;
+use App\Models\Prenotazione_Medico;
+use App\Models\Paziente;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Privato\Auth;
@@ -16,9 +15,9 @@ class AppuntamentoController extends Controller
     {
         return Validator::make($data, [
 
-            'codicefiscaletamponato' => ['required', 'string', 'max:16'],
+            'codicefiscalepaziente' => ['required', 'string', 'max:16'],
             'codicelabpubblico' => ['required', 'string', 'max:255'],
-            'emailprivato' => ['required', 'string', 'max:255'],
+            'emailmedico' => ['required', 'string', 'max:255'],
             'datatampone' => ['required', 'date', 'max:255'],
             'orario' => ['required', 'date_format:h:i', 'max:255'],
             'prezzo' => [ 'string', 'max:255'],
@@ -39,10 +38,10 @@ class AppuntamentoController extends Controller
      */
     protected function create(array $data)
     {
-        return Prenotazione_Privato::create([
-            'codicefiscaletamponato' => $data['codicefiscaletamponato'],
+        return Prenotazione_Medico::create([
+            'codicefiscalepaziente' => $data['codicefiscalepaziente'],
             'codicelabpubblico' => $data['codicelabpubblico'],
-            'emailprivato' => $data['emailprivato'],
+            'emailmedico' => $data['emailmedico'],
             'datatampone' => $data['datatampone'],
             'orario' => $data['orario'],
             'prezzo' => $data['prezzo'],
@@ -61,14 +60,14 @@ class AppuntamentoController extends Controller
      */
     public function showAppuntamentoForm()
     {
-        return view('privato.appuntamento');
+        return view('medico.appuntamento');
     }
 
     public function registerAppuntamento(Request $request){
-        $preventivo = new Prenotazione_Privato();
-        $preventivo->codicefiscaletamponato = $request->codicefiscaletamponato;
+        $preventivo = new Prenotazione_Medico();
+        $preventivo->codicefiscalepaziente = $request->codicefiscalepaziente;
         $preventivo->codicelabpubblico = $request->codicelabpubblico;
-        $preventivo->emailprivato = $request->emailprivato;
+        $preventivo->emailmedico = $request->emailmedico;
         $preventivo->datatampone = $request->datatampone;
         $preventivo->orario = $request->orario;
         $preventivo->prezzo = $request->prezzo;
@@ -81,7 +80,7 @@ class AppuntamentoController extends Controller
         $preventivo->email = $request->email;
         
      
-        return redirect('privato/riepilogo');
+        return redirect('medico/riepilogo');
 
 
         /*->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato

@@ -37,11 +37,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function prenotazione() {
-        return view('medico.prenotazione');
+    public function tamponato() {
+        return view('medico.tamponato');
     }
 
-    
+    public function appuntamento(){
+        return view('medico.appuntamento');
+    }
+
+    public function riepilogo(){
+        return view('medico.riepilogo');
+    }
+
+    public function continua(){
+        return view('medico.continua');
+    }
     /**
      * Show the Medico modifica.
      *

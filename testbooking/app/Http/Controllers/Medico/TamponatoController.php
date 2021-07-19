@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Privato;
+namespace App\Http\Controllers\Medico;
 
 use App\Http\Controllers\Controller;
-use App\Models\Privato;
-use App\Models\Tamponato_Privato;
+
+use App\Models\Medico;
+use App\Models\Paziente;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Privato\Auth;
-use App\Http\Controllers\Privato\RiepilogoController;
+use App\Http\Controllers\Medico\Auth;
+use App\Http\Controllers\Medico\RiepilogoController;
 
 class TamponatoController extends Controller
 {
@@ -16,7 +17,7 @@ class TamponatoController extends Controller
 
     public function elencoLaboratori() {
         $data = DB::table('laboratorios')->get();
-        return view('privato.appuntamento')->with('data', $data);
+        return view('medico.appuntamento')->with('data', $data);
     }
 
 
@@ -39,7 +40,7 @@ class TamponatoController extends Controller
     {
         return Validator::make($data, [
 
-            'codicefiscaletamponato' => ['required', 'string', 'max:16'],
+            'codicefiscalepaziente' => ['required', 'string', 'max:16'],
             'cognome' => ['required', 'string', 'max:255'],
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -51,7 +52,7 @@ class TamponatoController extends Controller
             'provincia' => ['required', 'string', 'max:255'],
             'cap' => ['required', 'string', 'max:255'],
             'nazione' => ['required', 'string', 'max:255'],
-            'emailprivato' => ['required', 'string', 'max:255'],
+            'emailmedico' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -64,8 +65,8 @@ class TamponatoController extends Controller
      */
     protected function create(array $data)
     {
-        return Tamponato_Privato::create([
-            'codicefiscaletamponato' => $data['codicefiscaletamponato'],
+        return Paziente::create([
+            'codicefiscalepaziente' => $data['codicefiscalepaziente'],
             'cognome' => $data['cognome'],
             'nome' => $data['nome'],
             'email' => $data['email'],
@@ -77,7 +78,7 @@ class TamponatoController extends Controller
             'provincia' => $data['provincia'],
             'cap' => $data['cap'],
             'nazione' => $data['nazione'],
-            'emailprivato' => $data['emailprivato'],
+            'emailmedico' => $data['emailmedico'],
             
         ]);
     }
@@ -89,12 +90,12 @@ class TamponatoController extends Controller
      */
     public function showTamponatoForm()
     {
-        return view('privato.tamponato');
+        return view('medico.tamponato');
     }
 
     public function registerTamponato(Request $request){
-        $tamponato = new Tamponato_Privato();
-        $tamponato->codicefiscaletamponato = $request->codicefiscaletamponato;
+        $tamponato = new Paziente();
+        $tamponato->codicefiscalepaziente = $request->codicefiscalepaziente;
         $tamponato->cognome = $request->cognome;
         $tamponato->nome = $request->nome;
         $tamponato->email = $request->email;
@@ -106,11 +107,11 @@ class TamponatoController extends Controller
         $tamponato->provincia = $request->provincia;
         $tamponato->cap = $request->cap;
         $tamponato->nazione = $request->nazione;
-        $tamponato->emailprivato = $request->emailprivato;
+        $tamponato->emailmedico = $request->emailmedico;
         $tamponato->save();
 
 
-        return redirect('privato/appuntamento')->with(['codicefiscaletamponato'=>$request->codicefiscaletamponato,
+        return redirect('medico/appuntamento')->with(['codicefiscaletamponato'=>$request->codicefiscalepaziente,
         'email'=>$request->email]);
     }
 

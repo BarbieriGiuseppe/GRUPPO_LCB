@@ -102,17 +102,17 @@ $(function() {
                     
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('privato')->user()->nome }}  {{ Auth::guard('privato')->user()->cognome }}<span class="caret"></span>
+                            {{ Auth::guard('medico')->user()->nome }}  {{ Auth::guard('medico')->user()->cognome }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('privato.logout') }}"
+                            <a class="dropdown-item" href="{{ route('medico.logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('privato.logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('medico.logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
 
@@ -122,7 +122,7 @@ $(function() {
                    
 
                     <li class="active-link">
-                        <a href="prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                        <a href="tamponato"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
                     
                     <li class="active-link">
@@ -146,10 +146,10 @@ $(function() {
             <div id="page-inner">
                 <div class="container">
                     <ul class="progressbar">
-                        <li> Dati Tamponato</li>
+                        <li> Dati Paziente</li>
                         <li class="active">Seleziona Appuntamento</li>
-                        <li>add friends</li>
-                        <li>View map</li>
+                        <li>Riepilogo e Pagamento</li>
+
                 </ul>
                 <div class="row">
                     <div class="col-md-12">
@@ -159,10 +159,10 @@ $(function() {
                  <!-- /. ROW  -->
                  
                  <!-- /. ROW  --> 
-     <form method="POST" action="{{ route('privato.registerAppuntamento') }}">
+     <form method="POST" action="{{ route('medico.registerAppuntamento') }}">
 					@csrf
  
-    <div class="input-group" style = "position:relative; left:-280px; top:48px;">
+    <div class="input-group" style = "position:relative; left:-650px; top:132px;">
         <h5>Laboratorio</h5>  
             <div>
                 <select class="form-control formselect required" placeholder="Laboratorio"
@@ -199,19 +199,19 @@ $(function() {
     </div>
 
     <div id="divCheckbox" style="display: none;">>
-        <h5> Email Privato</h5>
-       <input id="emailprivato" type="text" name = "emailprivato" readonly value=' {{ Auth::guard('privato')->user()->email }}'>
+        <h5> Email Medico</h5>
+       <input id="emailmedico" type="text" name = "emailmedico" readonly value=' {{ Auth::guard('medico')->user()->email }}'>
    </div>
 
 
    <div id="divCheckbox" style="display: none;">
     <h5> prezzo</h5>
-   <input id="codicefiscaletamponato" type="text" name = "prezzo" readonly value='00.00'>
+   <input id="prezzo" type="text" name = "prezzo" readonly value='00.00'>
 </div>
 
    <div id="divCheckbox" style="display: none;">
-    <h5> Codice F Tamponato</h5>
-   <input id="codicefiscaletamponato" type="text" name = "codicefiscaletamponato" readonly value=' {{Session::get('codicefiscaletamponato');}}'>
+    <h5> Codice F paziente</h5>
+   <input id="codicefiscalepaziente" type="text" name = "codicefiscalepaziente" readonly value=' {{Session::get('codicefiscaletamponato');}}'>
 </div>
 
 <div id="divCheckbox" style="display: none;">>
@@ -221,7 +221,7 @@ $(function() {
 
 <div id="divCheckbox" style="display: none;">>
     <h5> Esito</h5>
-   <input id="esito" type="text" name = "esito" readonly value='n/d'>
+   <input id="esito" type="text" name = "esito" readonly value='n.d'>
 </div>
 
     <br> <button type="submit" style = "position:relative; left:-280px; top: -180px;">

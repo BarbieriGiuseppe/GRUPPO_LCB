@@ -10,8 +10,10 @@ use App\Http\Controllers\Medico\PaymentController;
 
 // Home
 Route::get('/home', 'HomeController@home')->name('home');
-Route::get('/prenotazione', 'HomeController@prenotazione')->name('prenotazione');
+Route::get('/tamponato', 'HomeController@tamponato')->name('tamponato');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
+Route::get('/appuntamento', 'HomeController@appuntamento')->name('appuntamento');
+Route::get('/riepilogo','HomeController@riepilogo')->name('riepilogo');
 
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
@@ -45,3 +47,22 @@ Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
 // Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 // Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
 // Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+
+Route::get('/appuntamento','TamponatoController@elencoLaboratori');
+Route::get('/appuntamento/{codicelabpub}','TamponatoController@elencoTipologie');
+Route::get('registerTamponato', 'TamponatoController@showTamponatoForm')->name('registerTamponato');
+Route::post('registerTamponato', 'TamponatoController@registerTamponato');
+Route::get('registerAppuntamento','AppuntamentoController@showAppuntamentoForm')->name('registerAppuntamento');
+Route::post('registerAppuntamento','AppuntamentoController@registerAppuntamento');
+
+Route::get('registerRiepilogo', 'RiepilogoController@showAggiornaForm')->name('registerRiepilogo');
+Route::post('registerRiepilogo', 'RiepilogoController@registerRiepilogo');
+
+
+Route::get('paypal/pay', 'PaymentController@payWithPayPal');
+Route::get('paypal/status', 'PaymentController@payPalStatus');
+
+Route::get('prezzi','RiepilogoController@prezzi');
+
+Route::get('continua','HomeController@continua');

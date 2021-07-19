@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Privato;
+namespace App\Http\Controllers\Medico;
 
 use App\Http\Controllers\Controller;
 use App\Models\Privato;
 use App\Models\Tamponato_Privato;
-use App\Models\Prenotazione_Privato;
+use App\Models\Prenotazione_Medico;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Privato\Auth;
@@ -21,7 +21,7 @@ class RiepilogoController extends Controller
     public function registerRiepilogo(Request $request)
     {
 
-        $prenotazione = Prenotazione_Privato::where('codicefiscaletamponato',$request->codicefiscaletamponato)->first();
+        $prenotazione = Prenotazione_Medico::where('codicefiscalepaziente',$request->codicefiscalepaziente)->first();
 
         $prenotazione->metodopagamento = $request['metodopagamento'];
         $prenotazione->prezzo = $request['prezzo'];
@@ -29,7 +29,7 @@ class RiepilogoController extends Controller
 
        
 
-        return redirect('privato/home');
+        return redirect('medico/continua');
     
 
     }

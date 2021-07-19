@@ -100,7 +100,7 @@
             <div id="page-inner">
                 <div class="container">
                     <ul class="progressbar">
-                        <li class="active"> Dati Tamponato</li>
+                        <li class="active"> Dati Paziente</li>
                         <li>Selezione Appuntamento</li>
                         <li>Riepilogo e Pagamento</li>
 
@@ -121,8 +121,8 @@
     
     <div class="input-group"> 
          <h5> Codice Fiscale</h5>
-        <input id="codicefiscaletamponato" type="text" required class="form-control" name = "codicefiscaletamponato">
-        @error('codicefiscaletamponato')
+        <input id="codicefiscalepaziente" type="text" required class="form-control" name = "codicefiscalepaziente">
+        @error('codicefiscalepaziente')
             <div class = "error text-danger"> {{ $message }} </div>
         @enderror
     </div>
@@ -497,7 +497,7 @@
     </div>
      
     <div class="input-group"> 
-        <h5> Email Privato</h5>
+        <h5> Email Medico</h5>
        <input id="emailmedico" type="text" name = "emailmedico" readonly value=' {{ Auth::guard('medico')->user()->email }}'>
    </div>
 
