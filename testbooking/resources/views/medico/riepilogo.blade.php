@@ -56,17 +56,17 @@
                     
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('privato')->user()->nome }}  {{ Auth::guard('privato')->user()->cognome }}<span class="caret"></span>
+                            {{ Auth::guard('medico')->user()->nome }}  {{ Auth::guard('medico')->user()->cognome }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('privato.logout') }}"
+                            <a class="dropdown-item" href="{{ route('medico.logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('privato.logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('medico.logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
 
@@ -76,7 +76,7 @@
                    
 
                     <li class="active-link">
-                        <a href="prenotazione"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
+                        <a href="tamponato"><i class="fa fa-table "></i>Prenotazione  <span class="badge"></span></a>
                     </li>
                     
                     <li class="active-link">
@@ -100,7 +100,7 @@
             <div id="page-inner">
                 
                     <ul class="progressbar">
-                        <li > Dati Tamponato</li>
+                        <li > Dati Paziente</li>
                         <li>Selezione Appuntamento</li>
                         <li class="active">Riepilogo e Pagamento</li>
                     </ul>
@@ -117,10 +117,11 @@
 		
      @php
      use App\Models\Prenotazione_Privato;
-     use App\Models\Tamponato_Privato;
+     use App\Models\Prenotazione_Medico;
+     use App\Models\Paziente;
      use App\Models\Prezzo_Tampone;
-        $id=Prenotazione_Privato::latest()->first()->id;
-        $tipo = Prenotazione_Privato::latest()->first()->tipologia;
+        $id=Prenotazione_Medico::latest()->first()->id;
+        $tipo = Prenotazione_Medico::latest()->first()->tipologia;
   /* $prezzo = DB::table('prezzo_tampone')
         ->select('prezzo')
        ->where('tipologia', '=', is_null($tipo)?0:$tipo)
@@ -131,12 +132,12 @@
        //$cancella = Prenotazione_Privato::latest()->first()->id->delete();
        // <a href="click_delete/{{$prenotazione_privato->id}}" > 
      @endphp
-      <form method="POST" action="{{  route('privato.registerRiepilogo') }}">
+      <form method="POST" action="{{  route('medico.registerRiepilogo') }}">
         @csrf
        <h4>Dati del Prenotato</h4>
-        <div id="divCheckbox" style = "position:relative; left: 5px; top: 20px;">
+        <div id="divCheckbox" style = "position:relative; left: 5px; top: 70px;">
             <h5> Codice Fiscale Tamponato</h5>
-           <input id="codicefiscaletamponato" type="text" style= "border: none;" name = "codicefiscaletamponato" readonly value=' {{Prenotazione_Privato::latest()->first()->codicefiscaletamponato}}'>
+           <input id="codicefiscalepaziente" type="text" style= "border: none;" name = "codicefiscalepaziente" readonly value=' {{Prenotazione_Medico::latest()->first()->codicefiscalepaziente}}'>
           
         </div>
 
@@ -161,32 +162,32 @@
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 30px;">
             <h5> Codice Laboratorio </h5>
-           <input id="codicelabpubblico" type="text" style= "border: none;" name = "codicelabpubblico" readonly value=' {{Prenotazione_Privato::latest()->first()->codicelabpubblico}}' >
+           <input id="codicelabpubblico" type="text" style= "border: none;" name = "codicelabpubblico" readonly value=' {{Prenotazione_Medico::latest()->first()->codicelabpubblico}}' >
         </div>
         
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 40px;">
             <h5> Email Prenotante</h5>
-           <input id="emailprivato" type="text" style= "border: none; width: 250px;" name = "emailprivato" readonly value='{{ Auth::guard('privato')->user()->email }}'>
+           <input id="emailmedico" type="text" style= "border: none; width: 250px;" name = "emailmedico" readonly value='{{ Auth::guard('medico')->user()->email }}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 50px;">
             <h5> Email Prenotato</h5>
-           <input id="email" type="text" style= "border: none; width: 250px;" name = "email" readonly value=' {{Tamponato_Privato::latest()->first()->email}}'>
+           <input id="email" type="text" style= "border: none; width: 250px;" name = "email" readonly value=' {{Paziente::latest()->first()->email}}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 60px;">
             <h5> Data Prenotazione</h5>
-           <input id="datatampone" type="text" style= "border: none;" name = "datatampone" readonly value=' {{Prenotazione_Privato::latest()->first()->datatampone}}'>
+           <input id="datatampone" type="text" style= "border: none;" name = "datatampone" readonly value=' {{Prenotazione_Medico::latest()->first()->datatampone}}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 70px;">
             <h5> Orario</h5>
-           <input id="orario" type="text" style= "border: none;" name = "orario" readonly value=' {{Prenotazione_Privato::latest()->first()->orario}}'>
+           <input id="orario" type="text" style= "border: none;" name = "orario" readonly value=' {{Prenotazione_Medico::latest()->first()->orario}}'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 80px;">
             <h5> Tipologia</h5>
-           <input id="tipologia" style= "border: none;" type="text" name = "tipologia" readonly value=' {{Prenotazione_Privato::latest()->first()->tipologia}}'>
+           <input id="tipologia" style= "border: none;" type="text" name = "tipologia" readonly value=' {{Prenotazione_Medico::latest()->first()->tipologia}}'>
         </div>
  
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 80px;">

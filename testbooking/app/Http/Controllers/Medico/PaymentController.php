@@ -39,14 +39,14 @@ class PaymentController extends Controller
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         $amount = new Amount();
-        $amount->setTotal("20.00");
+        $amount->setTotal("35.00");
         $amount->setCurrency('EUR');
 
         $transaction = new Transaction();
         $transaction->setAmount($amount);
         // $transaction->setDescription('See your IQ results');
 
-        $callbackUrl = url('privato/paypal/status');
+        $callbackUrl = url('medico/paypal/status');
 
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl($callbackUrl)
@@ -74,7 +74,7 @@ class PaymentController extends Controller
 
         if (!$paymentId || !$payerId || !$token) {
             $status = 'Impossibile completare il pagamento';
-            return redirect('privato/paypal/failed')->with(compact('status'));
+            return redirect('medico/paypal/failed')->with(compact('status'));
         }
 
         $payment = Payment::get($paymentId, $this->apiContext);
@@ -87,7 +87,7 @@ class PaymentController extends Controller
 
         if ($result->getState() === 'approved') {
             $status = 'Grazie! Transazione effettuata correttamente';
-            return redirect('privato/riepilogo')->with(compact('status'));
+            return redirect('medico/riepilogo')->with(compact('status'));
         }
 
         $status = 'Impossibile completare il pagamento';

@@ -12,6 +12,7 @@ class Medico extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+   
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +23,7 @@ class Medico extends Authenticatable
         'telefono', 'datanascita', 'luogonascita',
         'residenza', 'citta', 'provincia',
         'cap', 'nazione','nomestudiomedico', 'partitaiva', 
-        'cittastudio', 'indirizzostudio','provinciastudio','email','password'
+        'cittastudio', 'indirizzostudio','provinciastudio','emailmedico','password'
     ];
 
     /**
