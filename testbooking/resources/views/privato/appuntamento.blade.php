@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Area Riservata</title>
+    <title>COVID-19 TestBooking: Appuntamento</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->

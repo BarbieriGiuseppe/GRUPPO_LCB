@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Area Riservata</title>
+    <title>COVID-19 TestBooking: Profilo</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="<?php echo url('/areariservatalayout'); ?>/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -60,7 +60,7 @@
                     </li>
                    
                     <li class="active-link">
-                        <a href="modifica"><i class="fa fa-edit "></i>Modifica Profilo  <span class="badge"></span></a>
+                        <a href="modifica"><i class="fa fa-edit "></i>Profilo  <span class="badge"></span></a>
                     </li>
 
                     
@@ -83,25 +83,21 @@
   
                   <div class="input-group">
                     <h5>Provincia</h5>
-                    <input type="text" class="form-control" placeholder="" />
+                    <input name='provincia' id='provincia' type="text"  readonly value="{{ Auth::guard('asl')->user()->provincia}}" class="form-control" />
                 </div>
                 
                 
                 
                 <div class="input-group">
-                     <h5>Mail</h5>
-                    <input type="text" class="form-control" placeholder="" />
+                     <h5>Email</h5>
+                     <input name='email' id='email' type="text"  readonly value="{{ Auth::guard('asl')->user()->email}}" class="form-control" />
                 </div>
             
                 <div class="input-group">
                     <h5>Codice Privato</h5>
-                   <input type="text" class="form-control" placeholder="" />
+                    <input name='codprivato' id='codprivato' type="text"  readonly value="{{ Auth::guard('asl')->user()->codprivato}}" class="form-control" />
                </div>
                 
-                
-            
-                
-                <br><button type=”submit”> Salva Modifiche </button>
                         
             
 

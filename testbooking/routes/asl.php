@@ -7,7 +7,9 @@ use app\Http\Controllers\Asl\HomeController;
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 
-Route::get('/home', 'HomeController@mostraPrenotazioni_mostraNumero_mostraNumeroPositivi');
+Route::get('/home', 'HomeController@mostraPrenotazioni');
+Route::get('/homePositivi', 'HomeController@mostraPositivi');
+Route::get('/homeFiltri', 'HomeController@mostraFiltri');
 
 Route::get('/infoTamponato/{cf}/{ruolo}', 'HomeController@infoTamponato');
 Route::get('/infoLaboratorio/{clp}', 'HomeController@infoLaboratorio');
