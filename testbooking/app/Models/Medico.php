@@ -23,7 +23,7 @@ class Medico extends Authenticatable
         'telefono', 'datanascita', 'luogonascita',
         'residenza', 'citta', 'provincia',
         'cap', 'nazione','nomestudiomedico', 'partitaiva', 
-        'cittastudio', 'indirizzostudio','provinciastudio','emailmedico','password'
+        'cittastudio', 'indirizzostudio','provinciastudio','email','password'
     ];
 
     /**

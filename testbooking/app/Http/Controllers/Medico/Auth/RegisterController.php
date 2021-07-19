@@ -68,7 +68,7 @@ class RegisterController extends Controller
             'indirizzostudio' => ['required', 'string', 'max:255'],
             'cittastudio' => ['required', 'string', 'max:255'],
             'provinciastudio' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:privatos'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:medicos'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
