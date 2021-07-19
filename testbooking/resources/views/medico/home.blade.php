@@ -117,9 +117,9 @@
                         <tr>
 
 
-                        <td style="text-align:center">{{ $prenotazione_medico->codicefiscalepaziente }}</td>
+                        <td style="text-align:center"><a href = '/medico/infoTamponato/{{ $prenotazione_medico->codicefiscalepaziente }}/{{ $paziente }}'>{{ $prenotazione_medico->codicefiscalepaziente }}</a></td>
 
-                        <td style="text-align:center">{{ $prenotazione_medico->codicelabpubblico }}</td>
+                        <td style="text-align:center"><a href = '/medico/infoLaboratorio/{{ $prenotazione_medico->codicelabpubblico }}'>{{ $prenotazione_medico->codicelabpubblico }}</a></td>
 
                         <td style="text-align:center">{{ $prenotazione_medico->datatampone }}</td> 
 

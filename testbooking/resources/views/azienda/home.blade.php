@@ -117,9 +117,9 @@
                         <tr>
 
 
-                        <td style="text-align:center">{{ $prenotazione_azienda->codicefiscaledipendente }}</td>
+                        <td style="text-align:center"><a href = '/azienda/infoTamponato/{{ $prenotazione_azienda->codicefiscaledipendente }}/{{ $dipendente }}'>{{ $prenotazione_azienda->codicefiscaledipendente }}</a></td>
 
-                        <td style="text-align:center">{{ $prenotazione_azienda->codicelabpubblico }}</td>
+                        <td style="text-align:center"><a href = '/azienda/infoLaboratorio/{{ $prenotazione_azienda->codicelabpubblico }}'>{{ $prenotazione_azienda->codicelabpubblico }}</a></td>
 
                         <td style="text-align:center">{{ $prenotazione_azienda->datatampone }}</td> 
 

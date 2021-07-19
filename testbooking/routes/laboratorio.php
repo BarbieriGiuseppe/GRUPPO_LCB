@@ -17,6 +17,7 @@ Route::get('/aggiornaprivato','HomeController@updateEsitoPrivato');
 Route::get('/aggiornapaziente','HomeController@updateEsitoPaziente');
 Route::get('/aggiornadipendente','HomeController@updateEsitoDipendente');
 
+Route::get('/infoTamponato/{cf}/{ruolo}', 'HomeController@infoTamponato');
 
 Route::get('/prezzotamponi', 'PrezzoTamponiController@showPrezzoTamponiForm')->name('savePrezzoTampone');
 Route::get('savePrezzoTampone', 'PrezzoTamponiController@savePrezzoTampone');
@@ -24,6 +25,7 @@ Route::get('savePrezzoTampone', 'PrezzoTamponiController@savePrezzoTampone');
 
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
 Route::get('/aggiorna','ModificaController@updateAnagrafica');
+
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

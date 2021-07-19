@@ -12,6 +12,9 @@ Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
+Route::get('/infoTamponato/{cf}/{ruolo}', 'HomeController@infoTamponato');
+Route::get('/infoLaboratorio/{clp}', 'HomeController@infoLaboratorio');
+
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
 Route::get('/aggiorna','ModificaController@updateAnagrafica');
 

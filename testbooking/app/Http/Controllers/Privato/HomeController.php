@@ -65,7 +65,10 @@ class HomeController extends Controller
     { 
         $id = Auth::guard('privato')->user()->id;
         $data = DB::select('select * from prenotazione_privato where emailprivato = (select email from privatos where id = ?)' , [$id]); 
-        return view('privato/home',['data'=>$data]);
+
+        $tamponato_privato = 'tamponato_privato';
+
+        return view('privato/home',['data'=>$data,'tamponato_privato'=>$tamponato_privato]);
     }
 
     public  function cancellaPrenotazione($id)
@@ -74,7 +77,30 @@ class HomeController extends Controller
         return redirect('privato/home');
     }
     
- 
+    
+    public function infoTamponato($cf,$ruolo) {
+
+            $data = DB::table("tamponato_privato")
+                    ->where("codicefiscaletamponato", "=", $cf)
+                    ->get();
+
+        return view('infoTamponato',['ruolo'=>$ruolo,'data'=>$data]);
+    }
+
+
+
+    public function infoLaboratorio($clp) {
+
+        $data = DB::table("laboratorios")
+                ->where("codicelabpubblico", "=", $clp )
+                ->get();
+
+        return view('infoLaboratorio',['data'=>$data]);
+    }
+
+
+
+
     public  function downloadGuida()
     {   
 

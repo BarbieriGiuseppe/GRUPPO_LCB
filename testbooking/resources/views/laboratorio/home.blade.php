@@ -120,7 +120,7 @@
                                    <input id="id" type="text" name = "id"  value={{ $prenotazioniprivati->id}}>
                                 </td>
 
-                                <td style="text-align:center">{{ $prenotazioniprivati->codicefiscaletamponato}}</td>
+                                <td style="text-align:center"><a href = '/laboratorio/infoTamponato/{{ $prenotazioniprivati->codicefiscaletamponato }}/{{ $tamponato_privato }}'>{{ $prenotazioniprivati->codicefiscaletamponato}}</a></td>
 
                                 <td style="text-align:center">{{ $prenotazioniprivati->emailprivato }}</td>
 
@@ -204,7 +204,7 @@
                                     <input id="id" type="text" name = "id"  value={{ $prenotazionipazienti->id}}>
                                  </td>
 
-                                <td style="text-align:center">{{ $prenotazionipazienti->codicefiscalepaziente}}</td>
+                                <td style="text-align:center"><a href = '/laboratorio/infoTamponato/{{ $prenotazionipazienti->codicefiscalepaziente }}/{{ $paziente }}'>{{ $prenotazionipazienti->codicefiscalepaziente}}</a></td>
 
                                 <td style="text-align:center">{{ $prenotazionipazienti->emailmedico }}</td>
 
@@ -240,7 +240,7 @@
                                     </select>
                                 </td>
 
-                                <td >
+                                <td style="text-align:center">
                                      <button id="editicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button> 
                                 </td>
 
@@ -284,6 +284,8 @@
                                         <input id="id" type="text" name = "id"  value={{ $prenotazionidipendenti->id}}>
                                      </td>
                                 
+                                    <td style="text-align:center"><a href = '/laboratorio/infoTamponato/{{ $prenotazionidipendenti->codicefiscaledipendente }}/{{ $dipendente }}'>{{ $prenotazionidipendenti->codicefiscaledipendente }}</a></td>
+
                                     <td style="text-align:center">{{ $prenotazionidipendenti->emaildatore }}</td>
         
                                     <td style="text-align:center">{{ $prenotazionidipendenti->datatampone }}</td> 
@@ -300,15 +302,15 @@
                                     <td style="text-align:center">
                                         <select name="esito" id="esito" type="text" >
     
-                                            <option value="E">{{ $prenotazionipazienti->esito }}</option>
+                                            <option value="E">{{ $prenotazionidipendenti->esito }}</option>
     
-                                            @if( $prenotazionipazienti->esito  == 'n.d.')
+                                            @if( $prenotazionidipendenti->esito  == 'n.d.')
                                                 <option value="P">Positivo</option>
                                                 <option value="N">Negativo</option>
-                                            @elseif( $prenotazionipazienti->esito  == 'Positivo')
+                                            @elseif( $prenotazionidipendenti->esito  == 'Positivo')
                                                 <option value="ND">n.d.</option>
                                                 <option value="N">Negativo</option>
-                                            @elseif( $prenotazionipazienti->esito == 'Negativo')
+                                            @elseif( $prenotazionidipendenti->esito == 'Negativo')
                                                 <option value="ND">n.d.</option>
                                                 <option value="P">Positivo</option>
                                             @endif
@@ -316,7 +318,7 @@
                                         </select>
                                     </td>
     
-                                    <td >
+                                    <td style="text-align:center">
                                          <button id="editicon" type = "submit" class = "btn btn-default"> <img src="<?php echo url('/img'); ?>/editicon.jpg" /> </button> 
                                     </td>
         

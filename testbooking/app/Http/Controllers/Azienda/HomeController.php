@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Azienda;
 use App\Http\Controllers\Controller;
 use App\Models\Azienda;
 use App\Controllers\Azienda\Auth\LoginController;
-use App\Controllers\Azienda\Auth;
+use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Azienda\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\AuthManager;
 use app\Http\Middleware\RedirectIfAzienda;
 use app\Http\Middleware\RedirectIfNotAzienda;
+use \PDF;
 
 class HomeController extends Controller
 {
@@ -52,8 +56,14 @@ class HomeController extends Controller
 
     public function mostraPrenotazioni()
     { 
-        $data = DB::select('select * from prenotazione_datore'); //Aggiungere!--> where emailprivato = (select email from privatos where id = ?)' , [$id])
-        return view('azienda/home',['data'=>$data]);
+
+        $id = Auth::guard('azienda')->user()->id;
+        $data = DB::select('select * from prenotazione_datore where emaildatore = (select email from aziendas where id = ?)' , [$id]);
+
+        $dipendente = 'dipendente';
+
+        return view('azienda/home',['data'=>$data,'dipendente'=>$dipendente]);
+
     }
 
     public  function cancellaPrenotazione($id)
@@ -62,6 +72,26 @@ class HomeController extends Controller
         return redirect('azienda/home');
     }
   
+
+    public function infoTamponato($cf,$ruolo) {
+
+            $data = DB::table("dipendente")
+                    ->where("codicefiscaledipendente", "=", $cf)
+                    ->get(); 
+
+        return view('infoTamponato',['ruolo'=>$ruolo,'data'=>$data]);
+    }
+
+
+
+    public function infoLaboratorio($clp) {
+
+        $data = DB::table("laboratorios")
+                ->where("codicelabpubblico", "=", $clp )
+                ->get();
+
+        return view('infoLaboratorio',['data'=>$data]);
+    }
     
     public  function downloadGuida()
     {   

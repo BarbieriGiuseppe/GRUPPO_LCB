@@ -93,6 +93,7 @@
                      <h2>Dashboard Privato</h2>   
                     </div>
                 </div> 
+                
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
@@ -118,9 +119,9 @@
                        <tr>
                        
                        
-                        <td style="text-align:center">{{ $prenotazione_privato->codicefiscaletamponato }}</td>
+                        <td style="text-align:center"><a href = '/privato/infoTamponato/{{ $prenotazione_privato->codicefiscaletamponato }}/{{ $tamponato_privato }}'>{{ $prenotazione_privato->codicefiscaletamponato }}</a></td>
                        
-                        <td style="text-align:center">{{ $prenotazione_privato->codicelabpubblico }}</td>
+                        <td style="text-align:center"><a href = '/privato/infoLaboratorio/{{ $prenotazione_privato->codicelabpubblico }}'>{{ $prenotazione_privato->codicelabpubblico }}</a></td>
                         
                         <td style="text-align:center">{{ $prenotazione_privato->datatampone }}</td> 
 

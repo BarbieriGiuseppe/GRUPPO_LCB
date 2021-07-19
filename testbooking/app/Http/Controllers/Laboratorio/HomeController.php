@@ -64,7 +64,11 @@ class HomeController extends Controller
         $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = ?' , [$cod]); 
         $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = ?' , [$cod]); 
 
-        return view('laboratorio/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
+        $tamponato_privato = 'tamponato_privato';
+        $paziente = 'paziente';
+        $dipendente = 'dipendente';
+
+        return view('laboratorio/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'tamponato_privato'=>$tamponato_privato,'paziente'=>$paziente,'dipendente'=>$dipendente]);
     }
 
 
@@ -108,5 +112,31 @@ class HomeController extends Controller
         return redirect('laboratorio/home');
     }
 
+
+
+
+    public function infoTamponato($cf,$ruolo) {
+
+        if($ruolo == 'tamponato_privato'){
+
+            $data = DB::table("tamponato_privato")
+                    ->where("codicefiscaletamponato", "=", $cf)
+                    ->get();
+
+        }else if ($ruolo == 'paziente'){
+
+            $data = DB::table("paziente")
+                    ->where("codicefiscalepaziente", "=", $cf)
+                    ->get();
+
+        }else if ($ruolo == 'dipendente'){
+
+            $data = DB::table("dipendente")
+                    ->where("codicefiscaledipendente", "=", $cf)
+                    ->get(); 
+        }
+
+        return view('infoTamponato',['ruolo'=>$ruolo,'data'=>$data]);
+    }
   
 }

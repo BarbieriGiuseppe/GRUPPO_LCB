@@ -57,55 +57,129 @@ class HomeController extends Controller
     public function tabellaassistiti() {
         return view('asl.tabellaassistiti');
     }
-/*
+
     
-    public function mostraPrenotazioni()
+    public function mostraPrenotazioni_mostraNumero_mostraNumeroPositivi()
     { 
-        $id = Auth::guard('asl')->user()->id;
-        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" or esito like "Negativo"' , [$id]);
-        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" or esito like "Negativo"' , [$id]); 
-        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ? and esito like "Positivo" or esito like "Negativo")' , [$id]); 
-       
-        return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
-    }
-*/
-/*
-    public function mostraNumeroTamponi()
-    { 
-        $id = Auth::guard('asl')->user()->id;
-        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" or esito like "Negativo"' , [$id]);
+               
+        $t_privati= DB::table("prenotazione_privato")
+                    ->where("codicelabpubblico", "=", function($query){
+                     $provincia = Auth::guard('asl')->user()->provincia;
+	                 $query->from("laboratorios")
+	                ->select("codicelabpubblico")
+	                ->where("provincia", "=", $provincia);
+                    })
+                    ->get();
+
+        $t_pazienti = DB::table("prenotazione_medico")
+                    ->where("codicelabpubblico", "=", function($query){
+                     $provincia = Auth::guard('asl')->user()->provincia;
+	                 $query->from("laboratorios")
+	                ->select("codicelabpubblico")
+	                ->where("provincia", "=", $provincia);
+                    })
+                    ->get();
+        
+        $t_dipendenti = DB::table("prenotazione_datore")
+                    ->where("codicelabpubblico", "=", function($query){
+                     $provincia = Auth::guard('asl')->user()->provincia;
+	                 $query->from("laboratorios")
+	                ->select("codicelabpubblico")
+	                ->where("provincia", "=", $provincia);
+                    })
+                    ->get();
+
         $n_privati = $t_privati->count();
-        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" or esito like "Negativo"' , [$id]); 
         $n_pazienti = $t_pazienti->count();
-        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?) and esito like "Positivo" or esito like "Negativo"' , [$id]); 
         $n_dipendenti = $t_dipendenti->count();
+        $n_tamponi = $n_privati + $n_pazienti + $n_dipendenti;
 
-            
 
-        return view('asl/home')->compact('n_privati','n_pazienti','n_dipendenti');
+        $tp_privati= DB::table("prenotazione_privato")
+                    ->where("esito", "=", 'Positivo')
+                    ->where("codicelabpubblico", "=", function($query){
+                     $provincia = Auth::guard('asl')->user()->provincia;
+	                 $query->from("laboratorios")
+	                ->select("codicelabpubblico")
+	                ->where("provincia", "=", $provincia);
+                    })
+                    ->get();
+
+        $tp_pazienti = DB::table("prenotazione_medico")
+                    ->where("esito", "=", 'Positivo')
+                    ->where("codicelabpubblico", "=", function($query){
+                     $provincia = Auth::guard('asl')->user()->provincia;
+	                 $query->from("laboratorios")
+	                ->select("codicelabpubblico")
+	                ->where("provincia", "=", $provincia);
+                    })
+                    ->get();
+        
+        $tp_dipendenti = DB::table("prenotazione_datore")
+                    ->where("esito", "=", 'Positivo')
+                    ->where("codicelabpubblico", "=", function($query){
+                     $provincia = Auth::guard('asl')->user()->provincia;
+	                 $query->from("laboratorios")
+	                ->select("codicelabpubblico")
+	                ->where("provincia", "=", $provincia);
+                    })
+                    ->get();
+        
+
+        $np_privati = $tp_privati->count();
+        $np_pazienti = $tp_pazienti->count();
+        $np_dipendenti = $tp_dipendenti->count();
+        $np_tamponi = $np_privati + $np_pazienti + $np_dipendenti;
+
+        $tasso = ($np_tamponi*100)/$n_tamponi;
+
+        $tamponato_privato = 'tamponato_privato';
+        $paziente = 'paziente';
+        $dipendente = 'dipendente';
+
+        return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'n_tamponi'=>$n_tamponi,'np_tamponi'=>$np_tamponi,'tasso'=>$tasso,'tamponato_privato'=>$tamponato_privato,'paziente'=>$paziente,'dipendente'=>$dipendente]);
     }
-*/
-/*
-    public function visualizzaPositivi()
-    { 
-        $id = Auth::guard('asl')->user()->id;
-        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" ' , [$id]);
-        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" ' , [$id]); 
-        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?) and esito like "Positivo"' , [$id]); 
-        $lab = DB::select('select * from laboratorios where provincia = (select provincia from asls where id = ?) and esito like "Positivo"' , [$id]); 
-        return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'lab'=>$lab]);
+
+
+
+
+
+
+
+
+    public function infoTamponato($cf,$ruolo) {
+
+        if($ruolo == 'tamponato_privato'){
+
+            $data = DB::table("tamponato_privato")
+                    ->where("codicefiscaletamponato", "=", $cf)
+                    ->get();
+
+        }else if ($ruolo == 'paziente'){
+
+            $data = DB::table("paziente")
+                    ->where("codicefiscalepaziente", "=", $cf)
+                    ->get();
+
+        }else if ($ruolo == 'dipendente'){
+
+            $data = DB::table("dipendente")
+                    ->where("codicefiscaledipendente", "=", $cf)
+                    ->get(); 
+        }
+
+        return view('infoTamponato',['ruolo'=>$ruolo,'data'=>$data]);
     }
-*/
-/*
-    public function visualizzaPositiviNegativi()
-    { 
-        $id = Auth::guard('asl')->user()->id;
-        $t_privati = DB::select('select * from prenotazione_privato where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" or esito like "Negativo"' , [$id]);
-        $t_pazienti = DB::select('select * from prenotazione_medico where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ?)and esito like "Positivo" or esito like "Negativo"' , [$id]); 
-        $t_dipendenti = DB::select('select * from prenotazione_datore where codicelabpubblico = (select codicelabpubblico from laboratorios where id = ? and esito like "Positivo" or esito like "Negativo")' , [$id]); 
-       
-        return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti]);
+
+
+
+    public function infoLaboratorio($clp) {
+
+        $data = DB::table("laboratorios")
+                ->where("codicelabpubblico", "=", $clp )
+                ->get();
+
+        return view('infoLaboratorio',['data'=>$data]);
     }
-    */
 
 }
