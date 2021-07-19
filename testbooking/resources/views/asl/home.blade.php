@@ -88,7 +88,18 @@
                      <h2>Dashboard Asl</h2>   
                     </div>
                 </div>       
-                       
+                   
+                
+               
+                    <div id="page-inner">
+                        <div class="row">
+                            <div class="col-lg-12">
+                             <h2>Dashboard Asl</h2>   
+                            </div>
+                        </div>     
+
+
+
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <h5><b>LISTA PRENOTAZIONI</b></h5>
