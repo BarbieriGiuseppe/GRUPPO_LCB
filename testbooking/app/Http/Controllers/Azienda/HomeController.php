@@ -27,7 +27,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the Azienda dashboard.
+     * Show the Datore dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -35,18 +35,29 @@ class HomeController extends Controller
         return view('azienda.home');
     }
 
+
      /**
-     * Show the Azienda prenotazione.
+     * Show the Datore prenotazione.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function prenotazione() {
-        return view('azienda.prenotazione');
+    public function tamponato() {
+        return view('azienda.tamponato');
     }
 
-    
+    public function appuntamento(){
+        return view('azienda.appuntamento');
+    }
+
+    public function riepilogo(){
+        return view('azienda.riepilogo');
+    }
+
+    public function continua(){
+        return view('azienda.continua');
+    }
     /**
-     * Show the Azienda modifica.
+     * Show the Datore modifica.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -56,14 +67,12 @@ class HomeController extends Controller
 
     public function mostraPrenotazioni()
     { 
-
         $id = Auth::guard('azienda')->user()->id;
         $data = DB::select('select * from prenotazione_datore where emaildatore = (select email from aziendas where id = ?)' , [$id]);
 
         $dipendente = 'dipendente';
 
         return view('azienda/home',['data'=>$data,'dipendente'=>$dipendente]);
-
     }
 
     public  function cancellaPrenotazione($id)
@@ -71,13 +80,13 @@ class HomeController extends Controller
         DB::delete('delete from prenotazione_datore where id = ?', [$id]);
         return redirect('azienda/home');
     }
-  
+    
 
     public function infoTamponato($cf,$ruolo) {
 
             $data = DB::table("dipendente")
                     ->where("codicefiscaledipendente", "=", $cf)
-                    ->get(); 
+                    ->get();
 
         return view('infoTamponato',['ruolo'=>$ruolo,'data'=>$data]);
     }
@@ -92,7 +101,10 @@ class HomeController extends Controller
 
         return view('infoLaboratorio',['data'=>$data]);
     }
-    
+
+
+
+
     public  function downloadGuida()
     {   
 

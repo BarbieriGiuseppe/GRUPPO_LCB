@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Notifications\Privato\Auth\ResetPassword;
-use App\Notifications\Privato\Auth\VerifyEmail;
+use App\Notifications\Azienda\Auth\ResetPassword;
+use App\Notifications\Azienda\Auth\VerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 class Dipendente extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $table = 'dipendente';
 
     /**
      * The attributes that are mass assignable.

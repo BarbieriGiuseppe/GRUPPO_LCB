@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 class Prenotazione_Datore extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $table = 'prenotazione_datore';
 
     /**
      * The attributes that are mass assignable.
