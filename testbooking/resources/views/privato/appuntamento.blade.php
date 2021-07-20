@@ -148,8 +148,7 @@ $(function() {
                     <ul class="progressbar">
                         <li> Dati Tamponato</li>
                         <li class="active">Seleziona Appuntamento</li>
-                        <li>add friends</li>
-                        <li>View map</li>
+                        <li>Riepilogo e Pagamento</li>
                 </ul>
                 <div class="row">
                     <div class="col-md-12">
@@ -159,12 +158,14 @@ $(function() {
                  <!-- /. ROW  -->
                  
                  <!-- /. ROW  --> 
+    <div class="input-group" style = "position:relative; left:-100px; top:80px;">
+
      <form method="POST" action="{{ route('privato.registerAppuntamento') }}">
 					@csrf
  
-    <div class="input-group" style = "position:relative; left:-280px; top:48px;">
-        <h5>Laboratorio</h5>  
-            <div>
+        <div class="input-group" style = "position:relative; left:-100px; top:40px;">
+            <h5>Laboratorio</h5>  
+                <div>
                 <select class="form-control formselect required" placeholder="Laboratorio"
                     id="codicelabpubblico" name="codicelabpubblico">
                     <option value="0" disabled selected>Seleziona un Laboratorio</option>
@@ -176,19 +177,20 @@ $(function() {
             </div>
     </div>
 
-    <div class="input-group" style = "position:relative; left: 25px; top: -20px;">
+ 
+    <div class="input-group" style = "position:relative; left: 150px; top: -30px;">
         <h5>Tipologia tampone</h5>
         <span class="focus-input100" ></span>
         <select class="form-control formselect required" placeholder="Seleziona una tipologia" id="tipologia" name="tipologia">
         </select>
     </div>
     
-    <div class="input-group" style = "position:relative; left: 290px; top: -90px;">
+    <div class="input-group" style = "position:relative; left: 370px; top: -100px;">
         <h5>Data Appuntamento</h5>
         <input type="text" id="datatampone" name="datatampone">
     </div>
    
-    <div class="input-group "style = "position:relative; left: 550px; top: -163px;"> 
+    <div class="input-group "style = "position:relative; left: 570px; top: -173px;"> 
         <h5>Orario</h5>
        <input id="orario" type="time" class="input100 @error('orario') is-invalid @enderror" name="orario" value="{{ old('orario') }}" required autocomplete="orario" autofocus min="08:00:00" max="20:00:00">
        @error('orario')
@@ -224,13 +226,13 @@ $(function() {
    <input id="esito" type="text" name = "esito" readonly value='n.d.'>
 </div>
 
-    <br> <button type="submit" style = "position:relative; left:-280px; top: -180px;">
+    <br> <button type="submit" style = "position:relative; left: 600px; top: -190px;">
         {{ __('Avanti') }}
     </button>	
+</div>
 
 
-
-    <div style = "position:relative; left:-300px; top: 100px;  background-color: rgb(33, 71, 97);
+    <div style = "position:relative; left:-300px; top: 80px;  background-color: rgb(33, 71, 97);
             -moz-border-radius: 10px;
             border-radius: 10px;
             padding: 10px;

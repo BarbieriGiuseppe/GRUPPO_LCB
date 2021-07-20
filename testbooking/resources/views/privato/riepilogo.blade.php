@@ -133,8 +133,8 @@
      @endphp
       <form method="POST" action="{{  route('privato.registerRiepilogo') }}">
         @csrf
-       <h4>Dati del Prenotato</h4>
-        <div id="divCheckbox" style = "position:relative; left: 5px; top: 20px;">
+       
+        <div id="divCheckbox" style = "position:relative; left: 5px; top: 80px;">
             <h5> Codice Fiscale Tamponato</h5>
            <input id="codicefiscaletamponato" type="text" style= "border: none;" name = "codicefiscaletamponato" readonly value=' {{Prenotazione_Privato::latest()->first()->codicefiscaletamponato}}'>
           
