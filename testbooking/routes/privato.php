@@ -23,6 +23,7 @@ Route::get('/infoLaboratorio/{clp}', 'HomeController@infoLaboratorio');
 
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
 Route::get('/aggiorna','ModificaController@updateAnagrafica');
+Route::get('/cancella_profilo/{id}','ModificaController@cancellaProfilo');
 
 Route::get('/downloadGuida','HomeController@downloadGuida')->name('downloadGuida');
 Route::get('/downloadQuestionario','HomeController@downloadQuestionario')->name('downloadQuestionario');

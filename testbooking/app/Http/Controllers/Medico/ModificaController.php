@@ -57,5 +57,13 @@ class ModificaController extends Controller
  
        return redirect('medico/modifica')->with('succes','Dati Salvati');
     }
+
+    public function cancellaProfilo(Request $request,$id) {
+        
+
+        Medico::destroy($id);
+        return redirect('/medico/login')->with("Success","Profilo Eliminato!");
+        
+    }
   
 }

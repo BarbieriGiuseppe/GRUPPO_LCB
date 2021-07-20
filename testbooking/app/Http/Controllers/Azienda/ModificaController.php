@@ -50,4 +50,12 @@ class ModificaController extends Controller
        return redirect('azienda/modifica')->with('succes','Dati Salvati');
     }
   
+
+    public function cancellaProfilo(Request $request,$id) {
+        
+
+        Azienda::destroy($id);
+        return redirect('/azienda/login')->with("Success","Profilo Eliminato!");
+        
+    }
 }

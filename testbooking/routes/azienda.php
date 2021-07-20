@@ -15,6 +15,8 @@ Route::get('/modifica', 'HomeController@modifica')->name('modifica');
 Route::get('/appuntamento', 'HomeController@appuntamento')->name('appuntamento');
 Route::get('/riepilogo','HomeController@riepilogo')->name('riepilogo');
 
+
+
 Route::get('/home', 'HomeController@mostraPrenotazioni');
 Route::get('/click_delete/{id}','HomeController@cancellaPrenotazione');
 
@@ -23,6 +25,7 @@ Route::get('/infoLaboratorio/{clp}', 'HomeController@infoLaboratorio');
 
 Route::get('/modifica','ModificaController@modificaAnagrafica')->name('modifica');
 Route::get('/aggiorna','ModificaController@updateAnagrafica');
+Route::get('/cancella_profilo/{id}','ModificaController@cancellaProfilo');
 
 Route::get('/downloadGuida','HomeController@downloadGuida')->name('downloadGuida');
 Route::get('/downloadQuestionario','HomeController@downloadQuestionario')->name('downloadQuestionario');

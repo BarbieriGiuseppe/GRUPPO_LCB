@@ -462,13 +462,16 @@
 
                     <div class="input-group"  style = "position:relative; left:0px; top:-785px; "> 
     
-                        <button type="submit" name="submit">Salva Modifiche</button>
-                        
+                        <button type="submit" name="submit">Salva Modifiche</button> &ensp;
                     </div>
-    
-    
-    
+      
     </form>
+
+    <div class="input-group"  style = "position:relative; left:130px; top:-820px; ">     
+        <form action= "/azienda/cancella_profilo/{{  Auth::guard('azienda')->user()->id }} " method="get"> 
+            <button id="cancellaProfilo" type = "submit" class = "btn btn-danger" data-dismiss="modal">Elimina Profilo </button>
+        </form>
+    </div>
 
                  <!-- /. ROW  -->           
     </div>

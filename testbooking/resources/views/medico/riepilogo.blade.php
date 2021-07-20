@@ -157,7 +157,7 @@
         
         <div id="divCheckbox" style="display: none;">>
             <h5> Esito</h5>
-           <input id="esito" type="text" name = "esito" readonly value='n/d'>
+           <input id="esito" type="text" name = "esito" readonly value='n.d.'>
         </div>
 
         <div id="divCheckbox" style = "position:relative; left: 5px; top: 30px;">

@@ -466,12 +466,14 @@
     
                         <button type="submit" name="submit">Salva Modifiche</button>
                         
-                    </div>
-    
-    
-    
+                    </div>    
     </form>
     
+    <div class="input-group"  style = "position:relative; left:130px; top:-820px; ">     
+        <form action= "/medico/cancella_profilo/{{  Auth::guard('medico')->user()->id }} " method="get"> 
+            <button id="cancellaProfilo" type = "submit" class = "btn btn-danger" data-dismiss="modal">Elimina Profilo </button>
+        </form>
+    </div>
 
                  <!-- /. ROW  -->           
     </div>

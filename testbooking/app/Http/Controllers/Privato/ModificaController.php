@@ -50,5 +50,13 @@ class ModificaController extends Controller
  
        return redirect('privato/modifica')->with('succes','Dati Salvati');
     }
+
+    public function cancellaProfilo(Request $request,$id) {
+        
+
+        Privato::destroy($id);
+        return redirect('/privato/login')->with("Success","Profilo Eliminato!");
+        
+    }
   
 }

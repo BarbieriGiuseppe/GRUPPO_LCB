@@ -114,9 +114,7 @@ class HomeController extends Controller
         $np_pazienti = $tp_pazienti->count();
         $np_dipendenti = $tp_dipendenti->count();
         $np_tamponi = $np_privati + $np_pazienti + $np_dipendenti;
-
-        $tasso = ($np_tamponi*100)/$n_tamponi;
-
+        
         $laboratori = DB::table("laboratorios")
                     ->where("provincia", "=", $provincia)
                     ->get();
@@ -127,8 +125,16 @@ class HomeController extends Controller
 
         $configurazione = 'principale';
 
-        return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'n_tamponi'=>$n_tamponi,'np_tamponi'=>$np_tamponi,'tasso'=>$tasso,'tamponato_privato'=>$tamponato_privato,'paziente'=>$paziente,'dipendente'=>$dipendente,'laboratori'=>$laboratori,'configurazione'=>$configurazione]);
-    }
+        if($np_tamponi <> 0 )
+        {
+                $tasso = ($np_tamponi*100)/$n_tamponi;
+                return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'n_tamponi'=>$n_tamponi,'np_tamponi'=>$np_tamponi,'tasso'=>$tasso,'tamponato_privato'=>$tamponato_privato,'paziente'=>$paziente,'dipendente'=>$dipendente,'laboratori'=>$laboratori,'configurazione'=>$configurazione]);
+        }elseif($np_tamponi == 0)
+        {
+                $tasso = "n.d.";
+                return view('asl/home',['t_privati'=>$t_privati,'t_pazienti'=>$t_pazienti,'t_dipendenti'=>$t_dipendenti,'n_tamponi'=>$n_tamponi,'np_tamponi'=>$np_tamponi,'tasso'=>$tasso,'tamponato_privato'=>$tamponato_privato,'paziente'=>$paziente,'dipendente'=>$dipendente,'laboratori'=>$laboratori,'configurazione'=>$configurazione]);
+        }        
+}
 
 
 
