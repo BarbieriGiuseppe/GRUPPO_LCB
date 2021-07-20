@@ -61,32 +61,25 @@ class HomeController extends Controller
     
     public function mostraPrenotazioni()
     { 
-               
+        $provincia = Auth::guard('asl')->user()->provincia;
+        
+
         $t_privati= DB::table("prenotazione_privato")
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->get();
 
         $t_pazienti = DB::table("prenotazione_medico")
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->get();
         
         $t_dipendenti = DB::table("prenotazione_datore")
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->get();
 
         $n_privati = $t_privati->count();
@@ -96,33 +89,24 @@ class HomeController extends Controller
 
 
         $tp_privati= DB::table("prenotazione_privato")
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->where("esito", "=", 'Positivo')
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
                     ->get();
 
         $tp_pazienti = DB::table("prenotazione_medico")
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->where("esito", "=", 'Positivo')
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
                     ->get();
         
         $tp_dipendenti = DB::table("prenotazione_datore")
+                    ->join("laboratorios", function($join){
+                     $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->where("esito", "=", 'Positivo')
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
                     ->get();
         
 
@@ -134,6 +118,7 @@ class HomeController extends Controller
         $tasso = ($np_tamponi*100)/$n_tamponi;
 
         $laboratori = DB::table("laboratorios")
+                    ->where("provincia", "=", $provincia)
                     ->get();
 
         $tamponato_privato = 'tamponato_privato';
@@ -150,36 +135,27 @@ class HomeController extends Controller
 
     public function mostraPositivi()
     { 
-
+        $provincia = Auth::guard('asl')->user()->provincia;
 
         $tp_privati= DB::table("prenotazione_privato")
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->where("esito", "=", 'Positivo')
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
                     ->get();
 
         $tp_pazienti = DB::table("prenotazione_medico")
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->where("esito", "=", 'Positivo')
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
                     ->get();
         
         $tp_dipendenti = DB::table("prenotazione_datore")
+                    ->join("laboratorios", function($join){
+                     $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
                     ->where("esito", "=", 'Positivo')
-                    ->where("codicelabpubblico", "=", function($query){
-                     $provincia = Auth::guard('asl')->user()->provincia;
-	                 $query->from("laboratorios")
-	                ->select("codicelabpubblico")
-	                ->where("provincia", "=", $provincia);
-                    })
                     ->get();
 
         $tamponato_privato = 'tamponato_privato';
@@ -195,6 +171,8 @@ class HomeController extends Controller
 
     public function mostraFiltri(Request $request)
     { 
+        $provincia = Auth::guard('asl')->user()->provincia;
+
         $input_lab = $request['laboratorio'];
         $input_data = $request['data'];
         $input_ora = $request['ora'];
@@ -203,277 +181,210 @@ class HomeController extends Controller
         if(empty($input_lab) && empty($input_data) && empty($input_ora)  ){
 
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->get();
         
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->get();
         
 
         }else if(!empty($input_lab) && !empty($input_data) && !empty($input_ora)){
-        
+
+
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("datatampone", "=", $input_data)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_privato.datatampone", "=", $input_data)
+                    ->where("prenotazione_privato.orario", "=", $input_ora)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("datatampone", "=", $input_data)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_medico.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_medico.datatampone", "=", $input_data)
+                    ->where("prenotazione_medico.orario", "=", $input_ora)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("datatampone", "=", $input_data)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_datore.datatampone", "=", $input_data)
+                    ->where("prenotazione_datore.orario", "=", $input_ora)
+                    ->get();
+        
             
 
         }else if(!empty($input_lab) && empty($input_data) && empty($input_ora)){                
 
+
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.codicelabpubblico", "=", $input_lab)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_medico.codicelabpubblico", "=", $input_lab)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.codicelabpubblico", "=", $input_lab)
+                    ->get();
         
 
         }else if(empty($input_lab) && !empty($input_data) && empty($input_ora)){
 
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("datatampone", "=", $input_data)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.datatampone", "=", $input_data)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("datatampone", "=", $input_data)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)                
+                    ->where("prenotazione_medico.datatampone", "=", $input_data)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("datatampone", "=", $input_data)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.datatampone", "=", $input_data)
+                    ->get();
             
         
         }else if(empty($input_lab) && empty($input_data) && !empty($input_ora)){
 
+
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.orario", "=", $input_ora)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_medico.orario", "=", $input_ora)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.orario", "=", $input_ora)
+                    ->get();
 
 
         }else if(!empty($input_lab) && !empty($input_data) && empty($input_ora)){     
         
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("datatampone", "=", $input_data)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_privato.datatampone", "=", $input_data)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("datatampone", "=", $input_data)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_medico.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_medico.datatampone", "=", $input_data)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("datatampone", "=", $input_data)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_datore.datatampone", "=", $input_data)
+                    ->get();
             
 
         }else if(empty($input_lab) && !empty($input_data) && !empty($input_ora)){   
 
+
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("datatampone", "=", $input_data)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.datatampone", "=", $input_data)
+                    ->where("prenotazione_privato.orario", "=", $input_ora)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("datatampone", "=", $input_data)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_medico.datatampone", "=", $input_data)
+                    ->where("prenotazione_medico.orario", "=", $input_ora)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("datatampone", "=", $input_data)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.datatampone", "=", $input_data)
+                    ->where("prenotazione_datore.orario", "=", $input_ora)
+                    ->get();
 
             
         }else if(!empty($input_lab) && empty($input_data) && !empty($input_ora)){ 
 
             $t_privati= DB::table("prenotazione_privato")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_privato.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_privato.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_privato.orario", "=", $input_ora)
+                    ->get();
 
             $t_pazienti = DB::table("prenotazione_medico")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-	                    $query->from("laboratorios")
-	                    ->select("codicelabpubblico")
-	                    ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
-            
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_medico.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_medico.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_medico.orario", "=", $input_ora)
+                    ->get();
+        
             $t_dipendenti = DB::table("prenotazione_datore")
-                        ->where("codicelabpubblico", "=", $input_lab)
-                        ->where("orario", "=", $input_ora)
-                        ->where("codicelabpubblico", "=", function($query){
-                        $provincia = Auth::guard('asl')->user()->provincia;
-                        $query->from("laboratorios")
-                        ->select("codicelabpubblico")
-                        ->where("provincia", "=", $provincia);
-                        })
-                        ->get();
+                    ->join("laboratorios", function($join){
+                    $join->on("prenotazione_datore.codicelabpubblico", "=", "laboratorios.codicelabpubblico"); })
+                    ->where("provincia", "=", $provincia)
+                    ->where("prenotazione_datore.codicelabpubblico", "=", $input_lab)
+                    ->where("prenotazione_datore.orario", "=", $input_ora)
+                    ->get();
 
         }
 
