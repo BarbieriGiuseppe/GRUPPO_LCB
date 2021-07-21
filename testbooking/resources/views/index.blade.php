@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/css/style.css">
-ciao
+
 
 </head>
 
@@ -182,7 +182,7 @@ ciao
             <img src="<?php echo url('/'); ?>/img/lab2.jpg" alt="..." class="team-img">
             <div class="caption">
               <h3>Laboratorio Poli</h3>
-              <a href="labpoli">Info</a>
+              <a href="/labpoli">Info</a>
             </div>
           </div>
         </div>

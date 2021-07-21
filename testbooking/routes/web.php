@@ -25,7 +25,7 @@ Route::get('/labdib', function () {
     return view('infolab.labdib');
 });
 
-Route::get('/lapoli', function () {
+Route::get('/labpoli', function () {
     return view('infolab.labpoli');
 });
 
