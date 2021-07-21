@@ -232,7 +232,7 @@
 
                     
 
-                        <div class="row" style = "position:relative; left:950px; top:-170px; " >
+                        <div class="row" style = "position:relative; left:950px; top:-400px; " >
                             <div class="col-lg-6 col-md-6">
                                 <h5><b>NUMERO TAMPONI <br> NELLA PROVINCIA DI {{ Auth::guard('asl')->user()->provincia }}</b></h5>
                 
@@ -248,7 +248,7 @@
                         </div>
                 
                 
-                        <div class="row" style = "position:relative; left:950px; top:-170px; " >
+                        <div class="row" style = "position:relative; left:950px; top:-400px; " >
                             <div class="col-lg-6 col-md-6">
                                 <h5><b>NUMERO POSITIVI <br> NELLA PROVINCIA DI {{ Auth::guard('asl')->user()->provincia }}</b></h5>
                 
@@ -263,7 +263,7 @@
                             </div>
                         </div>
                 
-                        <div class="row" style = "position:relative; left:950px; top:-170px; " >
+                        <div class="row" style = "position:relative; left:950px; top:-400px; " >
                             <div class="col-lg-6 col-md-6">
                                 <h5><b>TASSO POSITIVITA'<br> NELLA PROVINCIA DI {{ Auth::guard('asl')->user()->provincia }}</b></h5>
                 

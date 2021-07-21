@@ -224,18 +224,19 @@
                                 <td style="text-align:center">
                                     <select name="esito" id="esito" type="text" >
 
-                                        <option value="E">{{ $prenotazionipazienti->esito }}</option>
+                                        <option value="{{ $prenotazionipazienti->esito }}">{{ $prenotazionipazienti->esito }}</option>
 
                                         @if( $prenotazionipazienti->esito  == 'n.d.')
-                                            <option value="P">Positivo</option>
-                                            <option value="N">Negativo</option>
+                                            <option value="Positivo">Positivo</option>
+                                            <option value="Negativo">Negativo</option>
                                         @elseif( $prenotazionipazienti->esito  == 'Positivo')
-                                            <option value="ND">n.d.</option>
-                                            <option value="N">Negativo</option>
+                                            <option value="n.d.">n.d.</option>
+                                            <option value="Negativo">Negativo</option>
                                         @elseif( $prenotazionipazienti->esito == 'Negativo')
-                                            <option value="ND">n.d.</option>
-                                            <option value="P">Positivo</option>
+                                            <option value="n.d.">n.d.</option>
+                                            <option value="Positivo">Positivo</option>
                                         @endif
+
                         
                                     </select>
                                 </td>
@@ -302,17 +303,17 @@
                                     <td style="text-align:center">
                                         <select name="esito" id="esito" type="text" >
     
-                                            <option value="E">{{ $prenotazionidipendenti->esito }}</option>
+                                            <option value="{{ $prenotazionidipendenti->esito }}">{{ $prenotazionidipendenti->esito }}</option>
     
                                             @if( $prenotazionidipendenti->esito  == 'n.d.')
-                                                <option value="P">Positivo</option>
-                                                <option value="N">Negativo</option>
+                                                <option value="Positivo">Positivo</option>
+                                                <option value="Negativo">Negativo</option>
                                             @elseif( $prenotazionidipendenti->esito  == 'Positivo')
-                                                <option value="ND">n.d.</option>
-                                                <option value="N">Negativo</option>
+                                                <option value="n.d.">n.d.</option>
+                                                <option value="Negativo">Negativo</option>
                                             @elseif( $prenotazionidipendenti->esito == 'Negativo')
-                                                <option value="ND">n.d.</option>
-                                                <option value="P">Positivo</option>
+                                                <option value="n.d.">n.d.</option>
+                                                <option value="Positivo">Positivo</option>
                                             @endif
                             
                                         </select>
