@@ -221,7 +221,7 @@ $(function() {
 
 <div id="divCheckbox" style="display: none;">>
     <h5> Esito</h5>
-   <input id="esito" type="text" name = "esito" readonly value='n.d'>
+   <input id="esito" type="text" name = "esito" readonly value='n.d.'>
 </div>
 
     <br> <button type="submit" style = "position:relative; left:-280px; top: -180px;">
