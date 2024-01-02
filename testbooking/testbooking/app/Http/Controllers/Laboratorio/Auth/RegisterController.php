@@ -96,7 +96,7 @@ class RegisterController extends Controller
         $data['email'] = $user->email;
         Mail::send('laboratorio.emails.codiceprivato', $data, function($message) use ($data)
         {
-            $message->from('infogruppolcb@gmail.com', "TestBooking");
+            $message->from('provasitalian2023@gmail.com', "TestBooking");
             $message->subject("Codice privato per l'area riservata");
             $message->to($data['email']);
         });
